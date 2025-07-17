@@ -12,13 +12,13 @@ public class note
         
         m = ((++n + ++n) % 2) * n++;
         f = m == 0;
-//        System.out.println(m);
-//        System.out.println(n);
-//        System.out.println(f);
-//        System.out.println(--n);
-//        System.out.println(--n);
-//        System.out.println(n--);
-//        System.out.println((int)--n + 30);
+        System.out.println(m);
+        System.out.println(n);
+        System.out.println(f);
+        System.out.println(--n);
+        System.out.println(--n);
+        System.out.println(n--);
+        System.out.println((int)--n + 30);
 //        
         
         m = 0;
