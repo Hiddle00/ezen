@@ -48,11 +48,23 @@ public class WhileStar
 		x = 1;
 		while(x <= 7)
 		{
-			while(y >= x)
+			y = 1;
+			if(y >= x)
 			{
-				System.out.print("*");
+				while()
+				{
+					
+				}
+				
+//				System.out.print();
 				y++;
 			}
+			while()
+			{
+				System.out.print("*");
+				
+			}
+			x += 2;
 		}
 		
 		int row = 1;
