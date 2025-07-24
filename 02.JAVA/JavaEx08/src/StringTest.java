@@ -66,14 +66,38 @@ public class StringTest
 		String student = "공공일:30,공공이:45,공공삼:69,공공사:40";
 		int    score_sum = 0; //점수합계
 		int    score_avg = 0; //평균
-		
+		//각각의 학생정보를 분리(split)
+		//{"공공일:30","공공이:45","공공삼:69","공공사:40"}
+		String[] list = student.split(",");
+		for( String nm : list )
+		{
+			//nm="공공일:30" ->item = { "공공일", "30" }	
+			System.out.println(nm);
+			
+			String[] item = nm.split(":");
+			System.out.println("이름:" + item[0]);
+			System.out.println("점수:" + item[1]);
+			
+			//문자열 점수를 숫자 점수로 변환
+			score_sum += Integer.parseInt(item[1]);
+		}
+		score_avg = score_sum / list.length;
+		System.out.println("합계:" + score_sum);
+		System.out.println("평균:" + score_avg);
 		
 		//다음 전화번호부를 이용하여 아래와 같이 재난 발생 문자를 발송하세요.
 		//[010-1111-1111]님 전주지역 홍수경보가 발효되었습니다.
 		//[010-1111-2222]님 전주지역 홍수경보가 발효되었습니다.
 		//[010-1111-3333]님 전주지역 홍수경보가 발효되었습니다.
 		String tel = "010-1111-1111,010-1111-2222,010-1111-3333";
-		String msg = "{tel}님 전주지역 홍수경보가 발효되었습니다.";		
+		String msg = "{tel}님 전주지역 홍수경보가 발효되었습니다.{tel}님 대피하세요.";
 		
+		String[] tel_list = tel.split(",");
+		for(String hp : tel_list)
+		{
+			String send_msg = msg;
+			send_msg = send_msg.replace("{tel}",hp);
+			System.out.println(send_msg);
+		}
 	}
 }

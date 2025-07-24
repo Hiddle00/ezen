@@ -76,7 +76,27 @@ public class StringTest
 		{
 			score_sum += Integer.parseInt(stuAry[i]);
 		}
-		score_avg = score_sum / (stuAry.length / 2);
+		score_avg = score_sum / (stuAry.length / 2); //확장성,적응성
+		System.out.println(score_sum);
+		System.out.println(score_avg);
+		
+		//각각의 학생정보를 분리(split)
+		//{"공공일:30","공공이:45","공공삼:69","공공사:40"}
+		String[] list = student.split(",");
+		for(String nm : list)
+		{
+			//nm="공공일:30"  ->item = {"공공일", "30"}
+			System.out.println(nm);
+			
+			String[] item = nm.split(":");
+			System.out.println("이름:" + item[0]);
+			System.out.println("점수:" + item[1]);
+			
+			//문자열 점수를 숫자 점수로 졈환
+			score_sum += Integer.parseInt(item[1]);
+			
+		}
+		score_avg = score_sum / (stuAry.length / 2); //확장성,적응성
 		System.out.println(score_sum);
 		System.out.println(score_avg);
 		
@@ -86,8 +106,20 @@ public class StringTest
 		//[010-1111-2222]님 전주지역 홍수경보가 발효되었습니다.
 		//[010-1111-3333]님 전주지역 홍수경보가 발효되었습니다.
 		String tel = "010-1111-1111,010-1111-2222,010-1111-3333";
-		String msg = "{tel}님 전주지역 대설주의보가 발효되었습니다.";
-		String[] telAry = tel.split
+		String msg = "{tel}님 전주지역 홍수경보가 발효되었습니다."; //템플릿
+		String[] telAry = tel.split(",");
+		for(String nm : telAry)
+		{
+			System.out.println(nm + "님 전주지역 홍수경보가 발효되었습니다.");
+		}
+		
+		msg = "{tel}님 전주지역 홍수경보가 발효되었습니다.{tel}님 대피하세요"; //템플릿
+		String[] telList = tel.split(",");
+		for(hp : telList)
+		{
+			String send = msg;
+			send = send.replace({tel}, hp);
+		}
 		
 	}
 
