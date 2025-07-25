@@ -16,7 +16,7 @@ public class LottoTest
 //			System.out.printf("%02d",n);
 			//기존 만들어진 번호와 중복되는지 검사
 			boolean dup = false;	//중복여부 검사용 (플래그 변수)
-			for(int j = 0; j < i; i++)
+			for(int j = 0; j < i; j++)
 			{
 				if(n == lotto[i])
 				{

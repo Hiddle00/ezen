@@ -32,6 +32,29 @@ public class Variable
 		System.out.println(c);
 		System.out.println((int)c);
 		
+		for(c = 'A'; c <= 'Z'; c++)
+		{
+//			if(c == 'C' || c == 'D' || c =='E')
+//			{
+//				continue;
+//			}
+//			System.out.println("C=" + c);
+			
+//			if(c != 'C' && c != 'D' && c != 'E')
+//			{
+//				System.out.println("C=" + c);
+//			}
+			
+			switch(c)
+			{
+				case 'C':
+				case 'D':
+				case 'E':
+				break;
+				default: System.out.println(c);
+			}
+		}
+		
 		int in = 5;
 		int im = 10;
 		int temp = in;

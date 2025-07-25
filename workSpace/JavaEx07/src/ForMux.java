@@ -126,7 +126,7 @@ public class ForMux
 			{
 				System.out.print("¡Ú");
 			}
-			System.out.println("");
+			System.out.println("")
 		}
 	}
 

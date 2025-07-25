@@ -113,12 +113,13 @@ public class StringTest
 			System.out.println(nm + "님 전주지역 홍수경보가 발효되었습니다.");
 		}
 		
-		msg = "{tel}님 전주지역 홍수경보가 발효되었습니다.{tel}님 대피하세요"; //템플릿
+		msg = "{tel}님 전주지역 홍수경보가 발효되었습니다.{tel}님 대피하세요."; //템플릿
 		String[] telList = tel.split(",");
-		for(hp : telList)
+		for(String hp : telList)
 		{
 			String send = msg;
 			send = send.replace({tel}, hp);
+			System.out.println(send);
 		}
 		
 	}

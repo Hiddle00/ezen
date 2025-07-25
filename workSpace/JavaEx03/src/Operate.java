@@ -48,6 +48,12 @@ public class Operate
 		n = 1;
 		System.out.println(n++);		
 		System.out.println(++n);
+		
+		n = 10;
+		while(n >= 7)
+		{
+			System.out.println(--n);
+		}
 	}
 
 }
