@@ -118,7 +118,7 @@ public class StringTest
 		for(String hp : telList)
 		{
 			String send = msg;
-			send = send.replace({tel}, hp);
+			send = send.replace("{tel}", hp);
 			System.out.println(send);
 		}
 		
