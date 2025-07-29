@@ -34,7 +34,6 @@ public class Variable
         char c = 'A';
         System.out.println(c);
         System.out.println((int)c);
-		
 	}
 }
 

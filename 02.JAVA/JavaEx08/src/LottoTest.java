@@ -28,7 +28,7 @@ public class LottoTest
 		}
 		
 		Arrays.sort(lotto);
-		
+		 
 		for(int x : lotto)
 		{
 			System.out.printf("[%02d]",x);

@@ -39,6 +39,6 @@ public class Operate
 		//증감 연산자 응용
 		n = 1;
 		System.out.println(n++);
-		System.out.println(++n);		
+		System.out.println(++n);
 	}
 }
