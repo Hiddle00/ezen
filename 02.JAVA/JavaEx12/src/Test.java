@@ -43,6 +43,6 @@ public class Test
 		n = cal.DoCal(10,20,"*");
 		System.out.println(n);
 		n = cal.DoCal(10,20,"/");
-		System.out.println(n);		
+		System.out.println(n);
 	}
 }
