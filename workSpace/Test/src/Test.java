@@ -58,6 +58,7 @@ public class Test
 	    			i--;
 	    			break;
 	    		}
+	    		lotto[i] = number;
 	    	}
 	    }
 	    for(int i : lotto)

@@ -5,7 +5,7 @@ public class Test05_186
 	public static void main(String[] args) 
 	{
 		Person hong = new Person();
-		hong.name = "È«±æµ¿";
+		hong.setName() = "È«±æµ¿";
 		
 		Person chun = new Person();
 		chun.name = "¼ºÃáÇâ";
