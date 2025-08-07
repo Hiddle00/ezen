@@ -21,7 +21,6 @@ public class Car
 		this.name = name;
 		System.out.println("Car 클래스가 생성됨(2).");
 	}
-
 	
 	public String getCompany()  {	return company;  }
 	public int    getMaxspeed() {	return maxspeed; }
