@@ -23,6 +23,7 @@ public class PrintTest
 		System.out.printf("정수=%d \n", 100);				//decimal
 		System.out.printf("실수=%f\n",3.14);				//float
 		System.out.printf("문자열=%s\n" ,"abcdef");		//string
+		
 	}
 
 }
