@@ -20,7 +20,7 @@ public class Today extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		//¿À´Ã ³¯Â¥¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥
+		//ì˜¤ëŠ˜ ë‚ ì§œë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨
 		PrintWriter out = response.getWriter();
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");

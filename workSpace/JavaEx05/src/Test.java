@@ -4,8 +4,8 @@ public class Test
 
 	public static void main(String[] args) 
 	{
-		//while¹®À» ÀÌ¿ëÇÏ¿© ±¸±¸´Ü 6´ÜÀ» Ãâ·Â
-		//º¯¼ö´Â x,y
+		//whileë¬¸ì„ ì´ìš©í•˜ì—¬ êµ¬êµ¬ë‹¨ 6ë‹¨ì„ ì¶œë ¥
+		//ë³€ìˆ˜ëŠ” x,y
 		int x = 6;
 		int y = 1;
 		while(y < 10)

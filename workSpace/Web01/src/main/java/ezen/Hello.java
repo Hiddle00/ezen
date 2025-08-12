@@ -19,7 +19,7 @@ public class Hello extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		
-		//ºê¶ó¿ìÀú¿¡ ¹®¼­³»¿ëÀ» Àü¼ÛÇÑ´Ù.
+		//ë¸Œë¼ìš°ì €ì— ë¬¸ì„œë‚´ìš©ì„ ì „ì†¡í•œë‹¤.
 //		out.println("Send to Browser Hello?");
 		String html = "";
 		html += "<html>";
@@ -29,8 +29,8 @@ public class Hello extends HttpServlet {
 		html += "</html>";
 		out.println(html);
 		
-		//ÄÜ¼Ö·Î ³»¿ëÀÌ Ãâ·ÂµÈ´Ù.
-		System.out.println("ºê¶ó¿ìÀú·Î µ¥ÀÌÅÍ°¡ Àü¼ÛµÇ¾ú½À´Ï´Ù.");
+		//ì½˜ì†”ë¡œ ë‚´ìš©ì´ ì¶œë ¥ëœë‹¤.
+		System.out.println("ë¸Œë¼ìš°ì €ë¡œ ë°ì´í„°ê°€ ì „ì†¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 }

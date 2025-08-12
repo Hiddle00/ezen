@@ -3,8 +3,8 @@ public class HanKukTire extends Tire
 	public HanKukTire()
 	{
 		super();
-		super.setCompany("ÇÑ±¹ Å¸ÀÌ¾î");
+		super.setCompany("í•œêµ­ íƒ€ì´ì–´");
 		super.setInch(22);
-		System.out.println("HanKukTire »ı¼ºÀÚ°¡ È£ÃâµÊ.");
+		System.out.println("HanKukTire ìƒì„±ìê°€ í˜¸ì¶œë¨.");
 	}
 }

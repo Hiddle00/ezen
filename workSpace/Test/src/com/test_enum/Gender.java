@@ -1,5 +1,5 @@
 package com.test_enum;
-//¿­°ÅÅ¸ÀÔ 196p
+//ì—´ê±°íƒ€ì… 196p
 public enum Gender {
 	MAN,
 	WOMAN

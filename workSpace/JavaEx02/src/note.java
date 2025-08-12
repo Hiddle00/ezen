@@ -20,23 +20,23 @@ public class note
         System.out.println(n--);
         System.out.println((int)--n + 30);
 //        
-        
+        String s = "ê°€ë‚˜ë‹¤";
         m = 0;
 		n = 0;
-		m = (++n) + (n--) + (n--);     				//m:1 ÀúÀå 
+		m = (++n) + (n--) + (n--);     				//m:1 ï¿½ï¿½ï¿½ï¿½ 
 		System.out.println(n);
 		System.out.println(m);
 		
 		
 		m = 0;
 		n = 0;
-		m = (++n) + (n--) - (n);     				//m:1 ÀúÀå 
+		m = (++n) + (n--) - (n);     				//m:1 ï¿½ï¿½ï¿½ï¿½ 
 		System.out.println(n);
 		System.out.println(m);
 		
 		m = 0;
 		n = 0;
-		m = (++n) + (n--) + (--n);     				//m:1 ÀúÀå 
+		m = (++n) + (n--) + (--n);     				//m:1 ï¿½ï¿½ï¿½ï¿½ 
 		System.out.println(n);
 		System.out.println(m);
 	}

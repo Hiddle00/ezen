@@ -4,6 +4,6 @@ public class BoardVO
 {
 	public BoardVO()
 	{
-		System.out.println("BoardVO°¡ »ı¼ºµÊ.");
+		System.out.println("BoardVOê°€ ìƒì„±ë¨.");
 	}
 }

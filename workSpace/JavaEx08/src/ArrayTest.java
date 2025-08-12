@@ -1,10 +1,10 @@
-//18. ¹è¿­¿¬½À
+//18. ë°°ì—´ì—°ìŠµ
 public class ArrayTest 
 {
 
 	public static void main(String[] args) 
 	{
-		//5¸í ÇĞ»ıÀÇ Á¡¼ö ÇÕ°è
+		//5ëª… í•™ìƒì˜ ì ìˆ˜ í•©ê³„
 		int score1 = 10;
 		int score2 = 20;
 		int score3 = 30;
@@ -12,24 +12,24 @@ public class ArrayTest
 		int score5 = 50;
 		int sum = score1 + score2 + score3 + score4 + score5;
 		
-		//5¸í ÇĞ»ıÀÇ Á¡¼ö¸¦ ¹­¾î¼­ Ç¥Çö (¹è¿­ - Array)
+		//5ëª… í•™ìƒì˜ ì ìˆ˜ë¥¼ ë¬¶ì–´ì„œ í‘œí˜„ (ë°°ì—´ - Array)
 		int []score = {10, 20, 30, 40, 50, 66, 70};
-		System.out.println(score[0]); //0¹øÂ° ¿ø¼Ò °ª Ãâ·Â
-		System.out.println(score[4]); //4¹øÂ° ¿ø¼Ò °ª Ãâ·Â
+		System.out.println(score[0]); //0ë²ˆì§¸ ì›ì†Œ ê°’ ì¶œë ¥
+		System.out.println(score[4]); //4ë²ˆì§¸ ì›ì†Œ ê°’ ì¶œë ¥
 		
 		int n = 3;
 		System.out.println(score[n]); //n
 		
-		//¿ø¼ÒÀÇ °¹¼ö¸¦ È®ÀÎÇÏ´Â ¹æ¹ı
-		System.out.println("¿ø¼Ò°¹¼ö: " + score.length); //n¹øÂ° ¿ø¼Ò °ª Ãâ·Â
+		//ì›ì†Œì˜ ê°¯ìˆ˜ë¥¼ í™•ì¸í•˜ëŠ” ë°©ë²•
+		System.out.println("ì›ì†Œê°¯ìˆ˜: " + score.length); //në²ˆì§¸ ì›ì†Œ ê°’ ì¶œë ¥
 		
-		//¸ğµç ¿ø¼ÒÀÇ °ªÀ» Ãâ·ÂÇÑ´Ù.
+		//ëª¨ë“  ì›ì†Œì˜ ê°’ì„ ì¶œë ¥í•œë‹¤.
 		for(int i = 0; i < score.length; i++)
 		{
 			System.out.println(score[i]);
 		}
 		
-		//¹è¿­ scoreÀÇ ÀüÃ¼ ÇÕ°è¿Í Æò±ÕÀ» ±¸ÇÏ¼¼¿ä.
+		//ë°°ì—´ scoreì˜ ì „ì²´ í•©ê³„ì™€ í‰ê· ì„ êµ¬í•˜ì„¸ìš”.
 		int sumScore = 0;
 		int avgScore = 0;
 		for(int i = 0; i < score.length; i++)
@@ -37,8 +37,8 @@ public class ArrayTest
 			sumScore += score[i];
 		}
 		avgScore = sumScore / score.length;
-		System.out.println("ÇÕ°è : " + sumScore);
-		System.out.println("Æò±Õ : " + avgScore);
+		System.out.println("í•©ê³„ : " + sumScore);
+		System.out.println("í‰ê·  : " + avgScore);
 	}
 
 }

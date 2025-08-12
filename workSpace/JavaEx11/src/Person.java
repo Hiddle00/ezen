@@ -1,17 +1,17 @@
-//28. Å¬·¡½º(Class) ÇÊµå¿Í »ý¼ºÀÚ ¿¬½À
-//°³ÀÎÁ¤º¸ <- ÀÌ¸§, ³ªÀÌ, ÀüÈ­¹øÈ£
+//28. í´ëž˜ìŠ¤(Class) í•„ë“œì™€ ìƒì„±ìž ì—°ìŠµ
+//ê°œì¸ì •ë³´ <- ì´ë¦„, ë‚˜ì´, ì „í™”ë²ˆí˜¸
 public class Person 
 {
-	//Å¬·¡½º ÇÊµå(¼Ó¼º) ¼±¾ð
-	String name;  //ÀÌ¸§
-	int    age;   //³ªÀÌ
-	String tel;   //ÀüÈ­¹øÈ£
+	//í´ëž˜ìŠ¤ í•„ë“œ(ì†ì„±) ì„ ì–¸
+	String name;  //ì´ë¦„
+	int    age;   //ë‚˜ì´
+	String tel;   //ì „í™”ë²ˆí˜¸
 	
 	public Person()
 	{
-		System.out.println("Person »ý¼ºÀÚ°¡ ½ÇÇàµÇ¾ú½À´Ï´Ù." );
-		name = "¾Æ¹«°³";
+		System.out.println("Person ìƒì„±ìžê°€ ì‹¤í–‰ë˜ì—ˆìŠµë‹ˆë‹¤." );
+		name = "ì•„ë¬´ê°œ";
 		age  = 1;
-		tel  = "¾øÀ½";
+		tel  = "ì—†ìŒ";
 	}
 }

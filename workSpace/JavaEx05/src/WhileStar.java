@@ -1,11 +1,11 @@
-//12. while º° Âï±â
+//12. while ë³„ ì°ê¸°
 public class WhileStar 
 {
 
 	public static void main(String[] args) 
 	{
-		//while¹®À» ÀÌ¿ëÇÏ¿© ¾Æ·¡¿Í °°ÀÌ È­¸é¿¡ Ãâ·ÂÇÏ¼¼¿ä.
-		//º¯¼ö´Â x,y¸¦ »ç¿ëÇÏ¼¼¿ä.
+		//whileë¬¸ì„ ì´ìš©í•˜ì—¬ ì•„ë˜ì™€ ê°™ì´ í™”ë©´ì— ì¶œë ¥í•˜ì„¸ìš”.
+		//ë³€ìˆ˜ëŠ” x,yë¥¼ ì‚¬ìš©í•˜ì„¸ìš”.
 //		int x = 1;
 //		while(x <= 5)
 //		{
@@ -76,7 +76,7 @@ public class WhileStar
 				System.out.print(" ");
 				col++;
 			}
-			//º° È¦¼ö°³ Ãâ·Â
+			//ë³„ í™€ìˆ˜ê°œ ì¶œë ¥
 			col = 1;
 			while(col <= (row * 2) - 1)
 			{
@@ -95,7 +95,7 @@ public class WhileStar
 				System.out.print(" ");
 				col++;
 			}
-			//º° È¦¼ö°³ Ãâ·Â
+			//ë³„ í™€ìˆ˜ê°œ ì¶œë ¥
 			col = 1;
 			while(col <= (row * 2) - 1)
 			{

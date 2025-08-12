@@ -1,4 +1,4 @@
-//14. ¼úÀÚ¸® ¼ıÀÚ °ÔÀÓ ¸¸µé±â
+//14. ìˆ ìë¦¬ ìˆ«ì ê²Œì„ ë§Œë“¤ê¸°
 import java.util.*;
 
 public class WhileBingo 
@@ -6,7 +6,7 @@ public class WhileBingo
 	
 	public static void main(String[] args) 
 	{
-		//1~100»çÀÌÀÇ ·£´ıÇÑ °ªÀ» ¸¸µé¾î³½´Ù.
+		//1~100ì‚¬ì´ì˜ ëœë¤í•œ ê°’ì„ ë§Œë“¤ì–´ë‚¸ë‹¤.
 		int answer = ((int)(Math.random() * 100000) % 100) + 1;
 //		System.out.println(answer);
 		
@@ -14,13 +14,13 @@ public class WhileBingo
 		
 		while(true)
 		{
-			//»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ª
-			System.out.print("ÀÔ·Â:");
+			//ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’
+			System.out.print("ì…ë ¥:");
 			int user = key.nextInt();
 			
-			//Á¤´ä(answer)ÀÌ »ç¿ëÀÚÀÔ·Â°ª(user) º¸´Ù Å©¸é "UP"
-			//Á¤´ä(answer)ÀÌ »ç¿ëÀÚÀÔ·Â°ª(user) º¸´Ù ÀÛÀ¸¸é "DOWN"
-			//Á¤´ä(answer)ÀÌ »ç¿ëÀÚÀÔ·Â°ª(user) °ú °°À¸¸é "BINGO!!"
+			//ì •ë‹µ(answer)ì´ ì‚¬ìš©ìì…ë ¥ê°’(user) ë³´ë‹¤ í¬ë©´ "UP"
+			//ì •ë‹µ(answer)ì´ ì‚¬ìš©ìì…ë ¥ê°’(user) ë³´ë‹¤ ì‘ìœ¼ë©´ "DOWN"
+			//ì •ë‹µ(answer)ì´ ì‚¬ìš©ìì…ë ¥ê°’(user) ê³¼ ê°™ìœ¼ë©´ "BINGO!!"
 			
 			if(answer > user)
 			{

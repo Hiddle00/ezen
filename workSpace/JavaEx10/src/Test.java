@@ -1,23 +1,23 @@
-//27. ÀÚµ¿Â÷¿Í Å¸ÀÌ¾î Á¤º¸ Ç¥ÇöÀ» À§ÇÑ class
+//27. ìë™ì°¨ì™€ íƒ€ì´ì–´ ì •ë³´ í‘œí˜„ì„ ìœ„í•œ class
 public class Test 
 {
 	public static void main(String[] args)
 	{
-		//Tire °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+		//Tire ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 		Tire tire = new Tire();
-		tire.production = "³Ø¼¾Å¸ÀÌ¾î";
+		tire.production = "ë„¥ì„¼íƒ€ì´ì–´";
 		tire.inch       = 21;
 		
-		//Car °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+		//Car ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 		Car sonata = new Car();
-		sonata.company  = "Çö´ëÀÚµ¿Â÷";
-		sonata.model    = "¼Ò³ªÅ¸";
-		sonata.color    = "Èò»ö";
+		sonata.company  = "í˜„ëŒ€ìë™ì°¨";
+		sonata.model    = "ì†Œë‚˜íƒ€";
+		sonata.color    = "í°ìƒ‰";
 		sonata.maxSpeed = 200;
 		sonata.tire     = tire;
 		
 		Car mornig = new Car();
-		mornig.company  = "Çö´ëÀÚµ¿Â÷";
+		mornig.company  = "í˜„ëŒ€ìë™ì°¨";
 		
 		
 		System.out.println(sonata.tire.production);

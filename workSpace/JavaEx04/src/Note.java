@@ -7,7 +7,7 @@ public class Note
 		
 		
 		int age = 10;
-		System.out.println((age < 20)? "¹Ì¼º³â" : (age <= 29)? "20´ë" : (age <= 39)? "30´ë" : (age <= 49)? "Áß³â" : (age <= 59)? "Àå³â" : "³ë³â");
+		System.out.println((age < 20)? "ë¯¸ì„±ë…„" : (age <= 29)? "20ëŒ€" : (age <= 39)? "30ëŒ€" : (age <= 49)? "ì¤‘ë…„" : (age <= 59)? "ìž¥ë…„" : "ë…¸ë…„");
 		
 		char c = '\u0041';
 		System.out.println(c);

@@ -16,7 +16,7 @@ public class MemberService
 	{
 		if(id.equals("hong"))
 		{
-			System.out.println(id + "´ÔÀÌ ·Î±×¾Æ¿ô µÇ¾ú½À´Ï´Ù.");
+			System.out.println(id + "ë‹˜ì´ ë¡œê·¸ì•„ì›ƒ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 	}
 }

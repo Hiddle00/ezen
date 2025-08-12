@@ -2,7 +2,7 @@ public class Test
 {
 	public static void main(String[] args) 
 	{
-		//age°¡ 19»ì ÀÌ»óÀÌ¸é ¼º³â, ¾Æ´Ï¸é ¹Ì¼º³âÀÌ¶ó°í Ãâ·ÂÇÏ½Ã¿À.
+		//ageê°€ 19ì‚´ ì´ìƒì´ë©´ ì„±ë…„, ì•„ë‹ˆë©´ ë¯¸ì„±ë…„ì´ë¼ê³  ì¶œë ¥í•˜ì‹œì˜¤.
 		int age = 18;
 		int gender = 1;
 		
@@ -11,13 +11,13 @@ public class Test
 //		case 0: age >= 19
 //		}
 		String msg;
-		msg = (age >= 19) ? "¼ºÀÎ" : "¹Ì¼º³â";
+		msg = (age >= 19) ? "ì„±ì¸" : "ë¯¸ì„±ë…„";
 		msg += " ";
-		msg += (gender == 0) ? "³²ÀÚ" : "¿©ÀÚ";
+		msg += (gender == 0) ? "ë‚¨ìž" : "ì—¬ìž";
 		System.out.println(msg);
 		
 		
-		System.out.println((age >= 19) ? "¼ºÀÎ" : "¹Ì¼º³â" + " " + ((gender == 0) ? "³²ÀÚ" : "¿©ÀÚ"));
+		System.out.println((age >= 19) ? "ì„±ì¸" : "ë¯¸ì„±ë…„" + " " + ((gender == 0) ? "ë‚¨ìž" : "ì—¬ìž"));
 				
 	}
 

@@ -6,20 +6,20 @@ public class BA
 	{
 //		Account[] Account = null;
 //		 = new Account();
-//		String name    = "È«±æµ¿";
+//		String name    = "í™ê¸¸ë™";
 //		String account = "111-111";
 //		int    balance = 10000;
 //		Account[0] = hong;
 		
 		AA[] p = new AA[3];
 		AA hong = new AA();
-		hong.name = "È«±æµ¿";
+		hong.name = "í™ê¸¸ë™";
 		hong.age = 10000;
 		hong.numb = "111-111";
 		p[0] = hong;
 		
 		hong = new AA();
-		hong.name = "¼ºÃáÇâ";
+		hong.name = "ì„±ì¶˜í–¥";
 		hong.age = 20000;
 		hong.numb = "111-222";
 		p[1] = hong;

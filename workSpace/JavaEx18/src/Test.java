@@ -1,20 +1,20 @@
-//»ó¼Ó ¿¹Á¦ ÄÚµå
+//ìƒì† ì˜ˆì œ ì½”ë“œ
 public class Test 
 {
 
 	public static void main(String[] args) 
 	{
-//		Car car = new Car("¼Ò³ªÅ¸");
-//		System.out.println("Á¦Á¶»ç:" + car.getCompany());
-//		System.out.println("Â÷Á¾:" + car.getName());
+//		Car car = new Car("ì†Œë‚˜íƒ€");
+//		System.out.println("ì œì¡°ì‚¬:" + car.getCompany());
+//		System.out.println("ì°¨ì¢…:" + car.getName());
 		
 		//Taxi taxi = new Taxi();
-		//System.out.println("Á¦Á¶»ç:" + taxi.getCompany());
-		//System.out.println("Â÷Á¾:" + taxi.getName());
+		//System.out.println("ì œì¡°ì‚¬:" + taxi.getCompany());
+		//System.out.println("ì°¨ì¢…:" + taxi.getName());
 		
 //		Bus bus = new Bus();
-//		System.out.println("Á¦Á¶»ç:" + bus.getCompany());
-//		System.out.println("Â÷Á¾:" + bus.getName());
+//		System.out.println("ì œì¡°ì‚¬:" + bus.getCompany());
+//		System.out.println("ì°¨ì¢…:" + bus.getName());
 		/*
 		Car car = new Car();
 		car.Run();
@@ -25,9 +25,9 @@ public class Test
 		Bus bus = new Bus();
 		bus.Run();
 		*/
-		//»ó¼ÓÀ» ÅëÇÑ ´ÙÇü¼º °³³ä ÀÌÇØ
-		//ºÎ¸ğ Å¸ÀÔ¿¡´Â ¸ğµç ÀÚ½Ä °´Ã¼°¡ ´ëÀÔ °¡´É
-		int trans = 0; //±³Åë¼ö´Ü 0:ÀÚ°¡¿ë, 1:ÅÃ½Ã, 2:¹ö½º
+		//ìƒì†ì„ í†µí•œ ë‹¤í˜•ì„± ê°œë… ì´í•´
+		//ë¶€ëª¨ íƒ€ì…ì—ëŠ” ëª¨ë“  ìì‹ ê°ì²´ê°€ ëŒ€ì… ê°€ëŠ¥
+		int trans = 0; //êµí†µìˆ˜ë‹¨ 0:ìê°€ìš©, 1:íƒì‹œ, 2:ë²„ìŠ¤
 		Car car = null;
 		switch(trans)
 		{

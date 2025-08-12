@@ -10,7 +10,7 @@ public class Calculator
 		}catch(Exception e)
 		{
 //			return 0;
-			throw new Exception("0À¸·Î ³ª´­ ¼ö ¾øÀ½.");
+			throw new Exception("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŒ.");
 		}
 		
 		

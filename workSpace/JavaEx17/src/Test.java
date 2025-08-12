@@ -8,17 +8,17 @@ public class Test
 		Person hong = new Person();
 //		hong.age = -100;
 		
-		hong.setName("È«±æµ¿");
+		hong.setName("í™ê¸¸ë™");
 		hong.setAge(18);
 		
-		System.out.println("ÀÌ¸§: " + hong.getName());
-		System.out.println("³ªÀÌ: " + hong.getAge());
-		System.out.println("»ı³â: " + hong.getYear());
+		System.out.println("ì´ë¦„: " + hong.getName());
+		System.out.println("ë‚˜ì´: " + hong.getAge());
+		System.out.println("ìƒë…„: " + hong.getYear());
 		
-		//import¿¬½À & »ı¼ºÀÚ È£Ãâ
+		//importì—°ìŠµ & ìƒì„±ì í˜¸ì¶œ
 		PackageTest jeon = new PackageTest();
 		System.out.println(jeon.name);
-		jeon.name = "Àü¿ìÄ¡";
+		jeon.name = "ì „ìš°ì¹˜";
 		System.out.println(jeon.name);
 		
 		byte b = 10;

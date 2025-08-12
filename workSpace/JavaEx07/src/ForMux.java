@@ -1,4 +1,4 @@
-//16. for ¹Ýº¹¹®À» ÀÌ¿ëÇÑ ±¸±¸´Ü ¹× º° Âï±â Ãâ·Â ¿¬½À
+//16. for ë°˜ë³µë¬¸ì„ ì´ìš©í•œ êµ¬êµ¬ë‹¨ ë° ë³„ ì°ê¸° ì¶œë ¥ ì—°ìŠµ
 public class ForMux 
 {
 
@@ -6,7 +6,7 @@ public class ForMux
 	{
 		for(int x = 1; x <= 9; x++)
 		{
-			System.out.printf("%02d´Ü\n",x);
+			System.out.printf("%02dë‹¨\n",x);
 			for(int y = 1; y <= 9; y++)
 			{
 				System.out.printf("%02d x %02d = %02d\n", x, y, (x * y));
@@ -15,7 +15,7 @@ public class ForMux
 			System.out.println("-----------------------");
 		}
 		
-		//for¹®À» ÀÌ¿ëÇÏ¿© ´ÙÀ½°ú °°ÀÌ Ãâ·ÂÇÏ¼¼¿ä.
+		//forë¬¸ì„ ì´ìš©í•˜ì—¬ ë‹¤ìŒê³¼ ê°™ì´ ì¶œë ¥í•˜ì„¸ìš”.
 		//*
 		//**
 		//***
@@ -25,12 +25,12 @@ public class ForMux
 		{
 			for(int y = 1; y <= x; y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			System.out.println("");
 		}
 		
-		//for¹®À» ÀÌ¿ëÇÏ¿© ´ÙÀ½°ú °°ÀÌ Ãâ·ÂÇÏ¼¼¿ä.
+		//forë¬¸ì„ ì´ìš©í•˜ì—¬ ë‹¤ìŒê³¼ ê°™ì´ ì¶œë ¥í•˜ì„¸ìš”.
 		//*****
 		//****
 		//***
@@ -40,7 +40,7 @@ public class ForMux
 		{
 			for(int y = x; y <= 5; y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			System.out.println("");
 		}
@@ -48,12 +48,12 @@ public class ForMux
 		{
 			for(int y = 1; y <= x; y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			System.out.println("");
 		}
 		
-		//for¹®À» ÀÌ¿ëÇÏ¿© ¾Æ·¡¿Í °°ÀÌ È­¸é¿¡ Ãâ·ÂÇÏ¼¼¿ä.
+		//forë¬¸ì„ ì´ìš©í•˜ì—¬ ì•„ëž˜ì™€ ê°™ì´ í™”ë©´ì— ì¶œë ¥í•˜ì„¸ìš”.
 		//   *
 		//  ***
 		// *****
@@ -67,11 +67,11 @@ public class ForMux
 			}
 			for(int y = 1; y <= (x*2-1); y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			System.out.println("");
 		}
-		//for¹®À» ÀÌ¿ëÇÏ¿© ¾Æ·¡¿Í °°ÀÌ È­¸é¿¡ Ãâ·ÂÇÏ¼¼¿ä.
+		//forë¬¸ì„ ì´ìš©í•˜ì—¬ ì•„ëž˜ì™€ ê°™ì´ í™”ë©´ì— ì¶œë ¥í•˜ì„¸ìš”.
 		//*******
 		// *****
 		//  *** 
@@ -84,16 +84,16 @@ public class ForMux
 			}
 			for(int y = 1; y <= (x*2-1); y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			System.out.println("");
 		}
-		//¿ªº°Âï±â
+		//ì—­ë³„ì°ê¸°
 		for(int x = 1; x <= 4; x++)
 		{
 			for(int y = 1; y <= 4-x; y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			for(int y = 1; y <= (x*2-1); y++)
 			{
@@ -101,30 +101,30 @@ public class ForMux
 			}
 			for(int y = 1; y <= 4-x; y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			System.out.println("");
 		}
 		
 		for(int x = 3; x >= 0; x--)
 		{
-			//º°
+			//ë³„
 			for(int y = 1; y <= 4-x; y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
-			//°ø¹é¸¶¸§¸ð
+			//ê³µë°±ë§ˆë¦„ëª¨
 			for(int y = 1; y <= (x*2-1); y++)
 			{
 				System.out.print(" ");
 			}
-			//¸¶Áö¸· ÁÙ 
+			//ë§ˆì§€ë§‰ ì¤„ 
 			if(x == 0)
 			{
-				System.out.print("¡Ú¡Ú¡Ú");
+				System.out.print("â˜…â˜…â˜…");
 			}else for(int y = 1; y <= 4-x; y++)
 			{
-				System.out.print("¡Ú");
+				System.out.print("â˜…");
 			}
 			System.out.println("")
 		}

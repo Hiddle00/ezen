@@ -4,8 +4,8 @@ public class NexenTire extends Tire
 	public NexenTire()
 	{
 		super();
-		super.setCompany("³Ø¼¾ Å¸ÀÌ¾î");
+		super.setCompany("ë„¥ì„¼ íƒ€ì´ì–´");
 		super.setInch(20);
-		System.out.println("NexenTire »ı¼ºÀÚ°¡ È£ÃâµÊ.");
+		System.out.println("NexenTire ìƒì„±ìê°€ í˜¸ì¶œë¨.");
 	}
 }

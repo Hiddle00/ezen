@@ -1,48 +1,48 @@
-//17. for¹®À» ÀÌ¿ëÇÑ ¼úÀÚ¸® ¼ıÀÚ°ÔÀÓ
-import java.util.*; //¿ÜºÎ ¶óÀÌºê·¯¸® »ç¿ë ¼±¾ğ
+//17. forë¬¸ì„ ì´ìš©í•œ ìˆ ìë¦¬ ìˆ«ìê²Œì„
+import java.util.*; //ì™¸ë¶€ ë¼ì´ë¸ŒëŸ¬ë¦¬ ì‚¬ìš© ì„ ì–¸
 public class ForBingo 
 {
 
 	public static void main(String[] args) 
 	{
-		//·£´ı °ªÀ» °¡Áö´Â Á¤´ä
+		//ëœë¤ ê°’ì„ ê°€ì§€ëŠ” ì •ë‹µ
 //		int answer = ((int)(Math.random() * 100000)) % 100 + 1;
 //		System.out.println(answer);
 //		
-//		//Å°º¸µå ÀÔ·Â °´Ã¼ ¸¸µé±â 
-//		Scanner key = new Scanner(System.in); //java.util¿¡ Æ÷ÇÔµÈ °´Ã¼ »ç¿ë
+//		//í‚¤ë³´ë“œ ì…ë ¥ ê°ì²´ ë§Œë“¤ê¸° 
+//		Scanner key = new Scanner(System.in); //java.utilì— í¬í•¨ëœ ê°ì²´ ì‚¬ìš©
 //		
-//		System.out.print("ÀÔ·Â: ");
-//		int user = key.nextInt();	//¼ıÀÚ°¡ ¾Æ´Ñ ¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¸é ¿À·ù; ÀÔ·Â°ª Á¦ÇÑµµ °¡´É
+//		System.out.print("ì…ë ¥: ");
+//		int user = key.nextInt();	//ìˆ«ìê°€ ì•„ë‹Œ ë¬¸ìë¥¼ ì…ë ¥í•˜ë©´ ì˜¤ë¥˜; ì…ë ¥ê°’ ì œí•œë„ ê°€ëŠ¥
 //		
-//		System.out.println("´ç½ÅÀÌ ÀÔ·ÂÇÑ °ª: " + user);
+//		System.out.println("ë‹¹ì‹ ì´ ì…ë ¥í•œ ê°’: " + user);
 //		
-		//·£´ı °ªÀ» °¡Áö´Â Á¤´ä
+		//ëœë¤ ê°’ì„ ê°€ì§€ëŠ” ì •ë‹µ
 		int answer = ((int)(Math.random() * 100000)) % 100 + 1;
 //		System.out.println(answer);
 		
-		//Å°º¸µå ÀÔ·Â °´Ã¼ ¸¸µé±â 
-		Scanner key = new Scanner(System.in); //java.util¿¡ Æ÷ÇÔµÈ °´Ã¼ »ç¿ë
+		//í‚¤ë³´ë“œ ì…ë ¥ ê°ì²´ ë§Œë“¤ê¸° 
+		Scanner key = new Scanner(System.in); //java.utilì— í¬í•¨ëœ ê°ì²´ ì‚¬ìš©
 		int max_life = 3;
 		for(int n = 0; n < max_life; n++)
 		{			
-			System.out.print("³²Àº ±âÈ¸ : " + (max_life - n) + "\nÀÔ·Â: ");
-			int user = key.nextInt();	//¼ıÀÚ°¡ ¾Æ´Ñ ¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¸é ¿À·ù; ÀÔ·Â°ª Á¦ÇÑµµ °¡´É
+			System.out.print("ë‚¨ì€ ê¸°íšŒ : " + (max_life - n) + "\nì…ë ¥: ");
+			int user = key.nextInt();	//ìˆ«ìê°€ ì•„ë‹Œ ë¬¸ìë¥¼ ì…ë ¥í•˜ë©´ ì˜¤ë¥˜; ì…ë ¥ê°’ ì œí•œë„ ê°€ëŠ¥
 			
 			if(user < answer)
 			{
-				System.out.println("´ç½ÅÀÌ ÀÔ·ÂÇÑ °ª: " + user + " UP\n");
+				System.out.println("ë‹¹ì‹ ì´ ì…ë ¥í•œ ê°’: " + user + " UP\n");
 			}else if(user > answer)
 			{
-				System.out.println("´ç½ÅÀÌ ÀÔ·ÂÇÑ °ª: " + user + " DOWN\n");
+				System.out.println("ë‹¹ì‹ ì´ ì…ë ¥í•œ ê°’: " + user + " DOWN\n");
 			}else
 			{
-			System.out.println("´ç½ÅÀÌ ÀÔ·ÂÇÑ °ª: " + user + " Bingo!!\n");
+			System.out.println("ë‹¹ì‹ ì´ ì…ë ¥í•œ ê°’: " + user + " Bingo!!\n");
 			break;
 			}
 		}
 		
-		System.out.println("°ÔÀÓÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.")
+		System.out.println("ê²Œì„ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.")
 	}
 
 }

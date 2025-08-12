@@ -1,4 +1,4 @@
-// 31. Å¬·¡½º(Class) ¸Ş½îµå ¿¬½À
+// 31. í´ë˜ìŠ¤(Class) ë©”ì˜ë“œ ì—°ìŠµ
 public class Test 
 {
 
@@ -13,7 +13,7 @@ public class Test
 		
 		Calculater cal = new Calculater();
 				
-		//Á¤¼ö °ª °è»êÇÏ±â
+		//ì •ìˆ˜ ê°’ ê³„ì‚°í•˜ê¸°
 		int n = 0;
 		n = cal.Plus(10, 2);
 		System.out.println(n);
@@ -27,12 +27,12 @@ public class Test
 		n = cal.Divide(10, 2);
 		System.out.println(n);
 		
-		//½Ç¼ö °ª °è»êÇÏ±â
+		//ì‹¤ìˆ˜ ê°’ ê³„ì‚°í•˜ê¸°
 		double d = 0;
 		d = cal.Plus(1.12, 3.13);
 		System.out.println(d);
 		
-		//¹®ÀÚ¿­
+		//ë¬¸ìì—´
 		n = cal.Plus("1000", "2000");
 		System.out.println(n);
 		

@@ -2,9 +2,9 @@ package com.test06_20;
 
 public class Account 
 {
-	private String name;    //ÀÌ¸§
-	private String number;  //°èÁÂ¹øÈ£
-	private int    balance; //ÀÜ°í
+	private String name;    //ì´ë¦„
+	private String number;  //ê³„ì¢Œë²ˆí˜¸
+	private int    balance; //ì”ê³ 
 	
 	public String getName()    {  return name;    }
 	public String getNumber()  {  return number;  }
@@ -17,16 +17,16 @@ public class Account
 	public void menu()
 	{
 		System.out.println("--------------------------------");
-		System.out.println("1.°èÁÂ»ı¼º | 2. °èÁÂ¸ñ·Ï | 3.¿¹±İ | 4. Ãâ±İ | Á¾·á");
+		System.out.println("1.ê³„ì¢Œìƒì„± | 2. ê³„ì¢Œëª©ë¡ | 3.ì˜ˆê¸ˆ | 4. ì¶œê¸ˆ | ì¢…ë£Œ");
 		System.out.println("--------------------------------");
-		System.out.println("¼±ÅÃ> ");
+		System.out.println("ì„ íƒ> ");
 	}
 	
 	public void createNew()
 	{
 		System.out.println("----------");
-		System.out.println("°èÁÂ»ı¼º");
+		System.out.println("ê³„ì¢Œìƒì„±");
 		System.out.println("----------");
-		System.out.println("°èÁÂ¹øÈ£: ");
+		System.out.println("ê³„ì¢Œë²ˆí˜¸: ");
 	}
 }

@@ -1,10 +1,10 @@
 
 public class Mamber 
 {
-	private String name;     //ÀÌ¸§
-	private String id;       //¾ÆÀÌµğ
-	private String password; //ÆĞ½º¿öµå
-	private int    age;      //³ªÀÌ
+	private String name;     //ì´ë¦„
+	private String id;       //ì•„ì´ë””
+	private String password; //íŒ¨ìŠ¤ì›Œë“œ
+	private int    age;      //ë‚˜ì´
 	
 	public String getName()     {	return name;	 }
 	public String getId()       {	return id;		 }

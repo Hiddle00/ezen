@@ -2,7 +2,7 @@ package com.test06_19;
 
 public class Account_19 
 {
-	private int balance; //ÀÜ°í
+	private int balance; //ìž”ê³ 
 	final static int MIN_BALANCE = 0; //
 	final static int MAX_BALANCE = 1000000;
 

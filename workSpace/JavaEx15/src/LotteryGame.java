@@ -1,10 +1,10 @@
-//36. ±¸Á¶Àû ÇÁ·Î±×·¡¹ÖÀ» ÅëÇÑ ·Î¶Ç°ÔÀÓ »ý¼º
+//36. êµ¬ì¡°ì  í”„ë¡œê·¸ëž˜ë°ì„ í†µí•œ ë¡œë˜ê²Œìž„ ìƒì„±
 public class LotteryGame 
 {
 
 	public static void main(String[] args) 
 	{
-		//1 ~ 45±îÁöÀÇ ¼ýÀÚ¸¦ ÀÌ¿ëÇÏ¿© 6°³ÀÇ ·Î¶Ç¹øÈ£¸¦ »ý¼ºÇÏ½Ã¿À.
+		//1 ~ 45ê¹Œì§€ì˜ ìˆ«ìžë¥¼ ì´ìš©í•˜ì—¬ 6ê°œì˜ ë¡œë˜ë²ˆí˜¸ë¥¼ ìƒì„±í•˜ì‹œì˜¤.
 		int[] lotto = {0, 0, 0, 0, 0, 0};
 		int x;
 		for(x = 0; x < lotto.length; x++)

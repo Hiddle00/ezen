@@ -13,28 +13,28 @@ public class Test
 //			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 		
 		String str = "1,234,234";
 		try 
 		{
 			str = str.replace(",", "");
 			int z =Integer.parseInt(str);
-			System.out.println("¼ıÀÚ·Î µÈ ¹®ÀÚ¿­ ÀÔ´Ï´Ù.");
+			System.out.println("ìˆ«ìë¡œ ëœ ë¬¸ìì—´ ì…ë‹ˆë‹¤.");
 		}catch(Exception e)
 		{
-			System.out.println("¼ıÀÚ°¡ ¾Æ´Ñ ¹®ÀÚ¿­ ÀÔ´Ï´Ù.");
+			System.out.println("ìˆ«ìê°€ ì•„ë‹Œ ë¬¸ìì—´ ì…ë‹ˆë‹¤.");
 		}
 		
 		str = "1,234,234aaaa";
-		String msg = "¼ıÀÚ·Î µÈ ¹®ÀÚ¿­ ÀÔ´Ï´Ù.";
+		String msg = "ìˆ«ìë¡œ ëœ ë¬¸ìì—´ ì…ë‹ˆë‹¤.";
 		try 
 		{
 			str = str.replace(",", "");
 			Integer.parseInt(str);
 		}catch(Exception e)
 		{
-			msg = "¼ıÀÚ°¡ ¾Æ´Ñ ¹®ÀÚ¿­ ÀÔ´Ï´Ù.";
+			msg = "ìˆ«ìê°€ ì•„ë‹Œ ë¬¸ìì—´ ì…ë‹ˆë‹¤.";
 		}
 		System.out.println(msg);
 		

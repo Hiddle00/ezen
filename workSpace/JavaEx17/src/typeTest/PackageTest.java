@@ -1,4 +1,4 @@
-//�ڵ� import �׽�Ʈ
+//자동 import 테스트
 package typeTest;
 
 public class PackageTest 

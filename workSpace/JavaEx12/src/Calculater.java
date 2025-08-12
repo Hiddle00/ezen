@@ -1,18 +1,18 @@
-// 30. Å¬·¡½º(Class) ¸Ş½îµå ¿¬½À
+// 30. í´ë˜ìŠ¤(Class) ë©”ì˜ë“œ ì—°ìŠµ
 public class Calculater 
 {
-	//¸Ş¼Òµå ¿¬½À
-	//¸®ÅÏÅ¸ÀÔ ¸Ş¼ÒµåÀÌ¸§(¸Å°³º¯¼ö)¿Í °°ÀÌ ¸¸µë
+	//ë©”ì†Œë“œ ì—°ìŠµ
+	//ë¦¬í„´íƒ€ì… ë©”ì†Œë“œì´ë¦„(ë§¤ê°œë³€ìˆ˜)ì™€ ê°™ì´ ë§Œë“¬
 	
 //	public int Add(int x, int y)
 //	{
-//		System.out.println("add°¡ ½ÇÇà µÊ");
+//		System.out.println("addê°€ ì‹¤í–‰ ë¨");
 //		System.out.println("x=" + x);
 //		System.out.println("y=" + y);
 //		return (x + y);
 //	}
 	
-	//´õÇÏ±â
+	//ë”í•˜ê¸°
 	public int Plus(int x, int y)
 	{
 		return (x + y);
@@ -28,7 +28,7 @@ public class Calculater
 		return (Integer.parseInt(x) + Integer.parseInt(y));
 	}
 	
-	//»©±â
+	//ë¹¼ê¸°
 	public int Minus(int x, int y)
 	{
 		return (x - y);
@@ -44,7 +44,7 @@ public class Calculater
 		return (Integer.parseInt(x) - Integer.parseInt(y));
 	}
 	
-	//°öÇÏ±â
+	//ê³±í•˜ê¸°
 	public int Mux(int x, int y)
 	{
 		return (x * y);
@@ -60,7 +60,7 @@ public class Calculater
 		return (Integer.parseInt(x) * Integer.parseInt(y));
 	}
 	
-	//³ª´©±â
+	//ë‚˜ëˆ„ê¸°
 	public int Divide(int x, int y)
 	{
 		return (x / y);

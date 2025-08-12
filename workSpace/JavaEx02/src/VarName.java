@@ -1,22 +1,22 @@
-//02. º¯¼öÀÇ ÀÌ¸§ ¼±¾ğ ¿¬½À
+//02. ë³€ìˆ˜ì˜ ì´ë¦„ ì„ ì–¸ ì—°ìŠµ
 public class VarName 
 {
 	
 	public static void main(String[] args) 
 	{
-		short score;				//Á¡¼ö
-		int poketMoney;				//¿ëµ·
-		int priceProduct;			//»óÇ°°¡°İ
-		int loberCost;				//ÀÎ°Çºñ
+		short score;				//ì ìˆ˜
+		int poketMoney;				//ìš©ëˆ
+		int priceProduct;			//ìƒí’ˆê°€ê²©
+		int loberCost;				//ì¸ê±´ë¹„
 		
-		int priceTicket;			//Æ¼ÄÏ°¡°İ
-		short engScore;				//¿µ¾îÁ¡¼ö
+		int priceTicket;			//í‹°ì¼“ê°€ê²©
+		short engScore;				//ì˜ì–´ì ìˆ˜
 		
-		short totalScore;			//ÃÑÁ¡
-		short shippingQuantity;		//¹è¼Û¼ö·®
+		short totalScore;			//ì´ì 
+		short shippingQuantity;		//ë°°ì†¡ìˆ˜ëŸ‰
 		
-		//ÀÀ±ŞÃ³Ä¡½Ã°£
+		//ì‘ê¸‰ì²˜ì¹˜ì‹œê°„
 		
-		float fPi;					//¿øÁÖÀ²
+		float fPi;					//ì›ì£¼ìœ¨
 	}
 }

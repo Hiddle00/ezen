@@ -1,11 +1,11 @@
-//22. ·Î¶Ç Á¶ÇÕÇÏ±â
+//22. ë¡œë˜ ì¡°í•©í•˜ê¸°
 import java.util.*;
 public class LottoTest 
 {
 
 	public static void main(String[] args) 
 	{
-		//·Î¶Ç ¹øÈ£( 1 ~ 45 )
+		//ë¡œë˜ ë²ˆí˜¸( 1 ~ 45 )
 		int[] lotto = { 0, 0, 0, 0, 0, 0};
 		int n = ((int)(Math.random()*100000)) % 45 + 1;
 //		System.out.println(n);
@@ -14,13 +14,13 @@ public class LottoTest
 		{
 			n = ((int)(Math.random()*100000)) % 45 + 1;
 //			System.out.printf("%02d",n);
-			//±âÁ¸ ¸¸µé¾îÁø ¹øÈ£¿Í Áßº¹µÇ´ÂÁö °Ë»ç
-			boolean dup = false;	//Áßº¹¿©ºÎ °Ë»ç¿ë (ÇÃ·¡±× º¯¼ö)
+			//ê¸°ì¡´ ë§Œë“¤ì–´ì§„ ë²ˆí˜¸ì™€ ì¤‘ë³µë˜ëŠ”ì§€ ê²€ì‚¬
+			boolean dup = false;	//ì¤‘ë³µì—¬ë¶€ ê²€ì‚¬ìš© (í”Œë˜ê·¸ ë³€ìˆ˜)
 			for(int j = 0; j < i; j++)
 			{
 				if(n == lotto[i])
 				{
-					//±âÁ¸ ¹øÈ£¿Í Áßº¹
+					//ê¸°ì¡´ ë²ˆí˜¸ì™€ ì¤‘ë³µ
 					dup = true;
 					break;
 				}

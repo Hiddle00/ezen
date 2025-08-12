@@ -1,28 +1,28 @@
-//04. System.out.println() ¿¬½À
+//04. System.out.println() ì—°ìŠµ
 public class PrintTest 
 {
 
 	public static void main(String[] args) 
 	{
-		//System.out.print()´Â Ãâ·ÂÇÏ°í³ª¼­ °³ÇàÇÏÁö ¾ÊÀ½.
+		//System.out.print()ëŠ” ì¶œë ¥í•˜ê³ ë‚˜ì„œ ê°œí–‰í•˜ì§€ ì•ŠìŒ.
 		int n1 = 10;
 		int n2 = 20;
 		System.out.print("n1===>" + n1);
-		System.out.print("\n");				//\nÀº °³Çà¹®ÀÚ
+		System.out.print("\n");				//\nì€ ê°œí–‰ë¬¸ì
 		System.out.print("n2===>" + n2);
 		
 		int age = 24;
-		//´ç½ÅÀÇ ³ªÀÌ´Â 24¼¼ ÀÔ´Ï´Ù.
-		System.out.print("\n´ç½ÅÀÇ ³ªÀÌ´Â " + age + "¼¼ ÀÔ´Ï´Ù.\n");
+		//ë‹¹ì‹ ì˜ ë‚˜ì´ëŠ” 24ì„¸ ì…ë‹ˆë‹¤.
+		System.out.print("\në‹¹ì‹ ì˜ ë‚˜ì´ëŠ” " + age + "ì„¸ ì…ë‹ˆë‹¤.\n");
 		
-		//System.out.println()´Â Ãâ·ÂÇÏ°í ³ª¼­ ÀÚµ¿°³ÇàÇÕ´Ï´Ù.
+		//System.out.println()ëŠ” ì¶œë ¥í•˜ê³  ë‚˜ì„œ ìë™ê°œí–‰í•©ë‹ˆë‹¤.
 		System.out.println("n1===>" + n1);
 		System.out.println("n2===>" + n2);
 		
-		//Æ÷¸ä ¹®ÀÚ¿­ Ã³¸®
-		System.out.printf("Á¤¼ö=%d \n", 100);				//decimal
-		System.out.printf("½Ç¼ö=%f\n",3.14);				//float
-		System.out.printf("¹®ÀÚ¿­=%s\n" ,"abcdef");		//string
+		//í¬ë©§ ë¬¸ìì—´ ì²˜ë¦¬
+		System.out.printf("ì •ìˆ˜=%d \n", 100);				//decimal
+		System.out.printf("ì‹¤ìˆ˜=%f\n",3.14);				//float
+		System.out.printf("ë¬¸ìì—´=%s\n" ,"abcdef");		//string
 		
 	}
 

@@ -1,10 +1,10 @@
-//13. while ¹®¹ıÀÇ break, continue
+//13. while ë¬¸ë²•ì˜ break, continue
 public class WhileBreak 
 {
 
 	public static void main(String[] args) 
 	{
-		//while¹®°ú break¸¦ »ç¿ëÇÏ¿© 1~10±îÁö Ãâ·ÂÇÏ¼¼¿ä.
+		//whileë¬¸ê³¼ breakë¥¼ ì‚¬ìš©í•˜ì—¬ 1~10ê¹Œì§€ ì¶œë ¥í•˜ì„¸ìš”.
 		int n = 1;
 		while(true)
 		{

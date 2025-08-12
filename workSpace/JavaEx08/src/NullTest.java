@@ -1,55 +1,55 @@
-//19. Null°ú ÂüÁ¶Å¸ÀÔ
+//19. Nullê³¼ ì°¸ì¡°íƒ€ì…
 public class NullTest 
 {
 
 	public static void main(String[] args) 
 	{
-		//±âº»Å¸ÀÔ¿¡¼­ "=="Àº °ªÀÌ °°ÀºÁö ºñ±³
+		//ê¸°ë³¸íƒ€ì…ì—ì„œ "=="ì€ ê°’ì´ ê°™ì€ì§€ ë¹„êµ
 		int a = 10;
 		int b = 10;
 		if(a == b)
 		{
-			System.out.println("a¿Í b´Â µ¿ÀÏÇÑ °ªÀÔ´Ï´Ù.");
+			System.out.println("aì™€ bëŠ” ë™ì¼í•œ ê°’ì…ë‹ˆë‹¤.");
 		}else
 		{
-			System.out.println("a¿Í b´Â ¼­·Î ´Ù¸¥ °ªÀÔ´Ï´Ù.");
+			System.out.println("aì™€ bëŠ” ì„œë¡œ ë‹¤ë¥¸ ê°’ì…ë‹ˆë‹¤.");
 		}
 		
-		//ÂüÁ¶Å¸ÀÔ¿¡¼­ "=="Àº °¡¸®Å°´Â ÁÖ¼Ò°¡ µ¿ÀÏÇÑÁö ºñ±³
+		//ì°¸ì¡°íƒ€ì…ì—ì„œ "=="ì€ ê°€ë¦¬í‚¤ëŠ” ì£¼ì†Œê°€ ë™ì¼í•œì§€ ë¹„êµ
 		int[] aryA = {11, 22, 33};
 		int[] aryB = {11, 22, 33};
 		int[] aryC = aryA;
 		if (aryA == aryB)
 		{
-			System.out.println("aryA¿Í aryB´Â µ¿ÀÏÇÑ ÁÖ¼ÒÀÔ´Ï´Ù.");
+			System.out.println("aryAì™€ aryBëŠ” ë™ì¼í•œ ì£¼ì†Œì…ë‹ˆë‹¤.");
 		}else
 		{
-			System.out.println("aryA¿Í aryB´Â ¼­·Î ´Ù¸¥ ÁÖ¼ÒÀÔ´Ï´Ù.");
+			System.out.println("aryAì™€ aryBëŠ” ì„œë¡œ ë‹¤ë¥¸ ì£¼ì†Œì…ë‹ˆë‹¤.");
 		}
 		if (aryA == aryC)
 		{
-			System.out.println("aryA¿Í aryC´Â µ¿ÀÏÇÑ ÁÖ¼ÒÀÔ´Ï´Ù.");
+			System.out.println("aryAì™€ aryCëŠ” ë™ì¼í•œ ì£¼ì†Œì…ë‹ˆë‹¤.");
 		}else
 		{
-			System.out.println("aryA¿Í aryC´Â ¼­·Î ´Ù¸¥ ÁÖ¼ÒÀÔ´Ï´Ù.");
+			System.out.println("aryAì™€ aryCëŠ” ì„œë¡œ ë‹¤ë¥¸ ì£¼ì†Œì…ë‹ˆë‹¤.");
 		}
 		
-		//NULLÀº °ªÀ» °¡¸®Å°´Â ÁÖ¼Ò°¡ ¾øÀ½
+		//NULLì€ ê°’ì„ ê°€ë¦¬í‚¤ëŠ” ì£¼ì†Œê°€ ì—†ìŒ
 		aryC = null;
 		if(aryA != null)
 		{
-			System.out.println("aryA´Â NUllÀÌ ¾Æ´Õ´Ï´Ù.");
+			System.out.println("aryAëŠ” NUllì´ ì•„ë‹™ë‹ˆë‹¤.");
 		}
 		if(aryC == null)	
 		{
-			System.out.println("aryC´Â NUllÀÔ´Ï´Ù.");
+			System.out.println("aryCëŠ” NUllì…ë‹ˆë‹¤.");
 		}
 		
-		//½Ç¼öÇü ¹è¿­¿¹Á¦
+		//ì‹¤ìˆ˜í˜• ë°°ì—´ì˜ˆì œ
 		double[] aryX = {1.1, 1.2};
 		double[] aryY = aryX;
 				
-		//aryX¿Í aryY´Â µ¿ÀÏÇÑ ÁÖ¼Ò¸¦ °¡¸®Å°°í ÀÖÀ½
+		//aryXì™€ aryYëŠ” ë™ì¼í•œ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¤ê³  ìˆìŒ
 		aryY[0] = 3.3;
 		System.out.println(aryX[0]);
 	}

@@ -1,4 +1,4 @@
-//¿¹¿ÜÃ³¸® ¿¬½À 1¹ø
+//ì˜ˆì™¸ì²˜ë¦¬ ì—°ìŠµ 1ë²ˆ
 public class ExTset 
 {
 
@@ -15,17 +15,17 @@ public class ExTset
 		System.out.println(z);
 		}catch(Exception e)
 		{
-			System.out.println("¿À·ù ¹ß»ı");
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ");
 		}
 		System.out.println(z);
 		
 		try {
 			String str = null;
-			System.out.println("¹®ÀÚ¿­ ±æÀÌ : " + str.length());
+			System.out.println("ë¬¸ìì—´ ê¸¸ì´ : " + str.length());
 		}catch(Exception e) 
 		{
 			System.out.println(e);
-			System.out.println("¿À·ù ¹ß»ı");
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ");
 		}
 		try 
 		{
@@ -33,7 +33,7 @@ public class ExTset
 			System.out.println(ary[10]);
 		}catch(Exception e)
 		{
-			System.out.println("¿À·ù ¹ß»ı");
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ");
 		}
 		
 		try {
@@ -43,7 +43,7 @@ public class ExTset
 		}catch(Exception e)
 		{
 			System.out.println(e);
-			System.out.println("¿À·ù ¹ß»ı");
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ");
 		}
 	}
 

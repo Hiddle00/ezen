@@ -27,9 +27,9 @@ public class Test03
 		System.out.println(sum);
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("ÀÔ·Â : ");
+		System.out.print("ì…ë ¥ : ");
 		int n = scanner.nextInt();
-		System.out.println("´ç½ÅÀÌ ÀÔ·ÂÇÑ °ª : " + n);
+		System.out.println("ë‹¹ì‹ ì´ ì…ë ¥í•œ ê°’ : " + n);
 		scanner.close();
 		
 		

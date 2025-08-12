@@ -1,4 +1,4 @@
-//¿¹¿ÜÃ³¸® ¿¬½À 2¹ø
+//ì˜ˆì™¸ì²˜ë¦¬ ì—°ìŠµ 2ë²ˆ
 public class TryTest 
 {
 
@@ -12,21 +12,21 @@ public class TryTest
 		
 		try 
 		{
-			//¹è¿­ ¿À·ù
+			//ë°°ì—´ ì˜¤ë¥˜
 			System.out.println(ary[10]);
 			
-			//null ¿À·ù
+			//null ì˜¤ë¥˜
 			int length = str.length();
 			
-			//0³ª´©±â ¿À·ù
+			//0ë‚˜ëˆ„ê¸° ì˜¤ë¥˜
 			z = x / (y - 1);
 		}catch(Exception e)
 		{
 			System.out.println(e);
-			System.out.println("¿À·ù ¹ß»ı");
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ");
 			e.printStackTrace();
 		}
-		System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 }

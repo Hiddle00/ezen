@@ -1,8 +1,8 @@
-//26. Å¸ÀÌ¾î Á¤º¸ Ç¥ÇöÀ» À§ÇÑ Tire class
+//26. íƒ€ì´ì–´ ì •ë³´ í‘œí˜„ì„ ìœ„í•œ Tire class
 public class Tire 
 {
-	//Å¬·¡½º ÇÊµå(¼Ó¼º)
-	String production;  //Á¦Á¶È¸»ç
-	int    inch;        //ÀÎÄ¡
+	//í´ë˜ìŠ¤ í•„ë“œ(ì†ì„±)
+	String production;  //ì œì¡°íšŒì‚¬
+	int    inch;        //ì¸ì¹˜
 	
 }

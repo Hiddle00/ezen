@@ -1,4 +1,4 @@
-//38. MyLotto Å¬·¡½º¸¦ ÀÌ¿ëÇÑ ·Î¶Ç°ÔÀÓ »ı¼º
+//38. MyLotto í´ë˜ìŠ¤ë¥¼ ì´ìš©í•œ ë¡œë˜ê²Œì„ ìƒì„±
 public class Test 
 {
 
@@ -9,13 +9,13 @@ public class Test
 //		int r = lotto.GetRendom(45);
 //		System.out.println(r);
 		
-		//·Î¶Ç ¹øÈ£ 6°³¸¦ »ı¼ºÇÑ´Ù.
+		//ë¡œë˜ ë²ˆí˜¸ 6ê°œë¥¼ ìƒì„±í•œë‹¤.
 		int n = 5;
 		for(int i = 0; i <= n; i++)
 		{
 			lotto.PickUp(45);
 		}
-//		»ı¼ºµÈ ·Î¶Ç ¹øÈ£¸¦ Ãâ·ÂÇÑ´Ù.
+//		ìƒì„±ëœ ë¡œë˜ ë²ˆí˜¸ë¥¼ ì¶œë ¥í•œë‹¤.
 //		lotto.PrintInfo();
 		
 	}

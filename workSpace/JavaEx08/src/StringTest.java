@@ -1,4 +1,4 @@
-//20. ¹®ÀÚ¿­ ´Ù·ç±â
+//20. ë¬¸ìì—´ ë‹¤ë£¨ê¸°
 public class StringTest 
 {
 
@@ -6,14 +6,14 @@ public class StringTest
 	{
 //		int n = 10;
 //		string s2 = n;
-		//¹®ÀÚ¿­ ¹è¿­
-		String[] name = {"È«±æµ¿", "¼ºÃáÇâ", "ÀÌ¼ø½Å"};
+		//ë¬¸ìì—´ ë°°ì—´
+		String[] name = {"í™ê¸¸ë™", "ì„±ì¶˜í–¥", "ì´ìˆœì‹ "};
 		for(int i = 0; i < name.length; i++)
 		{
 			System.out.println(name[i]);
 		}
 		
-		//¹®ÀÚ¿­ Ä¡È¯ (Áß¿ä)
+		//ë¬¸ìì—´ ì¹˜í™˜ (ì¤‘ìš”)
 		String strNum1 = "1,111";
 		String strNum2 = "2,222";
 		strNum1 = strNum1.replace("," , "");
@@ -21,24 +21,24 @@ public class StringTest
 		System.out.println(strNum1);
 		System.out.println(strNum2);
 		
-		//¹®ÀÚ¿­À» ¼ıÀÚ·Î º¯È¯
+		//ë¬¸ìì—´ì„ ìˆ«ìë¡œ ë³€í™˜
 		int Num1 = Integer.parseInt(strNum1);
 		int Num2 = Integer.parseInt(strNum2);
 		int sum = Num1 + Num2;
-		System.out.println("ÇÕ°è : " + sum);
+		System.out.println("í•©ê³„ : " + sum);
 				
-		//¼ıÀÚ¸¦ ¹®ÀÚ¿­·Î º¯È¯
+		//ìˆ«ìë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜
 		int    n1 = 123;
 		String s1 = "";
 		
-		//[¹æ¹ı1] : ¹®ÀÚ¿­ °áÇÕ(+±âÈ£)
+		//[ë°©ë²•1] : ë¬¸ìì—´ ê²°í•©(+ê¸°í˜¸)
 		s1 = s1 + n1;
 		System.out.println(s1);
-		//[¹æ¹ı2] : Integer °´Ã¼ È°¿ë
+		//[ë°©ë²•2] : Integer ê°ì²´ í™œìš©
 		s1 = Integer.toString(n1);
 		System.out.println(s1);
 		
-		//Çâ»óµÈ for¹®
+		//í–¥ìƒëœ forë¬¸
 		int ary[] = {11, 22, 33, 44};
 		for(int i = 0; i < ary.length; i++)
 		{
@@ -50,15 +50,15 @@ public class StringTest
 			System.out.println(n);
 		}
 		
-		String[] aryname = {"È«±æµ¿", "¼ºÃáÇâ", "ÀÌ¼ø½Å"};
+		String[] aryname = {"í™ê¸¸ë™", "ì„±ì¶˜í–¥", "ì´ìˆœì‹ "};
 		for(String n : aryname)
 		{
 			System.out.println(n);
 		}
 		
-		//¹®ÀÚ¿­À» ¹è¿­·Î º¯È¯
-		//ÀÌ¶§, ÀÌ¸§¿¡ ÀÖ´Â °ø¹éÀ» Á¦°Å ÈÄ Ãâ·ÂÇÏ¼¼¿ä
-		String nameList = "Àü ¿ìÄ¡/È« ±æµ¿/±è À¯½Å/¼¼Á¾ ´ë¿Õ";
+		//ë¬¸ìì—´ì„ ë°°ì—´ë¡œ ë³€í™˜
+		//ì´ë•Œ, ì´ë¦„ì— ìˆëŠ” ê³µë°±ì„ ì œê±° í›„ ì¶œë ¥í•˜ì„¸ìš”
+		String nameList = "ì „ ìš°ì¹˜/í™ ê¸¸ë™/ê¹€ ìœ ì‹ /ì„¸ì¢… ëŒ€ì™•";
 		nameList = nameList.replace(" ", "");
 		String[] nameAry = nameList.split("/");
 		for(String nm : nameAry)
@@ -67,53 +67,53 @@ public class StringTest
 			System.out.println(nm);
 		}
 		
-		//´ÙÀ½ ¹®ÀÚ¿­¿¡¼­ ÇĞ»ıµéÀÇ Á¡¼öÇÕ°è¿Í Æò±ÕÀ» ±¸ÇÏ¿© Ãâ·ÂÇÏ¼¼¿ä.
-		String student = "°ø°øÀÏ:30,°ø°øÀÌ:45,°ø°ø»ï:69,°ø°ø»ç:40";
-		int    score_sum = 0; //Á¡¼öÇÕ°è
-		int    score_avg = 0; //Æò±Õ
+		//ë‹¤ìŒ ë¬¸ìì—´ì—ì„œ í•™ìƒë“¤ì˜ ì ìˆ˜í•©ê³„ì™€ í‰ê· ì„ êµ¬í•˜ì—¬ ì¶œë ¥í•˜ì„¸ìš”.
+		String student = "ê³µê³µì¼:30,ê³µê³µì´:45,ê³µê³µì‚¼:69,ê³µê³µì‚¬:40";
+		int    score_sum = 0; //ì ìˆ˜í•©ê³„
+		int    score_avg = 0; //í‰ê· 
 		String[] stuAry = student.replace(":", ",").split(",");
 		for(int i = 1; i < stuAry.length ; i += 2)
 		{
 			score_sum += Integer.parseInt(stuAry[i]);
 		}
-		score_avg = score_sum / (stuAry.length / 2); //È®Àå¼º,ÀûÀÀ¼º
+		score_avg = score_sum / (stuAry.length / 2); //í™•ì¥ì„±,ì ì‘ì„±
 		System.out.println(score_sum);
 		System.out.println(score_avg);
 		
-		//°¢°¢ÀÇ ÇĞ»ıÁ¤º¸¸¦ ºĞ¸®(split)
-		//{"°ø°øÀÏ:30","°ø°øÀÌ:45","°ø°ø»ï:69","°ø°ø»ç:40"}
+		//ê°ê°ì˜ í•™ìƒì •ë³´ë¥¼ ë¶„ë¦¬(split)
+		//{"ê³µê³µì¼:30","ê³µê³µì´:45","ê³µê³µì‚¼:69","ê³µê³µì‚¬:40"}
 		String[] list = student.split(",");
 		for(String nm : list)
 		{
-			//nm="°ø°øÀÏ:30"  ->item = {"°ø°øÀÏ", "30"}
+			//nm="ê³µê³µì¼:30"  ->item = {"ê³µê³µì¼", "30"}
 			System.out.println(nm);
 			
 			String[] item = nm.split(":");
-			System.out.println("ÀÌ¸§:" + item[0]);
-			System.out.println("Á¡¼ö:" + item[1]);
+			System.out.println("ì´ë¦„:" + item[0]);
+			System.out.println("ì ìˆ˜:" + item[1]);
 			
-			//¹®ÀÚ¿­ Á¡¼ö¸¦ ¼ıÀÚ Á¡¼ö·Î Á±È¯
+			//ë¬¸ìì—´ ì ìˆ˜ë¥¼ ìˆ«ì ì ìˆ˜ë¡œ ì¡ˆí™˜
 			score_sum += Integer.parseInt(item[1]);
 			
 		}
-		score_avg = score_sum / (stuAry.length / 2); //È®Àå¼º,ÀûÀÀ¼º
+		score_avg = score_sum / (stuAry.length / 2); //í™•ì¥ì„±,ì ì‘ì„±
 		System.out.println(score_sum);
 		System.out.println(score_avg);
 		
 		
-		//´ÙÀ½ ÀüÈ­¹øÈ£ºÎ¸¦ ÀÌ¿ëÇÏ¿© ¾Æ·¡¿Í °°ÀÌ Àç³­ ¹ß»ı ¹®ÀÚ¸¦ ¹ß¼ÛÇÏ¼¼¿ä.
-		//[010-1111-1111]´Ô ÀüÁÖÁö¿ª È«¼ö°æº¸°¡ ¹ßÈ¿µÇ¾ú½À´Ï´Ù.
-		//[010-1111-2222]´Ô ÀüÁÖÁö¿ª È«¼ö°æº¸°¡ ¹ßÈ¿µÇ¾ú½À´Ï´Ù.
-		//[010-1111-3333]´Ô ÀüÁÖÁö¿ª È«¼ö°æº¸°¡ ¹ßÈ¿µÇ¾ú½À´Ï´Ù.
+		//ë‹¤ìŒ ì „í™”ë²ˆí˜¸ë¶€ë¥¼ ì´ìš©í•˜ì—¬ ì•„ë˜ì™€ ê°™ì´ ì¬ë‚œ ë°œìƒ ë¬¸ìë¥¼ ë°œì†¡í•˜ì„¸ìš”.
+		//[010-1111-1111]ë‹˜ ì „ì£¼ì§€ì—­ í™ìˆ˜ê²½ë³´ê°€ ë°œíš¨ë˜ì—ˆìŠµë‹ˆë‹¤.
+		//[010-1111-2222]ë‹˜ ì „ì£¼ì§€ì—­ í™ìˆ˜ê²½ë³´ê°€ ë°œíš¨ë˜ì—ˆìŠµë‹ˆë‹¤.
+		//[010-1111-3333]ë‹˜ ì „ì£¼ì§€ì—­ í™ìˆ˜ê²½ë³´ê°€ ë°œíš¨ë˜ì—ˆìŠµë‹ˆë‹¤.
 		String tel = "010-1111-1111,010-1111-2222,010-1111-3333";
-		String msg = "{tel}´Ô ÀüÁÖÁö¿ª È«¼ö°æº¸°¡ ¹ßÈ¿µÇ¾ú½À´Ï´Ù."; //ÅÛÇÃ¸´
+		String msg = "{tel}ë‹˜ ì „ì£¼ì§€ì—­ í™ìˆ˜ê²½ë³´ê°€ ë°œíš¨ë˜ì—ˆìŠµë‹ˆë‹¤."; //í…œí”Œë¦¿
 		String[] telAry = tel.split(",");
 		for(String nm : telAry)
 		{
-			System.out.println(nm + "´Ô ÀüÁÖÁö¿ª È«¼ö°æº¸°¡ ¹ßÈ¿µÇ¾ú½À´Ï´Ù.");
+			System.out.println(nm + "ë‹˜ ì „ì£¼ì§€ì—­ í™ìˆ˜ê²½ë³´ê°€ ë°œíš¨ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		
-		msg = "{tel}´Ô ÀüÁÖÁö¿ª È«¼ö°æº¸°¡ ¹ßÈ¿µÇ¾ú½À´Ï´Ù.{tel}´Ô ´ëÇÇÇÏ¼¼¿ä."; //ÅÛÇÃ¸´
+		msg = "{tel}ë‹˜ ì „ì£¼ì§€ì—­ í™ìˆ˜ê²½ë³´ê°€ ë°œíš¨ë˜ì—ˆìŠµë‹ˆë‹¤.{tel}ë‹˜ ëŒ€í”¼í•˜ì„¸ìš”."; //í…œí”Œë¦¿
 		String[] telList = tel.split(",");
 		for(String hp : telList)
 		{

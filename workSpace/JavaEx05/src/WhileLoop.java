@@ -1,7 +1,7 @@
-//10. while ¹İº¹¹® ¿¬½À
+//10. while ë°˜ë³µë¬¸ ì—°ìŠµ
 public class WhileLoop 
 {
-//¼ÒÇÁÆ®Á¾·á, ÇÏµåÁ¾·á
+//ì†Œí”„íŠ¸ì¢…ë£Œ, í•˜ë“œì¢…ë£Œ
 	public static void main(String[] args) 
 	{
 		int n = 0;
@@ -29,11 +29,11 @@ public class WhileLoop
 			System.out.println("n=" + n);
 		}
 		
-		//while ¹®À» ÀÌ¿ëÇÏ¿© 1 ~ 10±îÁö Â¦¼ö¸¸ Ãâ·ÂÇÏ¼¼¿ä.
+		//while ë¬¸ì„ ì´ìš©í•˜ì—¬ 1 ~ 10ê¹Œì§€ ì§ìˆ˜ë§Œ ì¶œë ¥í•˜ì„¸ìš”.
 //		string s = n % 2;
 //		while()
 		
-		//while ¹®À» ÀÌ¿ëÇÏ¿© 1 ~ 10±îÁö Â¦¼ö¸¸ Ãâ·ÂÇÏ½Ã¿À.
+		//while ë¬¸ì„ ì´ìš©í•˜ì—¬ 1 ~ 10ê¹Œì§€ ì§ìˆ˜ë§Œ ì¶œë ¥í•˜ì‹œì˜¤.
 		n = 0;
 		while(++n < 10)
 		{
@@ -41,8 +41,8 @@ public class WhileLoop
 			System.out.println("n=" + n);
 		}
 		
-		//while ¹®À» ÀÌ¿ëÇÏ¿© 1 ~ 10±îÁö Â¦¼ö¸¸ Ãâ·ÂÇÏ½Ã¿À.
-		//´Ü, if ¹®À» ÀÌ¿ëÇÏ½Ã¿À.
+		//while ë¬¸ì„ ì´ìš©í•˜ì—¬ 1 ~ 10ê¹Œì§€ ì§ìˆ˜ë§Œ ì¶œë ¥í•˜ì‹œì˜¤.
+		//ë‹¨, if ë¬¸ì„ ì´ìš©í•˜ì‹œì˜¤.
 		n = 0;
 		while(n < 10)
 		{
@@ -51,7 +51,7 @@ public class WhileLoop
 			System.out.println("n=" + n);
 		}
 		
-		//while¹®À» ÀÌ¿ëÇÏ¿© 1ºÎÅÍ 10±îÁö ÇÕ°è¸¦ Ãâ·ÂÇÏ¼¼¿ä.
+		//whileë¬¸ì„ ì´ìš©í•˜ì—¬ 1ë¶€í„° 10ê¹Œì§€ í•©ê³„ë¥¼ ì¶œë ¥í•˜ì„¸ìš”.
 			n = 0;
 		int s = 0;
 		while(n < 10) 
@@ -75,7 +75,7 @@ public class WhileLoop
 		System.out.println(sum);
 		System.out.println(n);
 		
-		//while¹®À» ÀÌ¿ëÇÏ¿© 1 ~ 100±îÁöÀÇ ÇÕ°è¸¦ Ãâ·ÂÇÏ¼¼¿ä.
+		//whileë¬¸ì„ ì´ìš©í•˜ì—¬ 1 ~ 100ê¹Œì§€ì˜ í•©ê³„ë¥¼ ì¶œë ¥í•˜ì„¸ìš”.
 		n = 0;
 		sum = 0;
 		while(n <= 100) 
@@ -86,10 +86,10 @@ public class WhileLoop
 		System.out.println(sum);
 		System.out.println(n);
 		
-		//while¹®À» ÀÌ¿ëÇÏ¿© 1 ~ 100±îÁöÀÇ È¦¼ö¿Í Â¦¼öÀÇ ÇÕ°è¸¦ °¢°¢ ±¸ÇÏ½Ã¿À.
+		//whileë¬¸ì„ ì´ìš©í•˜ì—¬ 1 ~ 100ê¹Œì§€ì˜ í™€ìˆ˜ì™€ ì§ìˆ˜ì˜ í•©ê³„ë¥¼ ê°ê° êµ¬í•˜ì‹œì˜¤.
 		n = 0;
-		int even_sum = 0; //Â¦¼öÀÇ ÇÕ°è
-		int odd_sum = 0; //È¦¼öÀÇ ÇÕ°è
+		int even_sum = 0; //ì§ìˆ˜ì˜ í•©ê³„
+		int odd_sum = 0; //í™€ìˆ˜ì˜ í•©ê³„
 		while(n <= 100) 
 		{
 			if (n % 2 == 0)	
@@ -103,8 +103,8 @@ public class WhileLoop
 		}
 		
 		n = 0;
-		even_sum = 0; //Â¦¼öÀÇ ÇÕ°è
-		odd_sum = 0; //È¦¼öÀÇ ÇÕ°è
+		even_sum = 0; //ì§ìˆ˜ì˜ í•©ê³„
+		odd_sum = 0; //í™€ìˆ˜ì˜ í•©ê³„
 		while(++n <= 100) 
 		{
 			if (n % 2 == 0)	
@@ -118,8 +118,8 @@ public class WhileLoop
 		}
 		
 		n = 0;
-		even_sum = 0; //Â¦¼öÀÇ ÇÕ°è
-		odd_sum = 0; //È¦¼öÀÇ ÇÕ°è
+		even_sum = 0; //ì§ìˆ˜ì˜ í•©ê³„
+		odd_sum = 0; //í™€ìˆ˜ì˜ í•©ê³„
 		while(n <= 100) 
 		{
 			if (n % 2 == 0)	even_sum += n++;

@@ -1,10 +1,10 @@
-//25. ÀÚµ¿Â÷ Á¤º¸ Ç¥ÇöÀ» À§ÇÑ Car class
+//25. ìë™ì°¨ ì •ë³´ í‘œí˜„ì„ ìœ„í•œ Car class
 public class Car 
 {
-	//Å¬·¡½º ÇÊµå(¼Ó¼º)
-	String company;  //Á¦Á¶È¸»ç
-	String model;    //¸ğµ¨
-	String color;    //»ö»ó
-	int    maxSpeed; //ÃÖ°í¼Óµµ
-	Tire   tire;     //Å¸ÀÌ¾î Á¤º¸
+	//í´ë˜ìŠ¤ í•„ë“œ(ì†ì„±)
+	String company;  //ì œì¡°íšŒì‚¬
+	String model;    //ëª¨ë¸
+	String color;    //ìƒ‰ìƒ
+	int    maxSpeed; //ìµœê³ ì†ë„
+	Tire   tire;     //íƒ€ì´ì–´ ì •ë³´
 }

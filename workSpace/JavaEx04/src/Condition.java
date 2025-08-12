@@ -1,88 +1,88 @@
-//07. Á¶°Ç¹® if ¿¬½À
+//07. ì¡°ê±´ë¬¸ if ì—°ìŠµ
 public class Condition 
 {
 
 	public static void main(String[] args) 
 	{
-		//if ¹®¹ı ¿¬½À
+		//if ë¬¸ë²• ì—°ìŠµ
 		int n = 10;
 		boolean f;
 		f = (n % 2 == 0);
 		if(f)
 		{
-			System.out.println(n + "Àº Â¦¼öÀÔ´Ï´Ù.");
+			System.out.println(n + "ì€ ì§ìˆ˜ì…ë‹ˆë‹¤.");
 		}
 		
 		n = 20;
 		if( n % 2 == 0 )
 		{
-			System.out.println(n +"Àº Â¦¼öÀÔ´Ï´Ù.");
+			System.out.println(n +"ì€ ì§ìˆ˜ì…ë‹ˆë‹¤.");
 		}
 		
 		n = 12;
 		if( n % 2 == 0)
 		{
-			System.out.println(n + "Àº Â¦¼öÀÔ´Ï´Ù.");
+			System.out.println(n + "ì€ ì§ìˆ˜ì…ë‹ˆë‹¤.");
 		}else
 		{
-			System.out.println(n + "Àº È¦¼öÀÔ´Ï´Ù.");
+			System.out.println(n + "ì€ í™€ìˆ˜ì…ë‹ˆë‹¤.");
 		}
 		
 		int age = 17;
-		//¸¸ 19¼¼ ÀÌ»óÀÌ¸é "À½ÁÖ °¡´É"
-		//±×·¸Áö ¾ÊÀ¸¸é "À½ÁÖ ºÒ°¡"
+		//ë§Œ 19ì„¸ ì´ìƒì´ë©´ "ìŒì£¼ ê°€ëŠ¥"
+		//ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ "ìŒì£¼ ë¶ˆê°€"
 		if ( age >= 19 )
 		{ 
-			System.out.println("À½ÁÖ °¡´É");
+			System.out.println("ìŒì£¼ ê°€ëŠ¥");
 		}else
 		{
-			System.out.println("À½ÁÖ ºÒ°¡");
+			System.out.println("ìŒì£¼ ë¶ˆê°€");
 		}
 		
 		int x = 15;
 		if ( x % 3 == 0 && x % 5 == 0)
 		{ 
-			System.out.println("3°ú 5ÀÇ °ø¹è¼öÀÔ´Ï´Ù.");
+			System.out.println("3ê³¼ 5ì˜ ê³µë°°ìˆ˜ì…ë‹ˆë‹¤.");
 		}else
 		{
-			System.out.println("°ø¹è¼ö°¡ ¾Æ´Õ´Ï´Ù.");
+			System.out.println("ê³µë°°ìˆ˜ê°€ ì•„ë‹™ë‹ˆë‹¤.");
 		}
 		
-		//³ªÀÌ°¡
-		//20»ì ¹Ì¸¸ÀÌ¸é "¹Ì¼º³â"
-		//20~29»ì ÀÌ¸é "20´ë"
-		//30~39»ì ÀÌ¸é "30´ë"
-		//40~49»ì ÀÌ¸é "Áß³â"
-		//50~59»ì ÀÌ¸é "Àå³â"
-		//60»ì ÀÌ»óÀÌ¸é "³ë³â" ÀÌ¶ó°í Ãâ·ÂÇÏ¼¼¿ä.
+		//ë‚˜ì´ê°€
+		//20ì‚´ ë¯¸ë§Œì´ë©´ "ë¯¸ì„±ë…„"
+		//20~29ì‚´ ì´ë©´ "20ëŒ€"
+		//30~39ì‚´ ì´ë©´ "30ëŒ€"
+		//40~49ì‚´ ì´ë©´ "ì¤‘ë…„"
+		//50~59ì‚´ ì´ë©´ "ì¥ë…„"
+		//60ì‚´ ì´ìƒì´ë©´ "ë…¸ë…„" ì´ë¼ê³  ì¶œë ¥í•˜ì„¸ìš”.
 		
 		age = 33;
 		if ( age < 20 )
 		{
-			System.out.println("¹Ì¼º³â");
+			System.out.println("ë¯¸ì„±ë…„");
 		}else if ( age <= 29)
 		{
-			System.out.println("20´ë");
+			System.out.println("20ëŒ€");
 		}else if ( age <= 39)
 		{
-			System.out.println("30´ë");
+			System.out.println("30ëŒ€");
 		}else if ( age <= 49)
 		{
-			System.out.println("Áß³â");
+			System.out.println("ì¤‘ë…„");
 		}else if ( age <= 59)
 		{
-			System.out.println("Àå³â");
+			System.out.println("ì¥ë…„");
 		}else 
 		{
-			System.out.println("³ë³â");
+			System.out.println("ë…¸ë…„");
 		}
 		
-		//Á¡¼ö°¡
-		//90~100 : A Ãâ·Â
-		//80~89 : B Ãâ·Â
-		//70~79 : C Ãâ·Â
-		//60~69 : D Ãâ·Â
-		//60Á¡ ÀÌÇÏ : ³«Á¦ Ãâ·Â
+		//ì ìˆ˜ê°€
+		//90~100 : A ì¶œë ¥
+		//80~89 : B ì¶œë ¥
+		//70~79 : C ì¶œë ¥
+		//60~69 : D ì¶œë ¥
+		//60ì  ì´í•˜ : ë‚™ì œ ì¶œë ¥
 		int score = 95;
 		if (score >= 90)
 		{
@@ -98,30 +98,30 @@ public class Condition
 			System.out.println("D");
 		}else
 		{
-			System.out.println("³«Á¦");
+			System.out.println("ë‚™ì œ");
 		}
 		
-		//³ªÀÌ¿Í(age) ¼ºº°(gender)
-		//³ªÀÌ°¡ 20»ì ¹Ì¸¸ÀÌ°í gender = 0 ÀÌ¸é "¹Ì¼º³â=¿©ÀÚ"
-		//³ªÀÌ°¡ 20»ì ¹Ì¸¸ÀÌ°í gender = 1 ÀÌ¸é "¹Ì¼º³â=³²ÀÚ"
-		//³ªÀÌ°¡ 20»ì ÀÌ»óÀÌ°í gender = 0 ÀÌ¸é "¼ºÀÎ=¿©ÀÚ"
-		//³ªÀÌ°¡ 20»ì ÀÌ»óÀÌ°í gender = 1 ÀÌ¸é "¼ºÀÎ=³²ÀÚ"
+		//ë‚˜ì´ì™€(age) ì„±ë³„(gender)
+		//ë‚˜ì´ê°€ 20ì‚´ ë¯¸ë§Œì´ê³  gender = 0 ì´ë©´ "ë¯¸ì„±ë…„=ì—¬ì"
+		//ë‚˜ì´ê°€ 20ì‚´ ë¯¸ë§Œì´ê³  gender = 1 ì´ë©´ "ë¯¸ì„±ë…„=ë‚¨ì"
+		//ë‚˜ì´ê°€ 20ì‚´ ì´ìƒì´ê³  gender = 0 ì´ë©´ "ì„±ì¸=ì—¬ì"
+		//ë‚˜ì´ê°€ 20ì‚´ ì´ìƒì´ê³  gender = 1 ì´ë©´ "ì„±ì¸=ë‚¨ì"
 		int gender = 1;
 		if (age < 20 && gender == 0)
 		{
-			//20»ì ¹Ì¸¸ gender = 0
-			System.out.println("¹Ì¼º³â = ¿©ÀÚ");
+			//20ì‚´ ë¯¸ë§Œ gender = 0
+			System.out.println("ë¯¸ì„±ë…„ = ì—¬ì");
 		}else if (age < 20 && gender == 1)
 		{
-			//20»ì ¹Ì¸¸ gender = 1
-			System.out.println("¹Ì¼º³â - ³²ÀÚ");
+			//20ì‚´ ë¯¸ë§Œ gender = 1
+			System.out.println("ë¯¸ì„±ë…„ - ë‚¨ì");
 		}else if (gender == 1)
 		{
-			System.out.println("¼ºÀÎ - ¿©ÀÚ");
+			System.out.println("ì„±ì¸ - ì—¬ì");
 		}else
 		{
-			//20»ì ÀÌ»ó gender = 1
-			System.out.println("¼ºÀÎ - ³²ÀÚ");
+			//20ì‚´ ì´ìƒ gender = 1
+			System.out.println("ì„±ì¸ - ë‚¨ì");
 		}
 		
 	}

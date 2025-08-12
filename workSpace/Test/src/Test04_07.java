@@ -6,38 +6,38 @@ public class Test04_07
 	public static void main(String[] args) 
 	{
 		Scanner s = new Scanner(System.in);
-		int m = 0; 		   //¿¹±Ý¾×
-		int c;     		   //Ãâ±Ý¾×
-		boolean f = true;  //Á¾·á º¯¼ö ÀÌ°Ô ÇÃ·¡±×ÀÓ??
-		//ÇÃ·¡±× 
-		//ex. switch¹®¿¡¼­ ³²Àº case³ª default·Î break¸¦ Áàµµ ¼±ÅÃ ´Ü°è·Î µ¹¾Æ°¨
-		//    switch ¹Ù±ù¿¡¼­ if¹®À¸·Î f¸¦ °Ë»çÇØ Á¾·á½ÃÅ°´Â °Í
-		int v = 1; 		   //»ç¿ëÀÚ ¼±ÅÃ ¹øÈ£
+		int m = 0; 		   //ì˜ˆê¸ˆì•¡
+		int c;     		   //ì¶œê¸ˆì•¡
+		boolean f = true;  //ì¢…ë£Œ ë³€ìˆ˜ ì´ê²Œ í”Œëž˜ê·¸ìž„??
+		//í”Œëž˜ê·¸ 
+		//ex. switchë¬¸ì—ì„œ ë‚¨ì€ caseë‚˜ defaultë¡œ breakë¥¼ ì¤˜ë„ ì„ íƒ ë‹¨ê³„ë¡œ ëŒì•„ê°
+		//    switch ë°”ê¹¥ì—ì„œ ifë¬¸ìœ¼ë¡œ fë¥¼ ê²€ì‚¬í•´ ì¢…ë£Œì‹œí‚¤ëŠ” ê²ƒ
+		int v = 1; 		   //ì‚¬ìš©ìž ì„ íƒ ë²ˆí˜¸
 		while(f)
 		{
-			//º¯ÇÔ¾øÀÌ Ãâ·ÂÇÏ´Â ºÎ¹®Àº if ¹Ù±ù¿¡ µÎ°í
-			//º¯È­°¡ ÇÊ¿äÇÑ ºÎºÐ¸¸ Á¶°Ç¹® ¾ÈÂÊ¿¡ ³Ö¾î Èå¸§À» ¸¸µç´Ù
+			//ë³€í•¨ì—†ì´ ì¶œë ¥í•˜ëŠ” ë¶€ë¬¸ì€ if ë°”ê¹¥ì— ë‘ê³ 
+			//ë³€í™”ê°€ í•„ìš”í•œ ë¶€ë¶„ë§Œ ì¡°ê±´ë¬¸ ì•ˆìª½ì— ë„£ì–´ íë¦„ì„ ë§Œë“ ë‹¤
 			System.out.println("------------------------------");
-			System.out.printf("1.¿¹±Ý | 2.Ãâ±Ý | 3.ÀÜ°í | 4.Á¾·á\n");
+			System.out.printf("1.ì˜ˆê¸ˆ | 2.ì¶œê¸ˆ | 3.ìž”ê³  | 4.ì¢…ë£Œ\n");
 			System.out.println("------------------------------");
-			System.out.print("¼±ÅÃ> ");
+			System.out.print("ì„ íƒ> ");
 			v = s.nextInt();
 			if(v == 1)
 			{
-				System.out.print("¿¹±Ý¾×> ");
+				System.out.print("ì˜ˆê¸ˆì•¡> ");
 				m = s.nextInt();
 			}else if(v == 2)
 			{
-				System.out.print("Ãâ±Ý¾×> ");
+				System.out.print("ì¶œê¸ˆì•¡> ");
 				c = s.nextInt();
 				m = m - c;
 			}else if(v == 3) 
 			{
-				System.out.println("ÀÜ¾×> " + m);
+				System.out.println("ìž”ì•¡> " + m);
 			}else
 			{
 				f = false;
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
 			}
 		}
 	}

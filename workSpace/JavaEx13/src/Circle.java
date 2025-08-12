@@ -1,10 +1,10 @@
-//32. Á¤Àû(Static) ¸â¹ö ¿¬½À
+//32. ì •ì (Static) ë©¤ë²„ ì—°ìŠµ
 public class Circle 
 {
-	//ÀÎ½ºÅÏ½º ¸â¹ö : °´Ã¼°¡ »ý¼ºµÈ ÀÌÈÄ È°¿ë°¡´É
+	//ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„ : ê°ì²´ê°€ ìƒì„±ëœ ì´í›„ í™œìš©ê°€ëŠ¥
 //	double PI = 3.14159;
 	
-	//Á¤Àû ¸â¹ö : °´Ã¼¸¦ »ý¼ºÇÏÁö ¾Ê°í È°¿ë°¡´É
+	//ì •ì  ë©¤ë²„ : ê°ì²´ë¥¼ ìƒì„±í•˜ì§€ ì•Šê³  í™œìš©ê°€ëŠ¥
 	static double PI = 3.14159;
 	
 	static int Plus(int x, int y)

@@ -7,10 +7,10 @@ public class Test05_197
 		Gender g = Gender.MAN;
 		if( g == Gender.MAN)
 		{
-			System.out.println("³²ÀÚ");
+			System.out.println("ë‚¨ì");
 		}else
 		{
-			System.out.println("¿©ÀÚ");
+			System.out.println("ì—¬ì");
 		}
 	}
 

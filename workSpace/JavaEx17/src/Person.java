@@ -1,13 +1,13 @@
-//Á¢±Ù Á¦ÇÑÀÚ¿¡ ´ëÇÑ °³³ä ¼³¸í ¹× getter / setter
+//ì ‘ê·¼ ì œí•œìì— ëŒ€í•œ ê°œë… ì„¤ëª… ë° getter / setter
 public class Person 
 {
-//	private int age; //³ªÀÌ
+//	private int age; //ë‚˜ì´
 	
-	private String name; //ÀÌ¸§
-	private int    age;  //³ªÀÌ
-	private int    year; //³âµµ
-	private String addr; //°ÅÁÖÁö
-	private String tel; //ÀüÈ­¹øÈ£
+	private String name; //ì´ë¦„
+	private int    age;  //ë‚˜ì´
+	private int    year; //ë…„ë„
+	private String addr; //ê±°ì£¼ì§€
+	private String tel; //ì „í™”ë²ˆí˜¸
 	
 	//Getter
 	public String getName() { return name; }

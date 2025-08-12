@@ -1,25 +1,25 @@
-//ÀÚµ¿Â÷ Å¬·¡½º
+//ìë™ì°¨ í´ë˜ìŠ¤
 public class Car 
 {
-	private String company;  //Á¦Á¶»ç
-	private int    maxspeed; //ÃÖ´ë ¼Óµµ
-	private String name;     //Â÷Á¾
+	private String company;  //ì œì¡°ì‚¬
+	private int    maxspeed; //ìµœëŒ€ ì†ë„
+	private String name;     //ì°¨ì¢…
 	
-	//»ı¼ºÀÚ 1¹ø
+	//ìƒì„±ì 1ë²ˆ
 	public Car()
 	{
-		company  = "Çö´ëÀÚµ¿Â÷";
+		company  = "í˜„ëŒ€ìë™ì°¨";
 		maxspeed = 200;
-		name     = "½Â¿ëÂ÷";
-		System.out.println("Car Å¬·¡½º°¡ »ı¼ºµÊ(1).");
+		name     = "ìŠ¹ìš©ì°¨";
+		System.out.println("Car í´ë˜ìŠ¤ê°€ ìƒì„±ë¨(1).");
 	}
 	
-	//»ı¼ºÀÚ 2¹ø
+	//ìƒì„±ì 2ë²ˆ
 	public Car(String name)
 	{
 		this();
 		this.name = name;
-		System.out.println("Car Å¬·¡½º°¡ »ı¼ºµÊ(2).");
+		System.out.println("Car í´ë˜ìŠ¤ê°€ ìƒì„±ë¨(2).");
 	}
 	
 	public String getCompany()  {	return company;  }
@@ -32,7 +32,7 @@ public class Car
 	
 	public void Run()
 	{
-		System.out.println("ÀÚµ¿Â÷°¡ ´Ş¸³´Ï´Ù.");
+		System.out.println("ìë™ì°¨ê°€ ë‹¬ë¦½ë‹ˆë‹¤.");
 	}
 	
 }

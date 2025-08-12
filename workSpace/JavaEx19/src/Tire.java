@@ -1,26 +1,26 @@
-//Å¸ÀÌ¾î Å¬·¡½º
+//íƒ€ì´ì–´ í´ë˜ìŠ¤
 public class Tire 
 {
-	private String company; //Á¦Á¶»ç
-	private int    inch;    //Å¸ÀÌ¾î Å©±â
+	private String company; //ì œì¡°ì‚¬
+	private int    inch;    //íƒ€ì´ì–´ í¬ê¸°
 	
 	public Tire()
 	{
-		company = "¹«¸íÈ¸»ç";
+		company = "ë¬´ëª…íšŒì‚¬";
 		inch    = 12;
-		System.out.println("Tire »ı¼ºÀÚ È£ÃâµÊ.");
+		System.out.println("Tire ìƒì„±ì í˜¸ì¶œë¨.");
 	}
 
-	//getter & setter ¼³Á¤
+	//getter & setter ì„¤ì •
 	public String getCompany() {	return company; }
 	public int    getInch()    {	return inch;    }
 
 	public void setCompany(String company) {	this.company = company; }
 	public void setInch(int inch)          {	this.inch    = inch;    }	
 	
-	//¸Ş¼Òµå ¼±¾ğ
+	//ë©”ì†Œë“œ ì„ ì–¸
 	public void Roll()
 	{
-		System.out.println(company + "ÀÇ " + inch + "ÀÎÄ¡ Å¸ÀÌ¾î°¡ ±¼·¯°©´Ï´Ù.");
+		System.out.println(company + "ì˜ " + inch + "ì¸ì¹˜ íƒ€ì´ì–´ê°€ êµ´ëŸ¬ê°‘ë‹ˆë‹¤.");
 	}
 }

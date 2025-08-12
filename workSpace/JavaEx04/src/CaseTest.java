@@ -1,65 +1,65 @@
-//09. switch ~ case ¹®¹ı ¿¬½À
+//09. switch ~ case ë¬¸ë²• ì—°ìŠµ
 public class CaseTest 
 {
 
 	public static void main(String[] args) 
 	{
-		int gender = 0; //0-¿©ÀÚ,1-³²ÀÚ
+		int gender = 0; //0-ì—¬ì,1-ë‚¨ì
 		if(gender == 0)
-			//if ¹®ÀåÀ» ÀÌ¿ëÇÏ¿©
-			//gender°¡ 0ÀÌ¸é "¿©ÀÚ", 1ÀÌ¸é "³²ÀÚ" ±×·¸Áö ¾ÊÀ¸¸é
-			//"¾Ë¼ö¾øÀ½"ÀÌ¶ó°í Ãâ·ÂÇÏ¼¼¿ä.
+			//if ë¬¸ì¥ì„ ì´ìš©í•˜ì—¬
+			//genderê°€ 0ì´ë©´ "ì—¬ì", 1ì´ë©´ "ë‚¨ì" ê·¸ë ‡ì§€ ì•Šìœ¼ë©´
+			//"ì•Œìˆ˜ì—†ìŒ"ì´ë¼ê³  ì¶œë ¥í•˜ì„¸ìš”.
 		{
-			System.out.println("¿©ÀÚ");
+			System.out.println("ì—¬ì");
 		}else if(gender == 1)
 		{
-			System.out.println("³²ÀÚ");
+			System.out.println("ë‚¨ì");
 		}else
-		System.out.println("¾Ë¼ö¾øÀ½");
+		System.out.println("ì•Œìˆ˜ì—†ìŒ");
 		
 		gender = 10;
 		switch(gender)
 		{
 		case 0:
-			System.out.println("¿©ÀÚ");
+			System.out.println("ì—¬ì");
 			break;
 		case 1:
-			System.out.println("³²ÀÚ");
+			System.out.println("ë‚¨ì");
 			break;
 		default:
-			System.out.println("¾Ë¼ö¾øÀ½");
+			System.out.println("ì•Œìˆ˜ì—†ìŒ");
 			break;
 		}
 		
-		//¾î¶² °ª n¿¡ ´ëÇÏ¿© Â¦¼ö, È¦¼ö¸¦ Ãâ·ÂÇÏ´Â ¹®ÀåÀ» switch-case·Î Ãâ·ÂÇÏ½Ã¿À.
+		//ì–´ë–¤ ê°’ nì— ëŒ€í•˜ì—¬ ì§ìˆ˜, í™€ìˆ˜ë¥¼ ì¶œë ¥í•˜ëŠ” ë¬¸ì¥ì„ switch-caseë¡œ ì¶œë ¥í•˜ì‹œì˜¤.
 		int n =20;
 		switch(n % 2)
 		{
 		case 0:
-			System.out.println("Â¦¼ö");
+			System.out.println("ì§ìˆ˜");
 			break;
-		case 1: //default: ·Îµµ °¡´É
-			System.out.println("È¦¼ö");
-			break;  //1°ªÀÌ ¾ø´Âµ¥µµ µÎÁÙÀÌ ¸ğµÎ Ãâ·Â?
+		case 1: //default: ë¡œë„ ê°€ëŠ¥
+			System.out.println("í™€ìˆ˜");
+			break;  //1ê°’ì´ ì—†ëŠ”ë°ë„ ë‘ì¤„ì´ ëª¨ë‘ ì¶œë ¥?
 		}
 		
-		//³ªÀÌ°¡
-				//20»ì ¹Ì¸¸ÀÌ¸é "¹Ì¼º³â"
-				//20~29»ì ÀÌ¸é "20´ë"
-				//30~39»ì ÀÌ¸é "30´ë"
-				//40~49»ì ÀÌ¸é "Áß³â"
-				//50~59»ì ÀÌ¸é "Àå³â"
-				//60»ì ÀÌ»óÀÌ¸é "³ë³â" ÀÌ¶ó°í Ãâ·ÂÇÏ¼¼¿ä.
+		//ë‚˜ì´ê°€
+				//20ì‚´ ë¯¸ë§Œì´ë©´ "ë¯¸ì„±ë…„"
+				//20~29ì‚´ ì´ë©´ "20ëŒ€"
+				//30~39ì‚´ ì´ë©´ "30ëŒ€"
+				//40~49ì‚´ ì´ë©´ "ì¤‘ë…„"
+				//50~59ì‚´ ì´ë©´ "ì¥ë…„"
+				//60ì‚´ ì´ìƒì´ë©´ "ë…¸ë…„" ì´ë¼ê³  ì¶œë ¥í•˜ì„¸ìš”.
 		int age = 10;
-		switch(age / 10) //Á¤¼ö,½Ç¼ö,¹®ÀÚ¿­ //´ëºÎºĞ Á¤¼ö¸¦ »ç¿ëÇÑ´Ù.
+		switch(age / 10) //ì •ìˆ˜,ì‹¤ìˆ˜,ë¬¸ìì—´ //ëŒ€ë¶€ë¶„ ì •ìˆ˜ë¥¼ ì‚¬ìš©í•œë‹¤.
 		{
 		case 0:
-		case 1: System.out.println("¹Ì¼º³â"); break;
-		case 2: System.out.println("20´ë"); break;
-		case 3: System.out.println("30´ë"); break;
-		case 4: System.out.println("Áß³â"); break;
-		case 5: System.out.println("Àå³â"); break;
-		default: System.out.println("³ë³â"); break;
+		case 1: System.out.println("ë¯¸ì„±ë…„"); break;
+		case 2: System.out.println("20ëŒ€"); break;
+		case 3: System.out.println("30ëŒ€"); break;
+		case 4: System.out.println("ì¤‘ë…„"); break;
+		case 5: System.out.println("ì¥ë…„"); break;
+		default: System.out.println("ë…¸ë…„"); break;
 		}
 		
 		//

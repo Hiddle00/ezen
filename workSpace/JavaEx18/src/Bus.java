@@ -1,12 +1,12 @@
 
 public class Bus extends Car 
 {
-	private String meter; //ÀÌµ¿°Å¸®
+	private String meter; //ì´ë™ê±°ë¦¬
 	
 	public Bus()
 	{
-		super("¹ö½º");
-		System.out.println("Bus Å¬·¡½º°¡ »ı¼ºµÊ.");
+		super("ë²„ìŠ¤");
+		System.out.println("Bus í´ë˜ìŠ¤ê°€ ìƒì„±ë¨.");
 	}
 	
 	public String getMeter()           {  return meter;  }
@@ -16,6 +16,6 @@ public class Bus extends Car
 	public void Run()
 	{
 		super.Run();
-		System.out.println("¹ö½º°¡ ´Ş¸³´Ï´Ù.");
+		System.out.println("ë²„ìŠ¤ê°€ ë‹¬ë¦½ë‹ˆë‹¤.");
 	}
 }

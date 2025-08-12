@@ -7,10 +7,10 @@ public class Test05_186
 	public static void main(String[] args) 
 	{
 		Person hong = new Person();
-		hong.setName() = "È«±æµ¿";
+		hong.setName() = "í™ê¸¸ë™";
 		
 		Person chun = new Person();
-		chun.name = "¼ºÃáÇâ";
+		chun.name = "ì„±ì¶˜í–¥";
 		
 		Person[] a = null;
 		a = new Person[2];

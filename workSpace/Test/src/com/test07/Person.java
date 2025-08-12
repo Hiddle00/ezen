@@ -2,8 +2,8 @@ package com.test07;
 
 public class Person 
 {
-	private String name; //ÀÌ¸§
-	private int    age;  //³ªÀÌ
+	private String name; //ì´ë¦„
+	private int    age;  //ë‚˜ì´
 	
 	
 	public Person() {}
@@ -15,6 +15,6 @@ public class Person
 	
 	public void introduce()
 	{
-		System.out.println("Á¦ ÀÌ¸§Àº " + name + "ÀÌ°í, ³ªÀÌ´Â " + age + "»ì ÀÔ´Ï´Ù.");
+		System.out.println("ì œ ì´ë¦„ì€ " + name + "ì´ê³ , ë‚˜ì´ëŠ” " + age + "ì‚´ ì…ë‹ˆë‹¤.");
 	}
 }

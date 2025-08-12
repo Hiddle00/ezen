@@ -1,17 +1,17 @@
-//15. for ¹İº¹¹® ¿¬½À
+//15. for ë°˜ë³µë¬¸ ì—°ìŠµ
 public class ForLoop 
 {
 
 	public static void main(String[] args) 
 	{
-		//for¹® ÀÌ¿ëÇÏ¿© 1~10 ±îÁö Ãâ·ÂÇÏ´Â ¿¹Á¦
-		for(int n = 1; n <= 10; n++) //~ÇÏ´Â µ¿¾È for(ÃÊ±â°ª;Á¾·áÁ¶°Ç;Áõ°¨Á¶°Ç)
+		//forë¬¸ ì´ìš©í•˜ì—¬ 1~10 ê¹Œì§€ ì¶œë ¥í•˜ëŠ” ì˜ˆì œ
+		for(int n = 1; n <= 10; n++) //~í•˜ëŠ” ë™ì•ˆ for(ì´ˆê¸°ê°’;ì¢…ë£Œì¡°ê±´;ì¦ê°ì¡°ê±´)
 		{
 		 System.out.println(n);   
 		}
 
-		//for¹®À» ÀÌ¿ëÇÏ¿© 1 ~ 100±îÁö ÇÕ°è Ãâ·Â
-		//º¯¼ö :n, sum È°¿ë
+		//forë¬¸ì„ ì´ìš©í•˜ì—¬ 1 ~ 100ê¹Œì§€ í•©ê³„ ì¶œë ¥
+		//ë³€ìˆ˜ :n, sum í™œìš©
 		int sum = 0;
 		for(int n = 1; n <= 100; n++)
 		{
@@ -19,9 +19,9 @@ public class ForLoop
 		}
 		System.out.println(sum);
 		
-		//for¹®À» ÀÌ¿ëÇÏ¿© 1 ~ 100±îÁö
-		//Â¦¼öÇÕ°è,È¦¼öÇÕ°è,ÀüÃ¼ÇÕ°è¸¦ Ãâ·ÂÇÏ¼¼¿ä.
-		//º¯¼ö: n, sum, even_sum, odd_sum
+		//forë¬¸ì„ ì´ìš©í•˜ì—¬ 1 ~ 100ê¹Œì§€
+		//ì§ìˆ˜í•©ê³„,í™€ìˆ˜í•©ê³„,ì „ì²´í•©ê³„ë¥¼ ì¶œë ¥í•˜ì„¸ìš”.
+		//ë³€ìˆ˜: n, sum, even_sum, odd_sum
 		sum = 0;
 		int even_sum = 0;
 		int odd_sum = 0;
@@ -37,9 +37,9 @@ public class ForLoop
 			}
 		}
 		sum = even_sum + odd_sum;
-		System.out.println("Â¦¼öÇÕ°è: " + even_sum);
-		System.out.println("È¦¼öÇÕ°è: " + odd_sum);
-		System.out.println("ÀüÃ¼ÇÕ°è: " + sum);
+		System.out.println("ì§ìˆ˜í•©ê³„: " + even_sum);
+		System.out.println("í™€ìˆ˜í•©ê³„: " + odd_sum);
+		System.out.println("ì „ì²´í•©ê³„: " + sum);
 	}
 
 }

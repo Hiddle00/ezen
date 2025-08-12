@@ -2,7 +2,7 @@ package com.test07;
 
 public class Student extends Person
 {
-	private String studentId; //ÇÐ¹ø
+	private String studentId; //í•™ë²ˆ
 	
 	public Student()
 	{
@@ -17,6 +17,6 @@ public class Student extends Person
 	
 	public void study()
 	{
-		System.out.println("°øºÎ¸¦ ½ÃÀÛÇÕ´Ï´Ù.");
+		System.out.println("ê³µë¶€ë¥¼ ì‹œìž‘í•©ë‹ˆë‹¤.");
 	}
 }

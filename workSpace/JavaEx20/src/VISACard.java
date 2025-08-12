@@ -4,6 +4,6 @@ public class VISACard implements Card
 	@Override
 	public void DoPay() 
 	{
-		System.out.println("VISAÄ«µå °áÁ¦ ¿Ï·á");
+		System.out.println("VISAì¹´ë“œ ê²°ì œ ì™„ë£Œ");
 	}
 }

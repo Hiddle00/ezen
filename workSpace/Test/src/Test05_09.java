@@ -12,10 +12,10 @@ public class Test05_09
 		while(true)
 		{
 			System.out.println("-----------------------------------");
-			System.out.println("1.ÇÐ»ý¼ö | 2.Á¡¼öÀÔ·Â | 3.Á¡¼ö¸®½ºÆ® | 4.ºÐ¼® | 5.Á¾·á");
+			System.out.println("1.í•™ìƒìˆ˜ | 2.ì ìˆ˜ìž…ë ¥ | 3.ì ìˆ˜ë¦¬ìŠ¤íŠ¸ | 4.ë¶„ì„ | 5.ì¢…ë£Œ");
 			System.out.println("-----------------------------------");
 			
-			System.out.println("¼±ÅÃ> ");
+			System.out.println("ì„ íƒ> ");
 			values = scanner.nextInt();
 			switch(values)
 			{

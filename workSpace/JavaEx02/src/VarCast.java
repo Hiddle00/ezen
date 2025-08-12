@@ -1,26 +1,26 @@
-//03. Å¸ÀÔ º¯È¯ ¿¹Á¦
+//03. íƒ€ì… ë³€í™˜ ì˜ˆì œ
 public class VarCast 
 {
 
 	public static void main(String[] args)
 	{
-		//ÀÚµ¿ Å¸ÀÔ º¯È¯
-		int mathScore = 35; 								//¼öÇĞÁ¡¼ö
-		int korScore = 40; 									//±¹¾îÁ¡¼ö 
-		int engScore = 16;									//¿µ¾îÁ¡¼ö
+		//ìë™ íƒ€ì… ë³€í™˜
+		int mathScore = 35; 								//ìˆ˜í•™ì ìˆ˜
+		int korScore = 40; 									//êµ­ì–´ì ìˆ˜ 
+		int engScore = 16;									//ì˜ì–´ì ìˆ˜
 		int sumScore = mathScore + korScore + engScore;															
-		int avgScore = sumScore / 3;						//Æò±ÕÀÌ 30.3333ÀÌÁö¸¸, avgScore°¡ int(Á¤¼öÇü)ÀÌ¹Ç·Î ¼Ò¼ıÁ¡Àº ¶³¾îÁ® ³ª°¨														
-		System.out.println(sumScore);						//sumScore, avgScore Á¤¼ö°ªÀÌ¹Ç·Î Á¤¼ö°¡ Ãâ·ÂµÊ
+		int avgScore = sumScore / 3;						//í‰ê· ì´ 30.3333ì´ì§€ë§Œ, avgScoreê°€ int(ì •ìˆ˜í˜•)ì´ë¯€ë¡œ ì†Œìˆ«ì ì€ ë–¨ì–´ì ¸ ë‚˜ê°														
+		System.out.println(sumScore);						//sumScore, avgScore ì •ìˆ˜ê°’ì´ë¯€ë¡œ ì •ìˆ˜ê°€ ì¶œë ¥ë¨
 		System.out.println(avgScore);
 		
 		double sum = mathScore + korScore + engScore;
-		double avg = sum / 3; 								// ½Ç¼ö/Á¤¼ö ==> ½Ç¼ö°¡ °è»ê°á°ú ³ª¿È
-															//sum, avg´Â ½Ç¼ö°ªÀÌ¹Ç·Î ½Ç¼ö°¡ Ãâ·ÂµÊ
+		double avg = sum / 3; 								// ì‹¤ìˆ˜/ì •ìˆ˜ ==> ì‹¤ìˆ˜ê°€ ê³„ì‚°ê²°ê³¼ ë‚˜ì˜´
+															//sum, avgëŠ” ì‹¤ìˆ˜ê°’ì´ë¯€ë¡œ ì‹¤ìˆ˜ê°€ ì¶œë ¥ë¨
 		System.out.println(sum);
 		System.out.println(avg);
 		
 		
-		//°­Á¦ Å¸ÀÔ º¯È¯
+		//ê°•ì œ íƒ€ì… ë³€í™˜
 		double d1 =	1.5;
 		double d2 =	1.8;
 		int    n1 = 0;

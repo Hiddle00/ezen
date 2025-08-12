@@ -1,38 +1,38 @@
-//34. »ı¼ºÀÚ ¿À¹ö·Îµù 
+//34. ìƒì„±ì ì˜¤ë²„ë¡œë”© 
 public class Car 
 {
-	String company;  //Á¦Á¶»ç
-	String name;	 //Â÷Á¾
-	int	   inch;	 //ÈÙÅ©±â
+	String company;  //ì œì¡°ì‚¬
+	String name;	 //ì°¨ì¢…
+	int	   inch;	 //íœ í¬ê¸°
 	
-	//1¹ø »ı¼ºÀÚ
+	//1ë²ˆ ìƒì„±ì
 	public Car()
 	{
-		System.out.println("1¹ø »ı¼ºÀÚ°¡ ½ÇÇàµÊ.");
+		System.out.println("1ë²ˆ ìƒì„±ìê°€ ì‹¤í–‰ë¨.");
 		
 //		String name;
-//		name = "¾Æ¹İ¶¼";
+//		name = "ì•„ë°˜ë–¼";
 		
-		this.company = "Çö´ëÀÚµ¿Â÷";
-		this.name    = "¾Æ¹İ¶¼";
+		this.company = "í˜„ëŒ€ìë™ì°¨";
+		this.name    = "ì•„ë°˜ë–¼";
 		this.inch    = 15;
 	}
-	//2¹ø »ı¼ºÀÚ
+	//2ë²ˆ ìƒì„±ì
 	public Car(int inch)
 	{
-		System.out.println("2¹ø »ı¼ºÀÚ°¡ ½ÇÇàµÊ.");
+		System.out.println("2ë²ˆ ìƒì„±ìê°€ ì‹¤í–‰ë¨.");
 		
-		this.company = "Çö´ëÀÚµ¿Â÷";
-		this.name    = "¾Æ¹İ¶¼";
+		this.company = "í˜„ëŒ€ìë™ì°¨";
+		this.name    = "ì•„ë°˜ë–¼";
 		this.inch    = inch;
 	}
 	
-	//CarÅ¬·¡½º Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå
+	//Carí´ë˜ìŠ¤ ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ
 	public void PrintInfo()
 	{
-		System.out.println("Â÷·®È¸»ç" + this.company);
-		System.out.println("Â÷·®ÀÌ¸§" + this.name);
-		System.out.println("¹ÙÄûÅ©±â" + this.inch);
+		System.out.println("ì°¨ëŸ‰íšŒì‚¬" + this.company);
+		System.out.println("ì°¨ëŸ‰ì´ë¦„" + this.name);
+		System.out.println("ë°”í€´í¬ê¸°" + this.inch);
 		System.out.println("-------------------");
 	}
 	

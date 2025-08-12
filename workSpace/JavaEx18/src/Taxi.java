@@ -1,12 +1,12 @@
 
 public class Taxi extends Car 
 {
-	private String passenger; //½Â°´¼ö
+	private String passenger; //ìŠ¹ê°ìˆ˜
 	
 	public Taxi()
 	{
-		super("ÅÃ½Ã");
-		System.out.println("Taxi Å¬·¡½º°¡ »ı¼ºµÊ.");
+		super("íƒì‹œ");
+		System.out.println("Taxi í´ë˜ìŠ¤ê°€ ìƒì„±ë¨.");
 	}
 	
 	public String getPassenger()               {  return passenger;  }
@@ -16,6 +16,6 @@ public class Taxi extends Car
 	public void Run()
 	{
 		super.Run();
-		System.out.println("ÅÃ½Ã°¡ ´Ş¸³´Ï´Ù.");
+		System.out.println("íƒì‹œê°€ ë‹¬ë¦½ë‹ˆë‹¤.");
 	}
 }

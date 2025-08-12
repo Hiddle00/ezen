@@ -4,6 +4,6 @@ public class Car
 {
 	public Car()
 	{
-		System.out.println("auci Car Å¬·¡½º°¡ »ı¼ºµÊ.");
+		System.out.println("auci Car í´ë˜ìŠ¤ê°€ ìƒì„±ë¨.");
 	}
 }

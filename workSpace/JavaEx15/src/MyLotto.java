@@ -1,18 +1,18 @@
 import java.util.Arrays;
 
-//37.°´Ã¼ÁöÇâ ÇÁ·Î±×·¡¹ÖÀ» ÅëÇÑ ·Î¶Ç°ÔÀÓ »ı¼º
+//37.ê°ì²´ì§€í–¥ í”„ë¡œê·¸ë˜ë°ì„ í†µí•œ ë¡œë˜ê²Œì„ ìƒì„±
 public class MyLotto 
 {
 	int[] lotto = {0, 0, 0, 0, 0, 0};
 	
-	// 1 ~ 45ÀÇ ·£ÅÒ ¹øÈ£¸¦ ¾ò´Â´Ù
+	// 1 ~ 45ì˜ ëœí…€ ë²ˆí˜¸ë¥¼ ì–»ëŠ”ë‹¤
 	public int GetRendom(int n)
 	{
 		int rnd = (int)(Math.random() * 100000) % n + 1;
 		return rnd;
 	}
 	
-	//·Î¶Ç ¹øÈ£ 6°³¸¦ »ı¼ºÇÑ´Ù.
+	//ë¡œë˜ ë²ˆí˜¸ 6ê°œë¥¼ ìƒì„±í•œë‹¤.
 	public void PickUp(int n)
 	{
 		for (int x = 0; x < lotto.length; x++)
@@ -20,7 +20,7 @@ public class MyLotto
 			int rnd = GetRendom(n);
 			lotto[x] = rnd;
 			
-			//±âÁ¸¿¡ ÃßÃâÇÑ °ª°ú ÀÏÄ¡ÇÏ´Â ¿ø¼Ò°¡ ÀÖ´ÂÁö °Ë»ç
+			//ê¸°ì¡´ì— ì¶”ì¶œí•œ ê°’ê³¼ ì¼ì¹˜í•˜ëŠ” ì›ì†Œê°€ ìˆëŠ”ì§€ ê²€ì‚¬
 			for(int y = 0; y < x; y++)
 			{
 				if(rnd == lotto[y])
@@ -31,13 +31,13 @@ public class MyLotto
 			}
 		}
 		
-		//¿À¸§Â÷¼øÀ¸·Î Á¤·Ä
+		//ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 		Arrays.sort(lotto);
 		
 		PrintInfo();
 	}
 	
-	//»ı¼ºµÈ ·Î¶Ç ¹øÈ£¸¦ Ãâ·ÂÇÑ´Ù.
+	//ìƒì„±ëœ ë¡œë˜ ë²ˆí˜¸ë¥¼ ì¶œë ¥í•œë‹¤.
 	public void PrintInfo()
 	{
 		for(int v : lotto)

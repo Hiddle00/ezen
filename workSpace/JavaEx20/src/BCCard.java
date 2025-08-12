@@ -4,7 +4,7 @@ public class BCCard implements Card
 	@Override
 	public void DoPay() 
 	{
-		System.out.println("BCÄ«µå °áÁ¦ ¿Ï·á");
+		System.out.println("BCì¹´ë“œ ê²°ì œ ì™„ë£Œ");
 	}
 
 }

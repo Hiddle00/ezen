@@ -4,6 +4,6 @@ public class BoardDTO
 {
 	public BoardDTO()
 	{
-		System.out.println("BoardDTO°¡ »ı¼ºµÊ.");
+		System.out.println("BoardDTOê°€ ìƒì„±ë¨.");
 	}
 }

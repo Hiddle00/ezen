@@ -1,10 +1,10 @@
-//´ÙÇü¼ºÀ» ÀÌ¿ëÇÑ Ä«µå °áÁ¦
+//ë‹¤í˜•ì„±ì„ ì´ìš©í•œ ì¹´ë“œ ê²°ì œ
 public class Test 
 {
 
 	public static void main(String[] args) 
 	{
-		int type = 0; //0-BCÄ«µå, 1-VISAÄ«µå
+		int type = 0; //0-BCì¹´ë“œ, 1-VISAì¹´ë“œ
 		Card card = null;
 		switch(type)
 		{

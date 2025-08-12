@@ -1,4 +1,4 @@
-//29. Å¬·¡½º(Class) ÇÊµå¿Í »ı¼ºÀÚ ¿¬½À
+//29. í´ë˜ìŠ¤(Class) í•„ë“œì™€ ìƒì„±ì ì—°ìŠµ
 public class Test 
 {
 
@@ -6,7 +6,7 @@ public class Test
 	{
 		Person hong = new Person();
 		System.out.println(hong.name);
-		hong.name   = "È«±æµ¿";
+		hong.name   = "í™ê¸¸ë™";
 		System.out.println(hong.name);
 		System.out.println(hong.age);
 		hong.age    = 16;

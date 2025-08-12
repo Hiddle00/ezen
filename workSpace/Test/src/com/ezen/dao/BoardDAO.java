@@ -4,6 +4,6 @@ public class BoardDAO
 {
 	public BoardDAO()
 	{
-		System.out.println("BoardDAO°¡ »ı¼ºµÊ.");
+		System.out.println("BoardDAOê°€ ìƒì„±ë¨.");
 	}
 }

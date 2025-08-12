@@ -1,10 +1,10 @@
-//05. Ώ¬»κΐΪ Ώ¬½ΐ
+//05. μ—°μ‚°μ μ—°μµ
 public class Operate 
 {
 
 	public static void main(String[] args) 
 	{
-		//΄λΐΤ Ώ¬»κΐΪ
+		//λ€μ… μ—°μ‚°μ
 		int n = 2;
 		//n = n + 3
 		n += 3;
@@ -12,14 +12,14 @@ public class Operate
 		n -= 3; 
 		System.out.println(n);
 		
-		//Αυ°¨ Ώ¬»κΐΪ
+		//μ¦κ° μ—°μ‚°μ
 		int m = 0;
 		m += 1;
 		m++;
 		--m;
 		System.out.println(m);
 		
-		//Αυ°¨ Ώ¬»κΐΪ
+		//μ¦κ° μ—°μ‚°μ
 		m = 0;
 		n = 0;
 		m = n++; //m = n, n = n + 1
@@ -31,7 +31,7 @@ public class Operate
 		System.out.println("n=" + n);
 		System.out.println("m=" + m);
 		
-		//ΊΉΐβΗΡ Αυ°¨ Ώ¬»κΐΪ ΐΐΏλ
+		//λ³µμ΅ν• μ¦κ° μ—°μ‚°μ μ‘μ©
 		m = 0;
 		n = 0;
 		m = (n++) + (++n);
@@ -40,11 +40,11 @@ public class Operate
 		
 		m = 0;
 		n = 0;
-		m = (++n) + (n--);     				//m:1 ΐϊΐε 
+		m = (++n) + (n--);     				//m:1 μ €μ¥ 
 		System.out.println(n);
 		System.out.println(m);
 		
-		//Αυ°¨ Ώ¬»κΐΪ ΐΐΏλ
+		//μ¦κ° μ—°μ‚°μ μ‘μ©
 		n = 1;
 		System.out.println(n++);		
 		System.out.println(++n);

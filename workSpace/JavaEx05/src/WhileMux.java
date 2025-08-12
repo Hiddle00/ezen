@@ -1,11 +1,11 @@
-//11. while ¥Ÿ¡ﬂ π›∫ππÆ
-//System.out.printf() <-- ∆˜∏‰ πÆ¿⁄ø≠ ∏ﬁº“µÂ
+//11. while Îã§Ï§ë Î∞òÎ≥µÎ¨∏
+//System.out.printf() <-- Ìè¨Î©ß Î¨∏ÏûêÏó¥ Î©îÏÜåÎìú
 public class WhileMux 
 {
 
 	public static void main(String[] args) 
 	{
-		//±∏±∏¥‹ √‚∑¬«œ±‚
+		//Íµ¨Íµ¨Îã® Ï∂úÎ†•ÌïòÍ∏∞
 		int x = 1;
 		while(x <= 9)
 		{
@@ -21,10 +21,10 @@ public class WhileMux
 		}
 		
 		
-//		x∞° n¿œ∂ß n«‡mø≠ø° √‚∑¬
-//		tdø° id or class∏¶ ¡÷∞Ì √‚∑¬
+//		xÍ∞Ä nÏùºÎïå nÌñâmÏó¥Ïóê Ï∂úÎ†•
+//		tdÏóê id or classÎ•º Ï£ºÍ≥† Ï∂úÎ†•
 //		
-//		ƒ√∑≥ø° ∞™¿ª ¡ˆ¡§«ÿº≠ ¥Î¿‘ ---
+//		Ïª¨ÎüºÏóê Í∞íÏùÑ ÏßÄÏ†ïÌï¥ÏÑú ÎåÄÏûÖ ---
 	}
 	
 }

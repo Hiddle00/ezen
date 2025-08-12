@@ -19,8 +19,8 @@ public class Test
 		int[] score = {85, 90, 75, 95, 80};
 		int sum = 0;
 		for(int i : score) sum += i;
-		System.out.println("Á¡¼öÇÕ°è: " + sum);
-		System.out.println("Á¡¼öÆò±Õ: " + sum / score.length);
+		System.out.println("ì ìˆ˜í•©ê³„: " + sum);
+		System.out.println("ì ìˆ˜í‰ê· : " + sum / score.length);
 		
 		//3.
 		int[] data = {23, 5, 67, 12, 89, 34};
@@ -31,8 +31,8 @@ public class Test
 			if(data[i] > data[max]) max = i;
 			if(data[i] < data[min]) min = i;
 		}
-		System.out.println("ÃÖ´ë°ª: " + data[max]);
-		System.out.println("ÃÖ¼Ò°ª: " + data[min]);
+		System.out.println("ìµœëŒ€ê°’: " + data[max]);
+		System.out.println("ìµœì†Œê°’: " + data[min]);
 		
 		//4.
 		char[] alphabets = {'A', 'B', 'C', 'D', 'E'};
@@ -51,7 +51,7 @@ public class Test
 	    for(int i = 0; i < lotto.length; i++)
 	    {
 	    	random.setSeed(System.currentTimeMillis());
-	    	int number = random.nextInt(45); // 0 ~ 44 ±îÁöÀÇ ¹«ÀÛÀ§ int °ª ¸®ÅÏ 
+	    	int number = random.nextInt(45); // 0 ~ 44 ê¹Œì§€ì˜ ë¬´ìž‘ìœ„ int ê°’ ë¦¬í„´ 
 	    	for(int j = 0; j < i; j++)
 	    	{
 	    		if(number == lotto[j])

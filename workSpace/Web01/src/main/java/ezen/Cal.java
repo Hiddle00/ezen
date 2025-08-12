@@ -22,10 +22,10 @@ public class Cal extends HttpServlet {
 //		String y = "22";
 		String x = request.getParameter("x");
 		String y = request.getParameter("y");
-		System.out.println("º¯¼ö x : " + x);
-		System.out.println("º¯¼ö y : " + y);
+		System.out.println("ë³€ìˆ˜ x : " + x);
+		System.out.println("ë³€ìˆ˜ y : " + y);
 		
-		//È­¸é¿¡ "11 + 22 = 33"ÀÌ¶ó°í Ãâ·ÂÇÏ¼¼¿ä.
+		//í™”ë©´ì— "11 + 22 = 33"ì´ë¼ê³  ì¶œë ¥í•˜ì„¸ìš”.
 		int ix = 0;
 		int iy = 0;
 		int iz = 0;

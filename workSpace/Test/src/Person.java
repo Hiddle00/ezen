@@ -1,12 +1,12 @@
-//È¸¿øÁ¤º¸
+//íšŒì›ì •ë³´
 public class Person 
 {	
-	private String id;   //¾ÆÀÌµğ
-	private String pw;   //ºñ¹Ğ¹øÈ£
-	private String name; //ÀÌ¸§
-	private int    age;  //³ªÀÌ
-	private String addr; //ÁÖ¼Ò
-	private String mail; //¸ŞÀÏÁÖ¼Ò
+	private String id;   //ì•„ì´ë””
+	private String pw;   //ë¹„ë°€ë²ˆí˜¸
+	private String name; //ì´ë¦„
+	private int    age;  //ë‚˜ì´
+	private String addr; //ì£¼ì†Œ
+	private String mail; //ë©”ì¼ì£¼ì†Œ
 	
 	public String getId()   {  return id;   }
 	public String getPw()   {  return pw;   }

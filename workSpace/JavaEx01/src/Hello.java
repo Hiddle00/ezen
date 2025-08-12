@@ -6,12 +6,14 @@ public class Hello {
 		int x = 50;
 		int y = 2;
 		int as = x + y;
-		// z°ªÀ» Ãâ·ÂÇÏµµ·Ï ÇÑ´Ù. - comment
+		// zê°’ì„ ì¶œë ¥í•˜ë„ë¡ í•œë‹¤. - comment
 		/*
-		z°ªÀ» Ãâ·ÂÇÏµµ·Ï ÇÑ´Ù. - comment
-		z°ªÀ» Ãâ·ÂÇÏµµ·Ï ÇÑ´Ù. - comment
+		zê°’ì„ ì¶œë ¥í•˜ë„ë¡ í•œë‹¤. - comment
+		zê°’ì„ ì¶œë ¥í•˜ë„ë¡ í•œë‹¤. - comment
 		*/
 		System.out.println(as);
+		String s = "ê°’ì„";
+		for(byte b : s.getBytes()) {			System.out.println(b);		}
 	}
 
 }

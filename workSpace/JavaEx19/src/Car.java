@@ -1,12 +1,12 @@
 //
 public class Car 
 {
-	private String model; //Â÷Á¾
-	private Tire   tire;  //Å¸ÀÌ¾î
+	private String model; //ì°¨ì¢…
+	private Tire   tire;  //íƒ€ì´ì–´
 	
 	public Car()
 	{
-		model = "±×·£Àú";
+		model = "ê·¸ëœì €";
 		tire  = new Tire();
 	}
 	
@@ -18,6 +18,6 @@ public class Car
 	public void Run()
 	{
 		tire.Roll();
-		System.out.println(model + "°¡ ¿òÁ÷ÀÔ´Ï´Ù.");
+		System.out.println(model + "ê°€ ì›€ì§ì…ë‹ˆë‹¤.");
 	}
 }

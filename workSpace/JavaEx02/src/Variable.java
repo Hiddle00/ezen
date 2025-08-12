@@ -1,17 +1,17 @@
-//01.ÀÚ¹Ù º¯¼ö Å¸ÀÔ ¿¹Á¦
+//01.ìë°” ë³€ìˆ˜ íƒ€ì… ì˜ˆì œ
 public class Variable 
 {
 
 	public static void main(String[] args) 
 	{
-		//º¯¼ö : boolean Å¸ÀÔ ¿¬½À
+		//ë³€ìˆ˜ : boolean íƒ€ì… ì—°ìŠµ
 		boolean f = true;
 		System.out.println(f);
 				
 		f = false;
 		System.out.println(f);
 		
-		//º¯¼ö : Á¤¼ö(Integer) Å¸ÀÔ ¿¬½À
+		//ë³€ìˆ˜ : ì •ìˆ˜(Integer) íƒ€ì… ì—°ìŠµ
 		byte b =100;
 		System.out.println(b);
 		short s =32000;
@@ -21,13 +21,13 @@ public class Variable
 		long l = 1000000000;
 		System.out.println(l);
 		
-		//º¯¼ö : ½Ç¼ö(Float) Å¸ÀÔ ¿¬½À
-		float ff = 3.14f; //float´Â ½Ç¼ö µÚ¿¡ f°¡ ÇÊ¼ö?
+		//ë³€ìˆ˜ : ì‹¤ìˆ˜(Float) íƒ€ì… ì—°ìŠµ
+		float ff = 3.14f; //floatëŠ” ì‹¤ìˆ˜ ë’¤ì— fê°€ í•„ìˆ˜?
 		System.out.println(ff);
 		double dd = 3.14;
 		System.out.println(dd);
 		
-		//º¯¼ö : ¹®ÀÚ(Character) Å¸ÀÔ ¿¬½À 
+		//ë³€ìˆ˜ : ë¬¸ì(Character) íƒ€ì… ì—°ìŠµ 
 		char c = 'A';
 		System.out.println(c);
 		System.out.println((int)c);

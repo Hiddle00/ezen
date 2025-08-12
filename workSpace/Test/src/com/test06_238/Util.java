@@ -2,7 +2,7 @@ package com.test06_238;
 
 public class Util 
 {
-	//ÁÖ¾îÁø ¼ıÀÚ nÀÌ Â¦¼ö¸é true¸¦ ¸®ÅÏÇÏ°í È¦¼ö¸é false¸¦ ¸®ÅÏÇÑ´Ù.
+	//ì£¼ì–´ì§„ ìˆ«ì nì´ ì§ìˆ˜ë©´ trueë¥¼ ë¦¬í„´í•˜ê³  í™€ìˆ˜ë©´ falseë¥¼ ë¦¬í„´í•œë‹¤.
 	public boolean IsEven(int n)
 	{
 		if(n % 2 == 0) return true;
