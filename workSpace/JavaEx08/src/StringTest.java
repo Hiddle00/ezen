@@ -1,8 +1,7 @@
 //20. 문자열 다루기
 public class StringTest 
 {
-
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 //		int n = 10;
 //		string s2 = n;
@@ -117,6 +116,7 @@ public class StringTest
 		String[] telList = tel.split(",");
 		for(String hp : telList)
 		{
+			//System.out.println(msg.replace("{tel}", hp));
 			String send = msg;
 			send = send.replace("{tel}", hp);
 			System.out.println(send);
