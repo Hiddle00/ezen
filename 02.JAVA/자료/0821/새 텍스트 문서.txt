@@ -1,0 +1,28 @@
+	//기능 : ResultSet의 커서를 다음행으로 이동한다.
+	//파라메터 : 없음
+	//리턴값 : true-이동 성공, false-이동 실패
+	public boolean Next()
+	{
+		try
+		{
+			return rs.next();
+		}catch(Exception e)
+		{
+			return false;
+		}
+	}
+	
+	//기능 : ResultSet에서 해당 컬럼 값을 얻는다.
+	//파라메터 : column - 컬럼 이름
+	//리턴값 : 컬럼의 값	
+	public String GetValue(String column)
+	{
+		try
+		{
+			return rs.getString(column);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+	}

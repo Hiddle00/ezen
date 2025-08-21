@@ -31,7 +31,7 @@ public class Select {
 			
 			//3.2 작업객체를 이용해서 SQL 구문을 실행한다.
 			String sql = "";
-			sql  = "select no,title,note,wdata ";
+			sql  = "select no,title,note,wdate ";
 			sql += "from memo ";
 			sql += "order by no desc ";
 			ResultSet rs = stmt.executeQuery(sql);

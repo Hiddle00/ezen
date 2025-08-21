@@ -34,7 +34,7 @@ public class Insert {
 			String note = "내용입니다.";
 			
 			String sql = "";
-			for(int i = 1; i <= 500; i++) {
+			for(int i = 1; i <= 20; i++) {
 				title = String.format("[%03d]번째 제목입니다.", i);
 				sql  = "insert into memo(title, note)";
 				sql += "values ('" + title + "' , '" + note + "')";
