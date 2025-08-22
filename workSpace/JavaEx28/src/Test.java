@@ -2,23 +2,21 @@
 public class Test {
 	
 	public static void main(String[] args) {
-		DBManager db = new DBManager();
-		if(db.DBOpen() == false) {
-			System.out.println("로딩 실패");
+		DBManager db = new DBManager();			//DB매니저 객체 생성
+		if(db.DBOpen() == false) {				//드라이버 로딩 & DBMS 접속 확인
+			System.out.println("로딩 실패");		
 		}else {
 			System.out.println("로딩 성공");
 		}
-		String mode = "insert"; 
-		String sql  = "";
+		String mode = "insert"; 				//스위치 변수 선언
+		String sql  = "";						//sql 구문 객체
 		
 		switch(mode) {
-		case "delete": 
-			//delete 삭제 연습
+		case "delete": 							//delete 삭제 연습
 			sql = "delete from memo";
 			db.RunSQL(sql);
 			break;
-		case "insert": 
-			//insert 등록 연습
+		case "insert": 							//insert 등록 연습
 			String title = "제목입니다.";
 			String note  = "내용입니다.";
 			
@@ -30,8 +28,7 @@ public class Test {
 				db.RunSQL(sql);
 			}
 			break;
-		case "update":
-			//update 변경 연습
+		case "update":							//update 변경 연습
 			sql  = "update memo ";
 			sql += "set title = '변경된 제목입니다.' ";
 			sql += "where no = 20 ";
