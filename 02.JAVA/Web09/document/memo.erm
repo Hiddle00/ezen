@@ -10,7 +10,7 @@
 		<right_margin>30</right_margin>
 	</page_setting>
 	<category_index>0</category_index>
-	<zoom>1.0</zoom>
+	<zoom>1.5</zoom>
 	<x>0</x>
 	<y>0</y>
 	<default_color>
@@ -32,7 +32,7 @@
 		<notation></notation>
 		<notation_level>0</notation_level>
 		<notation_expand_group>true</notation_expand_group>
-		<view_mode>1</view_mode>
+		<view_mode>2</view_mode>
 		<outline_view_mode>1</outline_view_mode>
 		<view_order_by>1</view_order_by>
 		<auto_ime_change>false</auto_ime_change>
@@ -134,8 +134,8 @@
 			<connections>
 			</connections>
 			<display>false</display>
-			<creation_date>2025-02-18 10:12:42</creation_date>
-			<updated_date>2025-02-18 10:23:32</updated_date>
+			<creation_date>2025-08-19 10:17:58</creation_date>
+			<updated_date>2025-08-19 10:30:04</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -232,7 +232,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>작성일</logical_name>
+			<logical_name>작성일자</logical_name>
 			<physical_name>wdate</physical_name>
 			<type>datetime</type>
 		</word>
@@ -242,12 +242,12 @@
 	<contents>
 		<table>
 			<id>0</id>
-			<height>153</height>
-			<width>214</width>
+			<height>121</height>
+			<width>337</width>
 				<font_name>맑은 고딕</font_name>
 				<font_size>9</font_size>
-			<x>51</x>
-			<y>100</y>
+			<x>168</x>
+			<y>156</y>
 			<color>
 				<r>128</r>
 				<g>128</g>

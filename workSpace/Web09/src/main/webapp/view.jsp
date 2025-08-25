@@ -1,5 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ page import="ezen.*"%>
+<%
+//메모 번호를 받는다.
+String no = request.getParameter("no");
+if(no == null){
+	response.sendRedirect("list.jsp");
+	return;
+}
+
+ezen.DBManager db = new ezen.DBManager();				//클래스 생성
+db.DBOpen();											//DB 로드
+
+String sql = "";
+sql  = "select no, title, note, wdate ";
+sql += "from memo ";
+sql += "where no = " + no;
+
+db.OpenSelect(sql);
+if(db.Next() == false){
+	//해당 번호 게시물이 없는 경우임.
+	db.DBClose();
+	response.sendRedirect("list.jsp");
+	return;
+}
+String title = db.GetValue("title");
+String note  = db.GetValue("note");
+String wdate = db.GetValue("wdate");
+db.CloseSelect();
+
+db.DBClose();
+
+//< 와 > 문자를 변경한다
+note = note.replace("<", "&lt");
+note = note.replace(">", "&gt");
+//엔터문자를 변경한다
+note = note.replace("\n", "<br>\n");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +44,14 @@
 		<title>메모 보기</title>
 	</head>
 	<body>
+	<script>
+	function DoDelete(){
+		if(confirm("삭제하시겠습니까?") == false){
+			return;
+		}
+		document.location="delete.jsp?no=<%= no %>";
+	}
+	</script>
 		<table border="0" width="600px" align="center">
 			<tr>
 				<td align="center">
@@ -18,20 +63,16 @@
 					<table border="1" style="width:100%">
 						<tr>
 							<th width="100px">제목</th>
-							<td>제목입니다....</td>
+							<td><%= title %></td>
 						</tr>
 						<tr>
 							<th>날짜</th>
-							<td>2024.01.01</td>
+							<td><%= wdate %></td>
 						</tr>						
 						<tr>
 							<th>내용</th>
 							<td>
-							내용입니다.<br>
-							내용입니다.<br>
-							내용입니다.<br>
-							내용입니다.<br>
-							내용입니다.<br>
+							<%= note %>
 							</td>
 						</tr>				
 					</table>
@@ -41,9 +82,9 @@
 				<td align="center">
 				<a href="list.jsp">목록이동</a>
 				&nbsp;&nbsp;
-				<a href="update.jsp">변경하기</a>
+				<a href="update.jsp?no=<%= no %>">변경하기</a>
 				&nbsp;&nbsp;
-				<a href="delete.jsp">삭제하기</a>
+				<a href="javascript:DoDelete()">삭제하기</a>
 				</td>
 			</tr>
 		</table>

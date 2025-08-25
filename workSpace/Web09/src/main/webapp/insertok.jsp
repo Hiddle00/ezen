@@ -18,7 +18,7 @@ if(title == "" || note == ""){
 }
 
 //memo 테이블에 자료를 등록한다.
-DBManager db = new DBManager();
+ezen.DBManager db = new ezen.DBManager();
 
 db.DBOpen();
 
@@ -48,5 +48,5 @@ db.CloseSelect();
 db.DBClose();
 
 //메모글 보기 페이지로 이동시킨다.
-response.sendRedirect("veiw.jsp?no=" + no);
+response.sendRedirect("view.jsp?no=" + no);
 %>

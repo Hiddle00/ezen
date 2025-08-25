@@ -1,25 +1,23 @@
-/*
- * 모듈명 : MySQL 데이터베이스를 사용하기 위한 공용 클래스
- * 작성일 : 2025.02.17
- * 작성자 : 홍길동
- */
 package ezen;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+/*
+ * 모듈명 : MySQL 데이터베이스를 사용하기 위한 공용 클래스
+ * 작성일 : 2025.08.21
+ * 작성자 : 홍길동
+ */
+import java.sql.*;
+import java.util.*;
 
 public class DBManager 
 {
-	private Connection conn;
-	private Statement  stmt;
-	private ResultSet  rs;	
+	private Connection conn = null;
+	private Statement  stmt = null;
+	private ResultSet  rs   = null;	
 	
 	//기능 : 드라이버를 로딩한다.
 	//리턴값 : true-로딩 성공, false-로딩 실패
 	private boolean LoadDriver()
-	{		
+	{
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -27,45 +25,42 @@ public class DBManager
 		{
 			e.printStackTrace();
 			return false;
-		}
-		
+		}		
 		return true;
 	}
 	
 	//기능 : DBMS에 접속한다.
 	//리턴값 : true-접속 성공, false-접속 실패	
 	public boolean DBOpen()
-	{		
+	{	
 		if( LoadDriver() == false )
 		{
 			return false;
 		}
+				
+		String host   = "jdbc:mysql://localhost:3306/memodb";
+		host += "?useUnicode=true&characterEncoding=utf-8";
+		host += "&serverTimezone=UTC";
 		
 		try
 		{
-			String host   = "jdbc:mysql://localhost:3306/memodb";
-			host += "?useUnicode=true&characterEncoding=utf-8";
-			host += "&serverTimezone=UTC";			
-			conn = DriverManager.getConnection(host,"root","ezen");		
+			conn = DriverManager.getConnection(host,"root","ezen");
 		}catch(Exception e)
 		{
 			e.printStackTrace();
 			return false;
-		}
+		}		
 		return true;
 	}
-	
+
 	//기능 : DBMS에 접속을 종료한다.
 	//리턴값 : 없음		
 	public void DBClose()
-	{	
-		try
+	{
+		try 
 		{
 			conn.close();
-		}catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+		} catch(Exception e){}		
 	}
 	
 	//기능 : insert, delete, update 문장 실행
@@ -73,10 +68,10 @@ public class DBManager
 	//리턴값 : true-실행 성공, false-실행 실패
 	public boolean RunSQL(String sql)
 	{
+		System.out.println(sql);
 		try
 		{
 			Statement stmt = conn.createStatement();
-			System.out.println(sql);
 			stmt.executeUpdate(sql);
 			stmt.close();
 		}catch(Exception e)
@@ -92,13 +87,14 @@ public class DBManager
 	//리턴값 : true-실행 성공, false-실행 실패	
 	public boolean OpenSelect(String sql)
 	{
+		System.out.println(sql);
 		try
 		{
 			stmt = conn.createStatement();
-			System.out.println(sql);
-			rs   = stmt.executeQuery(sql);			
+			rs = stmt.executeQuery(sql);
 		}catch(Exception e)
 		{
+			e.printStackTrace();
 			return false;
 		}
 		return true;
@@ -143,18 +139,12 @@ public class DBManager
 			e.printStackTrace();
 			return null;
 		}
-	}
+	}	
 	
-	//작은 따옴표를 작은 따옴표 2개로 변환한다.
+	//작은 따옴표 1개를 작은 따옴표 2개로 변환한다.
 	public String _R(String value)
 	{
-		if( value == null)
-		{
-			return null;
-		}
-		return value.replace("'","''");
+		return value.replace("'", "''"); 
 	}
+	
 }
-
-
-
