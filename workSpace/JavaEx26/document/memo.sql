@@ -1,3 +1,5 @@
+mysql -u root -p
+
 drop database memodb;
 create database memodb;
 use memodb;

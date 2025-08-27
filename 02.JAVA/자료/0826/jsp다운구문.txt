@@ -1,0 +1,2 @@
+<br>
+<a href="down.jsp?uuid=<%= bpname %>&name=<%= bfname %>">내려받기</a>
