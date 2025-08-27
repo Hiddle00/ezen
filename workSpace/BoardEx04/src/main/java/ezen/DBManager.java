@@ -6,7 +6,7 @@ package ezen;
  * 
  * 수정일 : 2025.08.27
  * 작성자 : 최연흠
- * 내용  : 오탈자 수정 
+ * 내용  : 오탈자 수정, Open메서드 DB목적지 구문 수정
  */
 import java.util.*;
 import java.sql.*;
