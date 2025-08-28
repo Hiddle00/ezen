@@ -34,7 +34,7 @@ public class DBManager {
 		if(LoadDriver() == false) {
 			return false;
 		}
-		String host = "jdbc:mysql://localhost:3306/memodb";
+		String host = "jdbc:mysql://localhost:3306/boarddb";
 		host += "?useUnicode=true&characterEncoding=utf-8";
 		host += "&serverTimezone=UTC";
 		

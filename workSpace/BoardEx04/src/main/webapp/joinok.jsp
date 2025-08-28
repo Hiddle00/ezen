@@ -14,9 +14,11 @@ String[] fav  = request.getParameterValues("fav");
 //잘못된 경로 접근 차단
 if(userid == null || userpw == null || name == null){
 	response.sendRedirect("join.jsp");
+	return;
 }
 if(userid == "" || userpw == "" || name == ""){
 	response.sendRedirect("join.jsp");
+	return;
 }
 
 //관심분야 문자열로 변환
@@ -54,7 +56,18 @@ if(db.Next() == true){
 }
 db.CloseSelect();
 
-
+//회원가입을 진행한다.
+sql  = "insert into user ( ";
+sql += "userid,userpw,name,gender,hobby,fav) ";
+sql += "values ( ";
+sql += "'" + userid + "', ";
+sql += "md5('" + userpw + "'), ";
+sql += "'" + name + "', ";
+sql += "'" + gender + "', ";
+sql += "'" + hobby  + "', ";
+sql += "'" + fav_list    + "' ";
+sql += ") ";
+db.RunSQL(sql);
 
 db.DBClose();
 %>

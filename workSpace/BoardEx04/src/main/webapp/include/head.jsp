@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="ezen.*"%>
+<%
+//
+LoginVO login = (LoginVO)session.getAttribute("login");
+%>
 <!DOCTYPE html>
 <html>
 	<head>	
@@ -23,10 +27,21 @@
 								</a>
 							</td>
 							<td style="text-align:right;">
+							<% 
+							if(login == null){
+								%>
 								<a href="join.jsp">회원가입</a>
 								&nbsp;&nbsp;
 								<a href="login.jsp">로그인</a>
 								&nbsp;
+								<%
+							}else{
+							 %>
+							  [<%= login.getName() %>] 님 환영합니다.
+							  <a href="logout.jsp">Logout</a>
+							 <%
+							}
+							%>
 							</td>
 						</tr>
 					</table>

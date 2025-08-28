@@ -40,6 +40,12 @@
 			return false;
 		}
 		return true;
+		if(confirm("회원 가입을 진행하시겠습니까?") != true)
+		{
+			return false;
+		}
+		
+		return true;
 	}
 	
 </script>

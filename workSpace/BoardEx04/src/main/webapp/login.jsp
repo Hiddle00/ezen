@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="include/head.jsp" %>
+<%@ include file="./include/head.jsp" %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <table border="0" style="width:100%;">
 	<tr>
@@ -12,10 +12,31 @@
 <script>
 	window.onload = function()
 	{
+		document.login.userid.value = "ezen";				//개발빌드용 자동완성
+		document.login.userpw.value = "1234";
+		
 		document.login.userid.focus();
 	}
+	
+	function DoLogin()
+	{
+		var f = document.login;
+		if( f.userid.value == "" )
+		{
+			alert("아이디를 입력하세요.");
+			f.userid.focus();
+			return false;
+		}
+		if( f.userpw.value == "" )
+		{
+			alert("비밀번호를 입력하세요.");
+			f.userpw.focus();
+			return false;
+		}		
+		return true;
+	}
 </script>
-<form name="login" method="post" action="loginok.jsp">
+<form name="login" method="post" action="loginok.jsp" onsubmit="return DoLogin();">
 <table border="1" style="width:100%;">
 	<tr>
 		<td style="text-align:center;width:120px;">아이디 (*) </td>
@@ -33,4 +54,4 @@
 </table>
 </form>			
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
-<%@ include file="include/tail.jsp" %>
+<%@ include file="./include/tail.jsp" %>    

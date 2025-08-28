@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="include/head.jsp" %>
+<%
+String no = request.getParameter("no");
+
+%>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <table border="0" style="width:100%;">
 	<tr>
@@ -12,27 +16,23 @@
 <table border="1" style="width:100%;">
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">제목</td>
-		<td>자바 기초 문법에 대한 강의 입니다.</td>
+		<td><%=  %></td>
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">작성자</td>
-		<td>홍길동</td>
+		<td><%=  %></td>
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">작성일</td>
-		<td>2021.11.10</td>
+		<td><%=  %></td>
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">조회수</td>
-		<td>10회</td>
+		<td><%=  %></td>
 	</tr>
 	<tr>
 		<td colspan="2">	
-			자바 기초 문법에 대한 강의 입니다.
-			<br>
-			자바 기초 문법에 대한 강의 입니다.
-			<br>
-			자바 기초 문법에 대한 강의 입니다.
+			<%=  %>
 		</td>
 	</tr>	
 	<tr>
@@ -43,6 +43,7 @@
 		<td colspan="2" align="center" style="height:40px;">
 		<a href="index.jsp">글목록</a>
 		&nbsp;|&nbsp;
+		<%-- 로그인된 사용자에게만 출력 --%>
 		<a href="modify.jsp">글수정</a>
 		&nbsp;|&nbsp;
 		<a href="delete.jsp">글삭제</a>
