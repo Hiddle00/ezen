@@ -1,6 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="./include/head.jsp" %>
+<%
+//게시물번호(no)를 받는다.
+String no = request.getParameter("no");
+if( no == null )
+{
+	response.sendRedirect("index.jsp");
+	return;
+}
+
+DBManager db = new DBManager();
+db.DBOpen();
+String sql = "";
+
+//select 로 게시물 데이터를 읽는다.
+sql += "select no,userid,title,kind,note,pname,fname,wdate,hit,";
+//작성자 이름을 얻는 subquery
+sql += "(select name from user where userid = board.userid) as name ";
+sql += "from board ";
+sql += "where no = " + no;
+db.OpenSelect(sql);
+if(db.Next() == false)
+{
+	//해당 번호 게시물이 없는 경우임.
+	db.DBClose();
+	response.sendRedirect("index.jsp");
+	return;	
+}
+String userid = db.GetValue("userid");
+String title  = db.GetValue("title");
+String kind   = db.GetValue("kind");
+String note   = db.GetValue("note");
+String pname  = db.GetValue("pname");
+String fname  = db.GetValue("fname");
+String wdate  = db.GetValue("wdate");
+String hit    = db.GetValue("hit");
+String name   = db.GetValue("name");
+
+db.DBClose();
+%>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <table border="0" style="width:100%;">
 	<tr>

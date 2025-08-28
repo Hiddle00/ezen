@@ -39,14 +39,12 @@ if( db.Next() == false )
 //3. id/pw가 일치하면 세션에  로그인 정보를 저장한다.
 String name = db.GetValue("name");
 
-LoginVO vo = new LoginVO();
-vo.setUserid(userid);
-vo.setName(name);
-session.setAttribute("login", vo);
+session.setAttribute("userid", userid);
+session.setAttribute("name", name);
+
 
 db.DBClose();
 
-response.sendRedirect("index.jsp");
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 로그인이 완료되었습니다.

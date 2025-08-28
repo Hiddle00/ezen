@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="ezen.*" %>
-<%
-//세션에서 로그인 정보를 가져온다. 만약 login 이 null이면 로그인 안함.
-LoginVO login = (LoginVO)session.getAttribute("login");
-%>    
+<%@ page import="ezen.*" %>    
 <!DOCTYPE html>
 <html>
 	<head>	
@@ -26,24 +22,9 @@ LoginVO login = (LoginVO)session.getAttribute("login");
 								</a>
 							</td>
 							<td style="text-align:right;">
-								<%
-								if( login == null )
-								{
-									//로그인 안됨
-									%>
-									<a href="join.jsp">회원가입</a>
-									&nbsp;&nbsp;
-									<a href="login.jsp">로그인</a>
-									<%
-								}else
-								{
-									//로그인 됨
-									%>
-									[ <%= login.getName() %> 님 ]
-									<a href="logout.jsp">로그아웃</a>
-									<%
-								}
-								%>
+								<a href="join.jsp">회원가입</a>
+								&nbsp;&nbsp;
+								<a href="login.jsp">로그인</a>
 								&nbsp;
 							</td>
 						</tr>

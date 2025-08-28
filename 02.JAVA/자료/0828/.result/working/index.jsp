@@ -10,7 +10,12 @@
 	</tr>
 	<tr>
 		<td style="height:25px; text-align:right;">
-			<a href="write.jsp">글쓰기</a>
+			<%
+			if( login != null)
+			{
+				%><a href="write.jsp">글쓰기</a><%
+			}
+			%>
 		</td>
 	</tr>						
 	<tr>

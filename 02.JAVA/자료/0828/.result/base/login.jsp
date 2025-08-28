@@ -12,31 +12,10 @@
 <script>
 	window.onload = function()
 	{
-		document.login.userid.value = "ezen";
-		document.login.userpw.value = "ezen";
-		
 		document.login.userid.focus();
 	}
-	
-	function DoLogin()
-	{
-		var f = document.login;
-		if( f.userid.value == "" )
-		{
-			alert("아이디를 입력하세요.");
-			f.userid.focus();
-			return false;
-		}
-		if( f.userpw.value == "" )
-		{
-			alert("비밀번호를 입력하세요.");
-			f.userpw.focus();
-			return false;
-		}		
-		return true;
-	}
 </script>
-<form name="login" method="post" action="loginok.jsp" onsubmit="return DoLogin();">
+<form name="login" method="post" action="loginok.jsp">
 <table border="1" style="width:100%;">
 	<tr>
 		<td style="text-align:center;width:120px;">아이디 (*) </td>
