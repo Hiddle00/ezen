@@ -33,11 +33,12 @@ db.DBOpen();
 //db.RunSQL(sql);
 
 String sql = "";
+for(int i = 1; i <= 497; i++){
 sql  = "insert into memo ";
 sql += "(title, note) ";
 sql += "values ( '" + db._R(title) + "', '" + db._R(note) + "')";
 db.RunSQL(sql);
-
+}
 //메모 등록 후 부여된 번호를 얻는다.
 sql = "select last_insert_id() as no";
 db.OpenSelect(sql);

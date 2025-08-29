@@ -57,23 +57,29 @@ String sql = "";
 //select board.no, board.userid, user.name 
 //from user inner join board
 //on board.userid = user.userid
-sql  = "insert into board (userid,title,kind,note,pname,fname) ";
-sql += "values ('" + login.getUserid() + "',";
-sql += "'" + db._R(title) + "',";
-sql += "'" + kind + "',";
-sql += "'" + db._R(note) + "',";
-if(bfname != null)
-{
-	//첨부파일이 업로드 된 경우
-	sql += "'" + bpname + "',";
-	sql += "'" + bfname + "'";
-}else
-{
-	//첨부파일을 업로드 안한 경우
-	sql += "null,null";	
+	
+//반복
+for(int i = 1; i <= 497; i++){
+	title = String.format("[%03d]번째 HTML입니다.", i);
+	
+	sql  = "insert into board (userid,title,kind,note,pname,fname) ";
+	sql += "values ('" + login.getUserid() + "',";
+	sql += "'" + db._R(title) + "',";
+	sql += "'" + kind + "',";
+	sql += "'" + db._R(note) + "',";
+	if(bfname != null)
+	{
+		//첨부파일이 업로드 된 경우
+		sql += "'" + bpname + "',";
+		sql += "'" + bfname + "'";
+	}else
+	{
+		//첨부파일을 업로드 안한 경우
+		sql += "null,null";	
+	}
+	sql += ")";
+	db.RunSQL(sql);
 }
-sql += ")";
-db.RunSQL(sql);
 
 //메모 등록 후 부여된 번호를 얻는다.
 sql = "select last_insert_id() as no";

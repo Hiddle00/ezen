@@ -14,9 +14,10 @@ DBManager db = new DBManager();
 db.DBOpen();
 String sql = "";
 
-//해당 게시물의 조회수를 증가시킨다
-sql  = "update board set hit = hit + 1 where no = " + no;
+//해당 게시물의 조회수를 증가시킨다.
+sql = "update board set hit = hit + 1 where no = " + no;
 db.RunSQL(sql);
+
 //select 로 게시물 데이터를 읽는다.
 sql  = "select no,userid,title,kind,note,pname,fname,wdate,hit,";
 //작성자 이름을 얻는 subquery
@@ -91,7 +92,9 @@ note = note.replace("\n","<br>\n");
 		}else
 		{	
 			//첨부파일 있음
-			%><a href="down.jsp?no=<%= no %>"><%= fname %></a><%
+			%>
+			<a href="down.jsp?no=<%= no %>"><%= fname %></a>
+			<%
 		}
 		%>
 		</td>
