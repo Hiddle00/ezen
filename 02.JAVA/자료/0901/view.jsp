@@ -14,9 +14,10 @@ DBManager db = new DBManager();
 db.DBOpen();
 String sql = "";
 
-//해당 게시물의 조회수를 증가시킨다
-sql  = "update board set hit = hit + 1 where no = " + no;
+//해당 게시물의 조회수를 증가시킨다.
+sql = "update board set hit = hit + 1 where no = " + no;
 db.RunSQL(sql);
+
 //select 로 게시물 데이터를 읽는다.
 sql  = "select no,userid,title,kind,note,pname,fname,wdate,hit,";
 //작성자 이름을 얻는 subquery
@@ -41,6 +42,8 @@ String wdate  = db.GetValue("wdate");
 String hit    = db.GetValue("hit");
 String name   = db.GetValue("name");
 
+db.DBClose();
+
 //< 와 >를 변경한다.
 note = note.replace("<","&lt;");
 note = note.replace(">","&gt;");
@@ -50,12 +53,15 @@ note = note.replace("\n","<br>\n");
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <script>
-	function DoDelete(){
-		if(confirm("삭제하시겠습니까?") == false){
-			return;
-		}
-		document.location="delete.jsp?no=<%= no %>";
+
+function DoDelete()
+{
+	if(confirm("삭제 하시겠습니까?") != true)
+	{
+		return;
 	}
+	document.location = "delete.jsp?no=<%= no %>";
+}
 </script>
 <table border="0" style="width:100%;">
 	<tr>
@@ -97,7 +103,9 @@ note = note.replace("\n","<br>\n");
 		}else
 		{	
 			//첨부파일 있음
-			%><a href="down.jsp?no=<%= no %>"><%= fname %></a><%
+			%>
+			<a href="down.jsp?no=<%= no %>"><%= fname %></a>
+			<%
 		}
 		%>
 		</td>
@@ -113,72 +121,41 @@ note = note.replace("\n","<br>\n");
 			&nbsp;|&nbsp;
 			<a href="modify.jsp?no=<%= no %>">글수정</a>
 			&nbsp;|&nbsp;
-			<a href="javascript:DoDelete()">글삭제</a>
+			<a href="javascript:DoDelete();">글삭제</a>
 			<%
 		}
 		%>
 		</td>
 	</tr>																													
 </table>
-<script>
-function DoReply(){
-	if(document.reply.rnote.value == ""){
-		alert("댓글 내용을 입력하세요.");
-		document.reply.rnote.focus();
-		return false;
-	}
-	return true;
-}
-function DelReply(rno){
-	document.location = "delreply.jsp?no="<%= no %>"?rno=" + rno;
-}
-</script>
+
 <br>
-<form action="replyok.jsp" method="post" name="reply" onsubmit="return DoReply()">
-<input type="hidden" name="no" value="<%= no %>">
-	<table border="1" style="width:100%;">
-		<%
-		if(login != null){
-			%>
-			<tr>
-				<td width="110px"><%= login.getName() %></td>
-				<td><input type="text" name="rnote" style="width:95%"></td>
-				<td width="110px" align="center"><input type="submit" value="작성완료"></td>
-			</tr>
-			<%
-		}
-		sql  = "select rno, rnote, date(rwdate) as date, userid, ";
-		sql += "(select name from user where userid = reply.userid) as name "; 
-		sql += "from reply ";
-		sql += "where no = no ";
-		sql += "order by rno desc ";
-		db.OpenSelect(sql);
-		while(db.Next()){
-			String rno     = db.GetValue("rno");
-			String rnote   = db.GetValue("rnote");
-			String rwdate  = db.GetValue("rwdate");
-			String ruserid = db.GetValue("userid");
-			String rname   = db.GetValue("name");
-		%>
-		<tr>
-			<td width="110px"><%= rname %></td>
-			<td><%= rnote %>
-			<%
-			if(login != null || login.getUserid().equals(ruserid)){
-				%>
-				[<a href="javascript:">삭제</a>]
-				<%
-			}
-			%></td>
-			<td width="110px" align="center"><%= rwdate %></td>
-		</tr>
-		<%
-		}
-	%>													
-	</table>
-</form>
+<table border="1" style="width:100%;">
+	<tr>
+		<td width="110px">홍길동</td>
+		<td><input type="text" style="width:95%"></td>
+		<td width="110px" align="center"><input type="submit" value="작성완료"></td>
+	</tr>					
+	<tr>
+		<td width="110px">홍길동</td>
+		<td>댓글 입니다. 댓글입니다.</td>
+		<td width="110px" align="center">2021.12.01</td>
+	</tr>
+	<tr>
+		<td width="110px">홍길동</td>
+		<td>댓글 입니다. 댓글입니다.</td>
+		<td width="110px" align="center">2021.12.01</td>
+	</tr>
+	<tr>
+		<td width="110px">홍길동</td>
+		<td>댓글 입니다. 댓글입니다.</td>
+		<td width="110px" align="center">2021.12.01</td>
+	</tr>
+	<tr>
+		<td width="110px">홍길동</td>
+		<td>댓글 입니다. 댓글입니다. [ <a href="#">삭제</a> ]</td>
+		<td width="110px" align="center">2021.12.01</td>
+	</tr>																		
+</table>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <%@ include file="./include/tail.jsp" %>
-<%
-db.DBClose();
- %>

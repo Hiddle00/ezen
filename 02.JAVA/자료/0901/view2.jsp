@@ -14,9 +14,10 @@ DBManager db = new DBManager();
 db.DBOpen();
 String sql = "";
 
-//해당 게시물의 조회수를 증가시킨다
-sql  = "update board set hit = hit + 1 where no = " + no;
+//해당 게시물의 조회수를 증가시킨다.
+sql = "update board set hit = hit + 1 where no = " + no;
 db.RunSQL(sql);
+
 //select 로 게시물 데이터를 읽는다.
 sql  = "select no,userid,title,kind,note,pname,fname,wdate,hit,";
 //작성자 이름을 얻는 subquery
@@ -50,12 +51,16 @@ note = note.replace("\n","<br>\n");
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <script>
-	function DoDelete(){
-		if(confirm("삭제하시겠습니까?") == false){
-			return;
-		}
-		document.location="delete.jsp?no=<%= no %>";
+
+function DoDelete()
+{
+	if(confirm("삭제 하시겠습니까?") != true)
+	{
+		return;
 	}
+	document.location = "delete.jsp?no=<%= no %>";
+}
+
 </script>
 <table border="0" style="width:100%;">
 	<tr>
@@ -97,7 +102,9 @@ note = note.replace("\n","<br>\n");
 		}else
 		{	
 			//첨부파일 있음
-			%><a href="down.jsp?no=<%= no %>"><%= fname %></a><%
+			%>
+			<a href="down.jsp?no=<%= no %>"><%= fname %></a>
+			<%
 		}
 		%>
 		</td>
@@ -113,7 +120,7 @@ note = note.replace("\n","<br>\n");
 			&nbsp;|&nbsp;
 			<a href="modify.jsp?no=<%= no %>">글수정</a>
 			&nbsp;|&nbsp;
-			<a href="javascript:DoDelete()">글삭제</a>
+			<a href="javascript:DoDelete();">글삭제</a>
 			<%
 		}
 		%>
@@ -121,64 +128,75 @@ note = note.replace("\n","<br>\n");
 	</tr>																													
 </table>
 <script>
-function DoReply(){
-	if(document.reply.rnote.value == ""){
+
+function DoReply()
+{
+	if(document.reply.rnote.value == "")
+	{
 		alert("댓글 내용을 입력하세요.");
 		document.reply.rnote.focus();
 		return false;
 	}
 	return true;
-}
-function DelReply(rno){
-	document.location = "delreply.jsp?no="<%= no %>"?rno=" + rno;
+}	
+
+function DelReply(rno)
+{
+	document.location = "delreply.jsp?no=<%= no %>&rno=" + rno;
 }
 </script>
 <br>
-<form action="replyok.jsp" method="post" name="reply" onsubmit="return DoReply()">
+<form name="reply" method="post" action="replyok.jsp" onsubmit="return DoReply();">
 <input type="hidden" name="no" value="<%= no %>">
-	<table border="1" style="width:100%;">
+<table border="1" style="width:100%;">
+	<%
+	if(login != null)
+	{
+		%>
+		<tr>
+			<td width="110px"><%= login.getName() %></td>
+			<td><input type="text" name="rnote" style="width:95%"></td>
+			<td width="110px" align="center"><input type="submit" value="작성완료"></td>
+		</tr>							
 		<%
-		if(login != null){
-			%>
-			<tr>
-				<td width="110px"><%= login.getName() %></td>
-				<td><input type="text" name="rnote" style="width:95%"></td>
-				<td width="110px" align="center"><input type="submit" value="작성완료"></td>
-			</tr>
-			<%
-		}
-		sql  = "select rno, rnote, date(rwdate) as date, userid, ";
-		sql += "(select name from user where userid = reply.userid) as name "; 
-		sql += "from reply ";
-		sql += "where no = no ";
-		sql += "order by rno desc ";
-		db.OpenSelect(sql);
-		while(db.Next()){
-			String rno     = db.GetValue("rno");
-			String rnote   = db.GetValue("rnote");
-			String rwdate  = db.GetValue("rwdate");
-			String ruserid = db.GetValue("userid");
-			String rname   = db.GetValue("name");
+	}
+	
+	sql  = "select rno,no,rnote,date(rwdate) as rwdate,userid, ";
+	sql += "(select name from user where userid = reply.userid) as name ";
+	sql += "from reply ";
+	sql += "where no = " + no + " ";
+	sql += "order by rno desc ";
+	db.OpenSelect(sql);
+	while(db.Next())
+	{
+		String rno    = db.GetValue("rno");
+		String rnote  = db.GetValue("rnote");
+		String rwdate = db.GetValue("rwdate");
+		String rname  = db.GetValue("name");
+		String ruserid = db.GetValue("userid");		
 		%>
 		<tr>
 			<td width="110px"><%= rname %></td>
 			<td><%= rnote %>
-			<%
-			if(login != null || login.getUserid().equals(ruserid)){
+			<% 
+			if(login != null && login.getUserid().equals(ruserid))
+			{ 
 				%>
-				[<a href="javascript:">삭제</a>]
-				<%
+				[ <a href="javascript:DelReply('<%= rno %>');">삭제</a> ]
+				<% 
 			}
-			%></td>
+			%>			
+			</td>
 			<td width="110px" align="center"><%= rwdate %></td>
 		</tr>
 		<%
-		}
-	%>													
-	</table>
+	}
+	db.CloseSelect();
+	%>																		
+</table>
 </form>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <%@ include file="./include/tail.jsp" %>
 <%
 db.DBClose();
- %>
+%>

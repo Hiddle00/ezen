@@ -41,6 +41,8 @@ String wdate  = db.GetValue("wdate");
 String hit    = db.GetValue("hit");
 String name   = db.GetValue("name");
 
+db.DBClose();
+
 //< 와 >를 변경한다.
 note = note.replace("<","&lt;");
 note = note.replace(">","&gt;");
@@ -146,31 +148,19 @@ function DelReply(rno){
 				<td width="110px" align="center"><input type="submit" value="작성완료"></td>
 			</tr>
 			<%
-		}
-		sql  = "select rno, rnote, date(rwdate) as date, userid, ";
-		sql += "(select name from user where userid = reply.userid) as name "; 
-		sql += "from reply ";
-		sql += "where no = no ";
-		sql += "order by rno desc ";
-		db.OpenSelect(sql);
+			}
 		while(db.Next()){
-			String rno     = db.GetValue("rno");
-			String rnote   = db.GetValue("rnote");
-			String rwdate  = db.GetValue("rwdate");
+			String rno   = db.GetValue("rno");
+			String rnote = db.GetValue("rnote");
+			String rwdate = db.GetValue("rwdate");
 			String ruserid = db.GetValue("userid");
-			String rname   = db.GetValue("name");
+			
+			String rno = db.GetValue("no");
 		%>
 		<tr>
-			<td width="110px"><%= rname %></td>
-			<td><%= rnote %>
-			<%
-			if(login != null || login.getUserid().equals(ruserid)){
-				%>
-				[<a href="javascript:">삭제</a>]
-				<%
-			}
-			%></td>
-			<td width="110px" align="center"><%= rwdate %></td>
+			<td width="110px">홍길동</td>
+			<td>댓글 입니다. 댓글입니다.</td>
+			<td width="110px" align="center">2021.12.01</td>
 		</tr>
 		<%
 		}
@@ -179,6 +169,3 @@ function DelReply(rno){
 </form>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <%@ include file="./include/tail.jsp" %>
-<%
-db.DBClose();
- %>

@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="./include/head.jsp" %>
+<%@ include file="./include/config.jsp" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<%@ include file="./include/head.jsp" %>
-<%@ include file="./include/config.jsp" %>
 <%
-if(login == null){
+if( login == null )
+{
 	response.sendRedirect("index.jsp");
 	return;
 }
@@ -20,15 +21,9 @@ MultipartRequest multi = new MultipartRequest(request,
 		uploadPath, size, "utf-8", 
 		new DefaultFileRenamePolicy());
 
-String no    = multi.getParameter("no");
 String title = multi.getParameter("title");
 String kind  = multi.getParameter("kind");
 String note  = multi.getParameter("note");
-
-if(no == null || title == null || note == null){
-	response.sendRedirect("index.jsp");
-	return;
-}
 
 //업로드된 파일명을 얻는다. (논리파일명)
 String bfname = (String) multi.getFilesystemName("attach");
@@ -55,29 +50,36 @@ DBManager db = new DBManager();
 db.DBOpen();
 
 String sql = "";
-sql += "update board  set ";
-sql += "title = '" + db._R(title)  + "', ";
-sql += "kind  = '" + kind   + "', ";
-sql += "note  = '" + db._R(note)   + "' ";
-if( bfname != null )
+
+sql  = "insert into board (userid,title,kind,note,pname,fname) ";
+sql += "values ('" + login.getUserid() + "',";
+sql += "'" + db._R(title) + "',";
+sql += "'" + kind + "',";
+sql += "'" + db._R(note) + "',";
+if(bfname != null)
 {
-	sql += ",pname = '" + bpname + "', ";
-	sql += "fname = '" + bfname + "'  ";
+	//첨부파일이 업로드 된 경우
+	sql += "'" + bpname + "',";
+	sql += "'" + bfname + "'";
+}else
+{
+	//첨부파일을 업로드 안한 경우
+	sql += "null,null";	
 }
-sql += "where no = " + no;
+sql += ")";
 db.RunSQL(sql);
+
+
+//등록된 게시물 번호를 얻는다.
+sql = "select last_insert_id() as no";
+db.OpenSelect(sql);
+db.Next();
+String no = db.GetValue("no");
+db.CloseSelect();
 
 db.DBClose();
 
 //게시물 보기 페이지로 이동시킨다.
 response.sendRedirect("view.jsp?no=" + no);
 %>
-%>
-<!-- 컨텐츠 출력 되는곳 -------------------------- -->
-글수정이 완료되었습니다.
-<br>
-<a href="view.jsp">작성글 보기</a>
-|
-<a href="index.jsp">첫 페이지로 이동</a>
-<!-- 컨텐츠 출력 되는곳 -------------------------- -->
-<%@ include file="include/tail.jsp" %>
+<%@ include file="./include/tail.jsp" %>    

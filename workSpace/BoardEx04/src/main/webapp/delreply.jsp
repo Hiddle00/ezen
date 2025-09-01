@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ include file="include/head.jsp" %>
 <%
-String no = request.getParameter("no");
-if(no == null){
+String no  = request.getParameter("no");
+String rno = request.getParameter("rno");
+if(no == null || rno == null){
 	response.sendRedirect("index.jsp");
 	return;
 }
@@ -12,9 +13,12 @@ DBManager db = new DBManager();
 db.DBOpen();
 
 String sql = "";
-sql  = "select userid";
-sql += "from user";
-sql += "where no = " + no;
+
+//삭제하려는 댓글이 로그인한 유저의 작성글인지 검사
+sql  = "select userid ";
+sql += "from reply ";
+sql += "where rno = " + rno;
+
 db.OpenSelect(sql);
 if(db.Next() == false)
 {
@@ -36,14 +40,12 @@ if(login == null || !login.getUserid().equals(userid) )
 
 
 //해당 게시글의 댓글을 삭제한다.
-sql  = "delete from reply where no =" + no;
-db.RunSQL(sql);
-
-//해당 게시글을 삭제한다.
-sql  = "delete from board where no =" + no;
+sql  = "delete from reply where rno =" + rno;
 db.RunSQL(sql);
 
 db.DBClose();
+
+response.sendRedirect("view.jsp?no=" + no);
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 글이 삭제되었습니다.

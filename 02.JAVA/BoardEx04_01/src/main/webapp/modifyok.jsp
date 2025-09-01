@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="./include/head.jsp" %>
+<%@ include file="./include/config.jsp" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<%@ include file="./include/head.jsp" %>
-<%@ include file="./include/config.jsp" %>
 <%
-if(login == null){
+if( login == null )
+{
 	response.sendRedirect("index.jsp");
 	return;
 }
@@ -24,8 +25,8 @@ String no    = multi.getParameter("no");
 String title = multi.getParameter("title");
 String kind  = multi.getParameter("kind");
 String note  = multi.getParameter("note");
-
-if(no == null || title == null || note == null){
+if( no == null || title == null || note == null)
+{
 	response.sendRedirect("index.jsp");
 	return;
 }
@@ -72,12 +73,4 @@ db.DBClose();
 //게시물 보기 페이지로 이동시킨다.
 response.sendRedirect("view.jsp?no=" + no);
 %>
-%>
-<!-- 컨텐츠 출력 되는곳 -------------------------- -->
-글수정이 완료되었습니다.
-<br>
-<a href="view.jsp">작성글 보기</a>
-|
-<a href="index.jsp">첫 페이지로 이동</a>
-<!-- 컨텐츠 출력 되는곳 -------------------------- -->
-<%@ include file="include/tail.jsp" %>
+<%@ include file="./include/tail.jsp" %>

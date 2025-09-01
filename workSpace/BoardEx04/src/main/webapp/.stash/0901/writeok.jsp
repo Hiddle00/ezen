@@ -5,29 +5,25 @@
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<%@ include file="./include/head.jsp" %>
-<%@ include file="./include/config.jsp" %>
+<%@ include file="include/head.jsp" %>
 <%
-if(login == null){
-	response.sendRedirect("index.jsp");
-	return;
-}
+//첨부파일이 저장될 디렉토리 이름
+String uploadPath = "D:\\YH\\ezen\\workSpace\\BoardEx04\\src\\main\\webapp\\upload";
+
 //업로드될 파일의 최대 크기(1byte 단위)
-//byte > kbytes > mbytes > gbytes > tbytes > zbytes > pbyte > ybytes
-int size = 10 * 1024 * 1024; //10메가 바이트 이상 제한
+//byte > kbytes > mbytes > gbytes > tbytes > zbytes > pbytes > ybytes 
+int size = 10 * 1024 * 1024; //10mb 이상 제한
 
-MultipartRequest multi = new MultipartRequest(request, 
-		uploadPath, size, "utf-8", 
-		new DefaultFileRenamePolicy());
-
-String no    = multi.getParameter("no");
+MultipartRequest multi = new MultipartRequest(request,
+uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
+    
+//enctype="multipart/form-data"로 인코딩된 데이터 처리
 String title = multi.getParameter("title");
-String kind  = multi.getParameter("kind");
-String note  = multi.getParameter("note");
+String kind = multi.getParameter("kind");
+String note = multi.getParameter("note");
 
-if(no == null || title == null || note == null){
+if(title == null || kind == null || note == null){
 	response.sendRedirect("index.jsp");
-	return;
 }
 
 //업로드된 파일명을 얻는다. (논리파일명)
@@ -50,33 +46,24 @@ File srcFile    = new File(srcName);
 File targetFile = new File(targetName);
 srcFile.renameTo(targetFile);
 
-//board 테이블에 데이터를 등록한다.
-DBManager db = new DBManager();
-db.DBOpen();
-
 String sql = "";
-sql += "update board  set ";
-sql += "title = '" + db._R(title)  + "', ";
-sql += "kind  = '" + kind   + "', ";
-sql += "note  = '" + db._R(note)   + "' ";
-if( bfname != null )
-{
-	sql += ",pname = '" + bpname + "', ";
-	sql += "fname = '" + bfname + "'  ";
-}
-sql += "where no = " + no;
-db.RunSQL(sql);
+sql  = insert into board
+sql +=(userid, title, kind, note, pname, fname)
+values(userid, title, kind, note, bpname, bfname);
+//
 
-db.DBClose();
+//첨부파일 처리
 
-//게시물 보기 페이지로 이동시킨다.
-response.sendRedirect("view.jsp?no=" + no);
 %>
-%>
+title : <%= title %>
+kind : <%= kind %>
+note : <%= note %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
-글수정이 완료되었습니다.
+글쓰기가 완료되었습니다.
 <br>
 <a href="view.jsp">작성글 보기</a>
+|
+<a href="write.jsp">글쓰기</a>
 |
 <a href="index.jsp">첫 페이지로 이동</a>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
