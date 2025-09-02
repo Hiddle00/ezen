@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>SevletTest</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 
+  	문맥(context)
+  	호출, 응답에 대한 환경정보
+  	전역(global)적인 공간
+  -->
+  <context-param>
+  	<param-name>b</param-name>
+  	<param-value>global</param-value>
+  </context-param>
+  
+  <!-- xml기반 서블릿 url 설정 -->
+  <servlet>
+  	<servlet-name>BoardServlet</servlet-name>
+  	<servlet-class>board.BoardServlet</servlet-class>
+  	
+  	<!-- 
+  		BoardServlet클래스 안에서만 사용가능한 파라미터
+  		서블릿이 톰캣에 의해 초기화(생성자호출)될 때 a라는 키로 파라미터 값을 넣어준다. 
+	-->
+  	<init-param>
+  		<param-name>a</param-name>
+  		<param-value>서블릿 초기화 파라미터</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>BoardServlet</servlet-name>
+  	<url-pattern>/board</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 톰캣이 실행될때, 종료될 때 같이 실행되는 클래스 -->
+  <listener>
+  	<listener-class>listener.TomcatListner</listener-class>
+  </listener>
+  
+  
+</web-app>
