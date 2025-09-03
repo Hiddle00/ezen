@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Person hong  = new Student(); -->	
+	<bean id="hong" class="ezen.di.Student">
+		<!-- hong.setName("홍길동"); -->
+		<property name="name" value="홍길동"></property>
+		<property name="age" value="16"></property>
+		<property name="job" value="학생"></property>
+	</bean>
+	
+	<!-- Person jeon = new Teacher() -->
+	<bean id="jeon" class="ezen.di.Teacher">
+		<!-- jeon.setName("전우치"); -->
+		<property name="name" value="전우치"></property>
+		<property name="age" value="40"></property>
+		<property name="job" value="교사"></property>
+	</bean>
+	
+	<!-- School school = new School(); -->
+	<bean id="school" class="ezen.di.School">
+		<!-- school.setPerson(hong); -->
+		<property name="person" ref="hong"></property>
+	</bean>
+	
+	<!-- School school_jeon = new School(); -->
+	<bean id="school_jeon" class="ezen.di.School">
+		<!-- school_jeon.setPerson(jeon); -->
+		<property name="person" ref="jeon"></property>
+	</bean>
+
+</beans>

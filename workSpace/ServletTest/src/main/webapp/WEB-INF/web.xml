@@ -28,7 +28,7 @@
 		<servlet-class>board.BoardServlet</servlet-class>
 		<!-- 
 			BoardServle클래스 안에서만 사용가능한 파라미터
-			서블릿이 톰캣에 의해 쵝화(생성자호출)될 때 a라는 키로 파라미터 값을 넣어준다.
+			서블릿이 톰캣에 의해 초기화(생성자호출)될 때 a라는 키로 파라미터 값을 넣어준다.
 		 -->
 		<init-param>
 			<param-name>a</param-name>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Person hong = new Student(); -->
+	<bean id="hong" class="ezen.di.Student" />
+	
+	<!-- Person jeon = new Teacher(); -->
+	<bean id="jeon" class="ezen.di.Teacher" />
+	
+	<bean id="school" class="ezen.di.School" >
+		<!-- school.setPerson(hong) -->
+		<property name="person" ref="hong"></property>
+	</bean>
+	
+	<!-- School school = new School(); -->
+	<bean id="school_jeon" class="ezen.di.School" >
+		<property name="person" ref="jeon"></property>
+	</bean>
+</beans>

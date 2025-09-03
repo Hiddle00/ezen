@@ -34,7 +34,7 @@ public class HomeServlet extends HttpServlet {
 		//프로젝트마다 별도의 contextPath를 지정해주지않으면 주소가 겹침
 		//server side rendering
 		//get으로 요청하면 응답으로 문자열(append) 응답을 보냄
-		//OOP 하나의 파일이 너무 ㅏㄶ은 일을 하게 되니 요청은 서블릿이 받고 응답은 jsp로 떠넘긴다(포워딩)
+		//OOP 하나의 파일이 너무 많은 일을 하게 되니 요청은 서블릿이 받고 응답은 jsp로 떠넘긴다(포워딩)
 		
 		//응답을 jsp에 떠넘김(전달,포워딩)
 		//요청을 받는건 서블릿, 화면을 보여주는건 jsp
