@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="hong" class="ezen.di.Student">
+		<constructor-arg name="name" value="홍길동" />
+		<constructor-arg name="age" value="16" />
+		<constructor-arg name="job" value="학생" />
+	</bean>
+	
+	<bean id="jeon" class="ezen.di.Teacher">
+		<constructor-arg name="name" value="전우치" />
+		<constructor-arg name="age" value="40" />
+		<constructor-arg name="job" value="교사" />
+	</bean>
+	
+	<bean id="school" class="ezen.di.School">
+		<property name="person" ref="hong"/>
+	</bean>
+	
+	<bean id="school_jeon" class="ezen.di.School">
+		<property name="person" ref="jeon"/>
+	</bean>
+	
+	<!--  콜렉션 생성자(<constructor-arg>)의 list 이용  -->
+	<!--  ArrayList<Student> list = new ArrayList<>() -->
+	<bean id="list" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<!-- 새로운 객체 생성을 통한 등록 -->
+				<bean class="ezen.di.Student">
+					<constructor-arg name="name" value="성춘향"></constructor-arg>
+					<constructor-arg name="age" value="18"></constructor-arg>
+					<constructor-arg name="job" value="학생"></constructor-arg>
+				</bean>	
+				<bean class="ezen.di.Student">
+					<constructor-arg name="name" value="이순신"></constructor-arg>
+					<constructor-arg name="age" value="16"></constructor-arg>
+					<constructor-arg name="job" value="학생"></constructor-arg>
+				</bean>
+				<!-- 참조를 이용한 등록 -->
+				<ref bean="hong" />				
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

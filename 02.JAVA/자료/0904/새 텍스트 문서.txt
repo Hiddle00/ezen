@@ -1,0 +1,19 @@
+	<!--  콜렉션 생성자(<constructor-arg>)의 list 이용  -->
+	<!--  ArrayList<Student> list = new ArrayList<>() -->
+	<bean id="list" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<!-- 새로운 객체 생성을 통한 등록 -->
+				<bean class="ezen.di.Student">
+					<constructor-arg name="name" value="성춘향"></constructor-arg>
+					<constructor-arg name="age" value="18"></constructor-arg>
+					<constructor-arg name="job" value="학생"></constructor-arg>
+				</bean>	
+				<bean class="ezen.di.Student">
+					<constructor-arg name="name" value="이순신"></constructor-arg>
+					<constructor-arg name="age" value="16"></constructor-arg>
+					<constructor-arg name="job" value="학생"></constructor-arg>
+				</bean>				
+			</list>
+		</constructor-arg>
+	</bean>
