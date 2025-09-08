@@ -46,6 +46,6 @@ public class CalController {
 		model.addAttribute("x",x);
 		model.addAttribute("y",y);
 		model.addAttribute("z",z);
-		return "cal.do";
+		return "cal";
 	}
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- Namespace를 통해 JAVA 클래스와 Annotation클래스와 동기 -->
+<mapper namespace="com.ezen.data">
+	<select id="one" parameterType="java.lang.String" resultType="com.ezen.vo.DataVO">
+		select *from data
+		where no = #{no}
+	</select>
+
+	<!-- id는 넘어오는 요청이 어떤 태그를 실행 시켜야할지 (중복될수가 있으니) 지정한다 -->
+	<select id="list" resultType="com.ezen.vo.DataVO">
+		select *from data
+		order by no desc
+		limit 0,10
+	</select>
+</mapper>
