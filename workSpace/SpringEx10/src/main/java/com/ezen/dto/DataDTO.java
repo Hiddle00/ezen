@@ -1,5 +1,6 @@
 //DB에서 CRUD를 처리하는 class
 //DTO(Data Transfer Object)
+//DAO(Data Access Object)
 package com.ezen.dto;
 
 import org.apache.ibatis.session.*;
