@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="include/head.jsp" %>
 <%
-//구분값
+//게시판 카테고리 구분값
 String kind = request.getParameter("kind");
 if(kind == null) kind = "J";
 

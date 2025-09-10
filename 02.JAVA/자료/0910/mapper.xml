@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- Namespace를 통해 JAVA 클래스와 Annotation클래스와 동기 -->
+<mapper namespace="com.ezen.memo">
+
+	<insert id="insert" parameterType="com.ezen.vo.MemoVO" 
+			useGeneratedKeys="true" keyProperty="no">	
+		insert into memo(title,note) 
+		values(#{title},#{note})
+	</insert>
+		
+	<select id="one" parameterType="java.lang.String"
+			resultType="com.ezen.vo.MemoVO">
+		select * from memo
+		where no = #{no}
+	</select>	
+	
+	<select id="total" resultType="java.lang.Integer">
+		select count(*) as total
+		from memo
+	</select>
+		
+	<select id="list" parameterType="java.lang.Integer" 
+			resultType="com.ezen.vo.MemoVO">
+		select no,title,date(wdate) as wdate
+		from memo
+		order by no desc	
+		limit #{ startno }, 10
+	</select>
+	
+	<delete id="delete"  parameterType="java.lang.String" >
+		delete from memo
+		where no = #{ no }
+	</delete>
+		
+</mapper>

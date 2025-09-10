@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,30 +26,35 @@
 				<td>제목</td>
 				<td style="width:100px;">작성일</td>
 			</tr>
-			<% 
-			for(int i=1; i <= 10; i++)
-			{
-				%>
+			<c:forEach var="i" items="${list}">
 				<tr>
-					<td><%= i %></td>
+					<td>${i.no}</td>
 					<td style="text-align:left">
-						<a href="view.do">제목입니다.</a>
+						<a href="view.do?no=${i.no}">${i.title}</a>
 					</td>
 					<td  style="text-align:center">
-						2023.05.03
+						${i.wdate}
 					</td>
 				</tr>
-				<%
-			}
-			%>
+			</c:forEach>
 		</table>		
 		<table border="1" align="center" style="width:600px">
 			<tr>
-				<td>전체게시물 :  10</td>
+				<td>전체게시물 :  ${total} / ${maxPage} / ${curPage}  </td>
 			</tr>
 			<tr>
 				<td>
-				이전페이지 | 1 | 2 | 3 | 4 | 5 | 다음페이지
+				<!-- 이전페이지 | 1 | 2 | 3 | 4 | 5 | 다음페이지 -->
+				<c:forEach var="i" begin="1" end="${maxPage}">
+					<c:choose>
+						<c:when test="${curPage != i}">
+							<a href="index.do?page=${i}">${i}</a>
+						</c:when>
+						<c:otherwise>
+							${i}
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
 				</td>
 			</tr>
 		</table>
