@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="SpringEX12" path="/SpringEx12" reloadable="true" source="org.eclipse.jst.jee.server:SpringEX12"/><Context docBase="SpringEx11" path="/SpringEx11" reloadable="true" source="org.eclipse.jst.jee.server:SpringEx11"/><Context docBase="BoardEx04_01" path="/BoardEx04_01" reloadable="true" source="org.eclipse.jst.jee.server:BoardEx04_01"/></Host>
+      <Context docBase="SpringEX12" path="/SpringEx12" reloadable="true" source="org.eclipse.jst.jee.server:SpringEX12"/><Context docBase="SpringEx11" path="/SpringEx11" reloadable="true" source="org.eclipse.jst.jee.server:SpringEx11"/><Context docBase="BoardEx04_01" path="/BoardEx04_01" reloadable="true" source="org.eclipse.jst.jee.server:BoardEx04_01"/><Context docBase="SpringEx13" path="/SpringEx13" reloadable="true" source="org.eclipse.jst.jee.server:SpringEx13"/><Context docBase="SpringEx14" path="/SpringEx14" reloadable="true" source="org.eclipse.jst.jee.server:SpringEx14"/><Context docBase="AjaxEx02" path="/ezen" reloadable="true" source="org.eclipse.jst.jee.server:AjaxEx02"/></Host>
     </Engine>
   </Service>
 </Server>

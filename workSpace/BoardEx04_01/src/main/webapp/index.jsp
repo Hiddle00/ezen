@@ -138,7 +138,7 @@ db.DBOpen();
 			if(pageNo == i)
 			{
 				//현재 보고 있는 페이지임.
-				%><a href="index.jsp?kind=<%= kind %>&page=<%= i %>"><span style="color:red;"><%= i %></span></a>&nbsp;<%
+				%><span style="color:red;"><%= i %></span>&nbsp;<%
 			}else
 			{
 				%><a href="index.jsp?kind=<%= kind %>&page=<%= i %>"><%= i %></a>&nbsp;<%

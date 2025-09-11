@@ -1,0 +1,21 @@
+	@RequestMapping(value = "/down.do")
+	public void Down(@RequestParam("name")String fileName,
+			@RequestParam("file")String saveName,HttpServletResponse response)
+					throws IOException
+	{
+		File file = new File(uploadPath, saveName);
+		
+		// 파일명 인코딩
+		String encodedFileName = new String (fileName.getBytes("UTF-8"), "ISO-8859-1");
+
+		// file 다운로드 설정
+		response.setContentType("application/download");
+		response.setContentLength((int)file.length());
+		response.setHeader("Content-Disposition", "attatchment;filename=\"" + encodedFileName + "\"");
+		
+		// 다운로드 시 저장되는 이름은 Response Header의 "Content-Disposition"에 명시
+		OutputStream os = response.getOutputStream();
+		
+		FileInputStream fis = new FileInputStream(file);
+		FileCopyUtils.copy(fis, os);
+	}
