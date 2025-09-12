@@ -1,10 +1,17 @@
 package com.ezen.control;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ezen.service.UserService;
+import com.ezen.vo.UserVO;
 
 @Controller
 public class BoardController {
+	@Autowired
+	private UserService userService;
 	
 	@RequestMapping(value = "/index.do")
 	public String Index() {
@@ -22,7 +29,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/joinok.do")
-	public String JoinOK() {
+	public String JoinOK(UserVO vo) {
+		userService.Join(vo);
 		return "joinok";
 	}
 	
@@ -32,7 +40,21 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/loginok.do")
-	public String LoginOK() {
+	public String LoginOK(
+			@RequestParam(required = true)String id,
+			@RequestParam(required = true)String pw) {
+		UserVO vo = new UserVO();
+		String msg;
+		vo.setUserid(id);
+		vo.setUserpw(pw);
+		if(userService.IdCheck(id)) {
+			msg = "duplicated"; //중복됨
+			System.out.println(msg);
+		}else {
+			msg = "not dup";	//중복안됨
+			System.out.println(msg);
+		}
+		vo = userService.Login(vo);
 		return "loginok";
 	}
 	

@@ -1,4 +1,4 @@
-package com.example.ezen;
+package com.example.ezen.user;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.ezen.user.UserVO;
-
 @Controller
 public class UserController {
 	
 	@Autowired
 	private SqlSession session;
+	@Autowired
+	private UserService userservice;
 	//로그인
 	//로그인 화면에 대한 요청에 응답하는 메서드
 	@RequestMapping(value="/login", method = RequestMethod.GET)
@@ -37,7 +37,28 @@ public class UserController {
 		return "redirect:/";
 	}
 	
-	
 	//회원가입
+	//회원가입 화면에 대한 요청에 응답하는 메서드
+	@RequestMapping(value="/join", method = RequestMethod.GET)
+	public String join(){
+		
+		return "join";
+	}
 	
+	@RequestMapping(value="/joinok", method = RequestMethod.POST)
+	public String joinok(){
+		
+		return "redirect:/login";
+		//브라우저에 localhost:8080/ezen/login으로 get요청 하라 명령
+		//response.sendRedirect("/login");
+	}
+	//아이디 중복 체크에 대한 요청에 응답하는 메서드
+	@RequestMapping(value="/idcheck", method = RequestMethod.POST)
+	@ResponseBody
+	public String idcheck(String id){
+		System.out.println("아이디 체크 컨트롤러 요청 받음");
+		System.out.println(id);
+		int cnt = userservice.idCheck(id);
+		return cnt+"";
+	}
 }

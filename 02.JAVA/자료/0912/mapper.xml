@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- Namespace를 통해 JAVA 클래스와 Annotation클래스와 동기 -->
+<mapper namespace="com.ezen.board">
+
+	<insert id="join" parameterType="com.ezen.vo.UserVO">
+		insert into user 
+			(userid,userpw,name,gender,hobby,fav)
+		values 
+			(#{userid},md5(#{userpw}),#{name},#{gender},#{hobby},#{fav})
+	</insert>
+	
+	<select id="checkid" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		select count(*) as total
+		from user
+		where userid = #{ id }
+	</select> 
+	
+	<select id="login" parameterType="com.ezen.vo.UserVO"
+		resultType="com.ezen.vo.UserVO">		
+		select * 
+		from user
+		where userid = #{ userid } and userpw = md5(#{ userpw })		
+	</select>
+		
+</mapper>

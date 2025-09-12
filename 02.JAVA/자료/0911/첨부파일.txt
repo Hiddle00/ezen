@@ -19,3 +19,20 @@
 		FileInputStream fis = new FileInputStream(file);
 		FileCopyUtils.copy(fis, os);
 	}
+
+
+
+//업로드된 원본 파일 이름 가져오기
+		String originalFileName = file.getOriginalFilename();
+		System.out.println("originalFileName:" + originalFileName);
+		
+		//실제 저장해야하는 폴더로 업로드된 파일을 옮긴다.
+		//파일 이름이 중복되지 않도록 파일 이름 변경 : 서버에 저장할 이름
+		UUID uuid = UUID.randomUUID();
+		String savedFileName = uuid.toString();
+		System.out.println("savedFileName:" + savedFileName);
+		
+		//실제 저장해야하는 폴더로 업로드된 파일을 옮기는 처리
+		File newFile = new File(uploadPath + savedFileName);
+		
+		file.transferTo(newFile);
