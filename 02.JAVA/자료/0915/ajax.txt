@@ -1,0 +1,8 @@
+		$.ajax({
+			url : "idcheck.do",
+			type: "get",
+			dataType: "html",
+			success : function(res)
+			{
+			}
+		});

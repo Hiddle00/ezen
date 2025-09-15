@@ -26,7 +26,7 @@
 				url : "/ezen/idcheck",
 				type : "post",
 				data : {
-					"id" : $(this).val()
+					id : $(this).val()
 				},
 				success : function(result){
 					console.log(result);

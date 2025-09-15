@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>	
 		<meta charset="UTF-8">
 		<title>이젠IT 클라우드 학습 커뮤니티</title>
-		 <link rel="stylesheet" href="resources/css/board.css"/>
+		<link rel="stylesheet" href="resources/css/board.css"/>
+		<script src="resources/js/jquery-3.7.1.min.js"></script>
 	</head>
 	<body>
 		<table border="1" width="900px" align="center">
@@ -19,12 +21,21 @@
 								</span>
 								</a>
 							</td>
-							<td style="text-align:right;">
-								<a href="join.do">회원가입</a>
-								&nbsp;&nbsp;
-								<a href="login.do">로그인</a>
-								&nbsp;
-							</td>
+							<c:if test="${ sessionScope.login == null }">
+								<td style="text-align:right;">
+									<a href="join.do">회원가입</a>
+									&nbsp;&nbsp;
+									<a href="login.do">로그인</a>
+									&nbsp;
+								</td>
+							</c:if>
+							<c:if test="${ sessionScope.login != null }">
+								<td style="text-align:right;">
+									<span> [ ${ login.name } ] 님 
+										<a href="logout.do">로그아웃</a>
+									</span>
+								</td>
+							</c:if>
 						</tr>
 					</table>
 				</td>

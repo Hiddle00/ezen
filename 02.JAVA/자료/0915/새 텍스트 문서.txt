@@ -1,0 +1,20 @@
+
+	//userid 키보드 입력 이벤트 처리
+	$("#userid").keyup(function(){
+		//$("#msg_box").html($("#userid").val());
+		userid = $("#userid").val();
+		if(userid == "")
+		{
+			$("#msg_box").html("아이디를 입력하세요.");
+			return;
+		}
+		$.ajax({
+			url : "idcheck.do?id=" + userid,
+			type: "get",
+			dataType: "html",
+			success : function(res)
+			{
+						
+			}
+		});
+	}); 

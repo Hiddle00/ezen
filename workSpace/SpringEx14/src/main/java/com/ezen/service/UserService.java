@@ -22,7 +22,7 @@ public class UserService {
 	//회원가입
 	//return true : 가입 성공, false : 가입 실패
 	public boolean Join(UserVO vo) {
-		if(IdCheck(vo.getUserid())) {
+		if(!IdCheck(vo.getUserid())) {
 			session.insert(namespace + ".join", vo);
 			return true;
 		}
