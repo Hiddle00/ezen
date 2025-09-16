@@ -16,6 +16,12 @@ public class BoardVO {
 	private String wdate;	 //작성일
 	private String hit;		 //조회수
 	
+	//조회를 위한 추가 항목(필드)
+	private String rcount;	 //댓글갯수
+	private String name;	 //작성자
+	
+	
+	
 	public String getNo()		 {	return no;		}
 	public String getUserid()	 {	return userid;	}
 	public String getTitle()	 {	return title;	}
@@ -26,6 +32,10 @@ public class BoardVO {
 	public String getWdate()	 {	return wdate;	}
 	public String getHit()		 {	return hit;		}
 	
+	public String getRcount() 	 {	return rcount;	}
+	public String getName() 	 {	return name;	}
+	
+	
 	public void setNo(String no)		 {	this.no		= no;		}
 	public void setUserid(String userid) {	this.userid = userid;	}
 	public void setTitle(String title)	 {	this.title  = title;	}	
@@ -35,4 +45,8 @@ public class BoardVO {
 	public void setFname(String fname)	 {	this.fname  = fname;	}
 	public void setWdate(String wdate)	 {	this.wdate  = wdate;	}
 	public void setHit(String hit)		 {	this.hit    = hit;		}
+	
+	public void setRcount(String rcount) {	this.rcount = rcount;	}
+	public void setName(String name)	 {	this.name   = name;		}
+	
 }

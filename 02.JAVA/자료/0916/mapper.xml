@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- Namespace를 통해 JAVA 클래스와 Annotation클래스와 동기 -->
+<mapper namespace="com.ezen.board">
+
+	<insert id="join" parameterType="com.ezen.vo.UserVO">
+		insert into user 
+			(userid,userpw,name,gender,hobby,fav)
+		values 
+			(#{userid},md5(#{userpw}),#{name},#{gender},#{hobby},#{fav})
+	</insert>
+	
+	<select id="checkid" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		select count(*) as total
+		from user
+		where userid = #{ id }
+	</select> 
+	
+	<select id="login" parameterType="com.ezen.vo.UserVO"
+		resultType="com.ezen.vo.UserVO">		
+		select * 
+		from user
+		where userid = #{ userid } and userpw = md5(#{ userpw })		
+	</select>
+	
+	<insert id="insert" parameterType="com.ezen.vo.BoardVO" 
+		useGeneratedKeys="true" keyProperty="no">
+		insert into board (userid,title,kind,note,pname,fname) 
+		values (#{userid},#{title},#{kind},#{note},
+		<if test='fname != null and !fname.equals("")'>
+			#{pname},#{fname}
+		</if> 
+		<if test='fname == null or fname.equals("")'>
+			null, null
+		</if>
+		)		
+	</insert>
+	
+	<select id="view" parameterType="java.lang.String" 
+			resultType="com.ezen.vo.BoardVO">
+		select 
+			no,userid,title,kind,note,pname,fname,wdate,hit,
+			(select name from user where userid = board.userid) as name
+		from board
+		where no = #{ no }
+	</select>
+	
+	<update id="hit" parameterType="java.lang.String">
+		update board set hit = hit + 1
+		where no = #{ no }
+	</update>
+	
+	<update id="update" parameterType="com.ezen.vo.BoardVO">
+		update board set
+		title = #{ title },
+		note = #{ note },		
+		<if test='fname != null and !fname.equals("")'>
+			pname = #{pname},
+			fname = #{fname},
+		</if> 		
+		kind = #{ kind }
+		where no = #{ no }		
+	</update>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		delete from board
+		where no = #{ no }
+	</delete>
+	
+	<select id="total" parameterType="com.ezen.vo.SearchVO"
+		resultType="java.lang.Integer">
+		select count(*) as total
+		from board
+		where kind = #{ kind } 
+		<if test='keyword != null and !keyword.equals("")'>
+			and title like '%${ keyword }%'
+		</if>
+	</select>
+		
+</mapper>

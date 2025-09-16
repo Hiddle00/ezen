@@ -26,6 +26,7 @@ public class UserService {
 			session.insert(namespace + ".join", vo);
 			return true;
 		}
+		//중복된 아이디임
 		return false;
 	}
 	

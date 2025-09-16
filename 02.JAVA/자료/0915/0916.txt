@@ -1,0 +1,23 @@
+no, userid, title, kind, note, pname, fname
+
+
+
+
+update board set
+		title = '변경된 제목입니다',
+		note = '내용입니다',
+		kind = 'J',
+			pname = null,
+			fname = null
+		where no = '6'
+
+
+
+offset 상대적인 거리
+
+
+rno, no, userid, rnote
+
+delete from reply where rno = '1';
+
+insert into reply(no, userid, rnote)values(1, 'hong', '댓글입니다.');

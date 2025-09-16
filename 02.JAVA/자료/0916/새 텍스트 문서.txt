@@ -1,0 +1,15 @@
+
+ select count(*) as total
+ from board
+ where kind = 'H' 
+ and title like '%HTML%' 
+
+
+ select no,title,date(wdate) as wdate,hit,
+ (select name from user where userid = board.userid) as name,
+ (select count(*) from reply where no = board.no) as rcount
+ from board
+ where kind = 'H' 
+ and title like '%HTML%' 
+ limit 0,10
+
