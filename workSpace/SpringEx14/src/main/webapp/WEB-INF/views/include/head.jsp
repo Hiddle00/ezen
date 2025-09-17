@@ -42,9 +42,9 @@
 			</tr>
 			<tr>
 				<td style="width:200px" valign="top">
-					<div class="submenu"><a href="index.do">자바 학습 게시판</a></div>
+					<div class="submenu"><a href="index.do?kind=J">자바 학습 게시판</a></div>
 					<div style="height:2px; background-color:#ffffff;"></div>
-					<div class="submenu"><a href="index.do">HTML학습 게시판</a></div>
+					<div class="submenu"><a href="index.do?kind=H">HTML학습 게시판</a></div>
 				</td>
 				<td style="width:5px"></td>
 				<td>

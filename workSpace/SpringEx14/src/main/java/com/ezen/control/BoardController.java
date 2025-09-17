@@ -1,29 +1,44 @@
 package com.ezen.control;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import java.io.*;
+import java.util.*;
 
-import org.apache.ibatis.session.SqlSession;
+import javax.servlet.http.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.ezen.service.UserService;
-import com.ezen.vo.UserVO;
-import com.mysql.cj.Session;
+import com.ezen.service.*;
+import com.ezen.vo.*;
 
 @Controller
 public class BoardController {
+	private final static String uploadPath = "D:\\YH\\ezen\\workSpace\\SpringEx14\\upload";
+	
 	@Autowired
 	private UserService userService;
 	@Autowired
-	private SqlSession session;
+	private BoardService boardService;
+	@Autowired
+	private ReplyService replyService;
 	
 	@RequestMapping(value = "/index.do")
-	public String Index() {
+	public String Index(@RequestParam(defaultValue = "J")String king,Model model) {
+		SearchVO vo = new SearchVO();
+		vo.setKind("J");
+		vo.setPageno(1);
+		
+		List<BoardVO> list = boardService.GetList(vo);
+		for(BoardVO item : list) {
+			System.out.println("title" + item.getTitle());
+		}
+		
+		model.addAttribute("list",list);
+		model.addAttribute("search",vo);
+		
 		return "index"; //포워딩
 	}
 	
@@ -102,9 +117,39 @@ public class BoardController {
 		return "write";
 	}
 	
-	@RequestMapping(value = "/writeok.do")
-	public String WriteOK() {
-		return "writeok";
+	@RequestMapping(value = "/writeok.do", method = RequestMethod.POST)
+	public String WriteOK(BoardVO vo,HttpServletRequest request,
+			@RequestParam("attach")MultipartFile file) throws IllegalStateException, IOException {
+		UserVO login = (UserVO)request.getSession().getAttribute("login");
+		if(login == null) {
+			return "redirect:/index.do";
+		}
+		//게시글 작성자 아이디를 설정한다.
+		vo.setUserid(login.getUserid());
+		if(file != null) {
+			//업로드된 원본 파일 이름 가져오기
+			//tomcat소유의 임시디렉토리(temp) 서버가 리부팅되면 temp를 비운다
+			String originalFileName = file.getOriginalFilename();
+			System.out.println("originalFileName : " + originalFileName);
+			
+			//파일 이름이 중복되지 않도록 파일 이름 변경 : 서버에 저장할 이름
+			// UUID 클래스 사용
+			UUID uuid = UUID.randomUUID();
+			String savedFileName = uuid.toString();
+			System.out.println("savedFileName : " + savedFileName);
+			
+			//첨부파일 객체 생성
+			File newFile = new File(uploadPath + "\\" + savedFileName);
+			//실제 저장해야하는 폴더로 업로드 된 파일을 옮긴다.
+			//실제 저장 디렉토리로 전송
+			file.transferTo(newFile); //받아온 file을 newFile이 가지고있는 path에 (newFile객체에 담아서??)전송한다
+			
+			vo.setFname(originalFileName);	//원본파일명
+			vo.setPname(savedFileName);		//저장파일명
+		}
+		boardService.Insert(vo);
+		
+		return "redirect:/view?no=" + vo.getNo();
 	}
 	
 	@RequestMapping(value = "/modify.do")
