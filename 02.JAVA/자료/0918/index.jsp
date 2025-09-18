@@ -5,14 +5,14 @@
 	<tr>
 		<td style="height:40px">
 			<span style="font-weight:bold; color:red;">
-				<c:choose>
-					<c:when test="${ param['kind'] == null or param['kind'] == 'J'}">
-						※ 자바학습 게시판
-					</c:when>
-					<c:otherwise>
-						※ HTML 학습 게시판
-					</c:otherwise>
-				</c:choose>
+			<c:choose>
+				<c:when test="${ param['kind'] == null or param['kind'] == 'J' }">
+					※ 자바학습 게시판
+				</c:when>
+				<c:otherwise>
+					※ HTML 학습 게시판
+				</c:otherwise>
+			</c:choose>	
 			</span>
 		</td>
 	</tr>
@@ -25,7 +25,7 @@
 				<c:otherwise>
 					<a href="javascript:alert('로그인 후에 글쓰기가 가능합니다.');">글쓰기</a>
 				</c:otherwise>
-			</c:choose>
+			</c:choose>	
 		</td>
 	</tr>						
 	<tr>
@@ -40,32 +40,34 @@
 					<td style="text-align:center; background-color:#f2f2f2;width: 70px;">조회수</td>						
 				</tr>
 				<c:forEach var="item" items="${ list }">
-				<tr>
-					<td style="text-align:center;">${ item.no }</td>
-					<td><a href="view.do?no=${ item.no }">${ item.title }</a>
-					<c:if test="${ item.rcount  != '0'}">
-						<span style="color:#ff6600">(${ item.rcount })</span></td>
-					</c:if>
-					<td style="text-align:center;">${ item.wdate }</td>
-					<td style="text-align:center;">${ item.name }</td>
-					<td style="text-align:center;">${ item.hit }</td>
-				</tr>
+					<tr>
+						<td style="text-align:center;">${ item.no }</td>
+						<td>
+							<a href="view.do?no=${ item.no }">${ item.title }</a>
+							<c:if test="${ item.rcount != '0' }">
+								<span style="color:#ff6600">(${ item.rcount })</span>
+							</c:if>
+						</td>
+						<td style="text-align:center;">${ item.wdate }</td>
+						<td style="text-align:center;">${ item.name }</td>
+						<td style="text-align:center;">${ item.hit }</td>
+					</tr>
 				</c:forEach>
 			</table>							
 		</td>
 	</tr>
 	<tr>
 		<td style="text-align:center;">
-		<!--  ◀ 1 2 3 4 5 6 7 8 9  ▶ -->
-		<c:if test="${ startBk < 10 }">
-			<a href="index.do?kind=${ search.kind }?page=${ page - 1 } ">이전</a>
+		<!-- ◀ 1 2 3 4 5 6 7 8 9  ▶ -->
+		<c:if test="${ startbk != 1 }">
+			<a href="index.do?kind=${ search.kind }&page=${ startbk - 1 }">이전</a>
 		</c:if>
-		<c:forEach var="page" begin="${ startBk }" end="${ endBk }">
-			<a href="index.do?kind=${ search.kind }?page=${ page } ">${ page }</a>
+		<c:forEach var="page" begin="${ startbk }" end="${ endbk }">
+			<a href="index.do?kind=${ search.kind }&page=${ page }">${ page}</a>
 		</c:forEach>
-		<c:if test="${ endBk <= maxPage }">
-			<a href="index.do?kind=${ search.kind }?page=${ page + 1 } ">다음</a>
-		</c:if>
+		<c:if test="${ endbk < maxpage }">
+			<a href="index.do?kind=${ search.kind }&page=${ endbk + 1 }">다음</a>
+		</c:if>		
 		</td>
 	</tr>												
 </table>

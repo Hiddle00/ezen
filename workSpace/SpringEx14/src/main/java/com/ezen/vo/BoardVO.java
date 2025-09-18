@@ -34,6 +34,14 @@ public class BoardVO {
 	
 	public String getRcount() 	 {	return rcount;	}
 	public String getName() 	 {	return name;	}
+	public String getHTML() 	 {
+		String note = this.note;
+		//HTML을 텍스트로 변환
+		note = note.replace("<", "&lt");
+		note = note.replace(">", "&gt");
+		note = note.replace("\n", "\n<br>");
+		return note;	
+	}
 	
 	
 	public void setNo(String no)		 {	this.no		= no;		}

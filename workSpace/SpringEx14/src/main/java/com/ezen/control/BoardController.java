@@ -26,24 +26,59 @@ public class BoardController {
 	private ReplyService replyService;
 	
 	@RequestMapping(value = "/index.do")
-	public String Index(@RequestParam(defaultValue = "J")String king,Model model) {
+	public String Index(@RequestParam(defaultValue = "J")String kind
+			,@RequestParam(defaultValue = "1")int page
+			,Model model) {
 		SearchVO vo = new SearchVO();
-		vo.setKind("J");
-		vo.setPageno(1);
+		vo.setKind(kind);
+		vo.setPageno(page);
 		
+		//전체 갯수
+		int total = boardService.GetTotal(vo);
+				
+		//최대 페이지 갯수
+		int maxPage = total / 10;
+		if((total % 10) != 0) maxPage++;
+		
+		
+		//페이징 블럭 계산
+		//시작블럭 = (현재페이지/10) * 10 + 1
+		//끝블럭 = 시작블럭 + 10 -1
+		int startBk = ((page - 1) / 10) * 10 + 1;
+		int endBk = startBk + 10 - 1;
+		//끝블럭 > 전체페이지 갯수면, 끝블럭 = 전체페이지 갯수
+		if(endBk > maxPage) endBk = maxPage;
+		//목록 조회
 		List<BoardVO> list = boardService.GetList(vo);
 		for(BoardVO item : list) {
 			System.out.println("title" + item.getTitle());
 		}
+		/*
+		if(vo.getKind() == "J") {
+			model.addAttribute("title","※ 자바학습 게시판");
+		}else {
+			model.addAttribute("title","※ HTML 학습 게시판");
+		}
+		*/
+		
+		model.addAttribute("total",total);
+		model.addAttribute("maxPage",maxPage);
+		
+		model.addAttribute("startBk",startBk);
+		model.addAttribute("endBk",endBk);
 		
 		model.addAttribute("list",list);
 		model.addAttribute("search",vo);
 		
-		return "index"; //포워딩
+		return "redirect:/index.do"; //포워딩
 	}
 	
-	@RequestMapping(value = "/view.do")
-	public String View() {
+	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
+	public String View(@RequestParam(required = true)String no, Model model) {
+		
+		BoardVO vo = boardService.Read(no, true);
+		
+		model.addAttribute("item", vo);
 		return "view";
 	}
 	

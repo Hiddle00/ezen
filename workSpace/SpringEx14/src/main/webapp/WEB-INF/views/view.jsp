@@ -11,27 +11,23 @@
 <table border="1" style="width:100%;">
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">제목</td>
-		<td>자바 기초 문법에 대한 강의 입니다.</td>
+		<td>${ item.title }</td>
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">작성자</td>
-		<td>홍길동</td>
+		<td>${ item.name }</td>
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">작성일</td>
-		<td>2021.11.10</td>
+		<td>${ item.wdate }</td>
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">조회수</td>
-		<td>10회</td>
+		<td>${ item.hit }회</td>
 	</tr>
 	<tr>
 		<td colspan="2">	
-			자바 기초 문법에 대한 강의 입니다.
-			<br>
-			자바 기초 문법에 대한 강의 입니다.
-			<br>
-			자바 기초 문법에 대한 강의 입니다.
+			${ item.note }
 		</td>
 	</tr>	
 	<tr>
