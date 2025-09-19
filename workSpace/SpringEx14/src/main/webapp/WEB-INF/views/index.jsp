@@ -57,14 +57,14 @@
 	<tr>
 		<td style="text-align:center;">
 		<!--  ◀ 1 2 3 4 5 6 7 8 9  ▶ -->
-		<c:if test="${ startBk < 10 }">
-			<a href="index.do?kind=${ search.kind }?page=${ page - 1 } ">이전</a>
+		<c:if test="${ startBk > 10 }">
+			<a href="index.do?kind=${ search.kind }&page=${ startBk - 1 } ">이전</a>
 		</c:if>
 		<c:forEach var="page" begin="${ startBk }" end="${ endBk }">
-			<a href="index.do?kind=${ search.kind }?page=${ page } ">${ page }</a>
+			<a href="index.do?kind=${ search.kind }&page=${ page } ">${ page }</a>
 		</c:forEach>
-		<c:if test="${ endBk <= maxPage }">
-			<a href="index.do?kind=${ search.kind }?page=${ page + 1 } ">다음</a>
+		<c:if test="${ maxPage - 10 >= startBk }">
+			<a href="index.do?kind=${ search.kind }&page=${ endBk + 1 } ">다음</a>
 		</c:if>
 		</td>
 	</tr>												

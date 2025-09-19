@@ -31,7 +31,9 @@ public class BoardController {
 			,Model model) {
 		SearchVO vo = new SearchVO();
 		vo.setKind(kind);
-		vo.setPageno(page);
+		System.out.println(page);
+		System.out.println(vo.getPageno());
+		System.out.println(((1-1)/10));
 		
 		//전체 갯수
 		int total = boardService.GetTotal(vo);
@@ -39,7 +41,19 @@ public class BoardController {
 		//최대 페이지 갯수
 		int maxPage = total / 10;
 		if((total % 10) != 0) maxPage++;
+		if(total == 0) maxPage = 1; // 게시물이 없을 때 1페이지로 표시
 		
+		// 페이지 유효성 검사
+	    if(page > maxPage) {
+	        // 최대 페이지보다 큰 값을 요청하면 마지막 페이지로 리다이렉트
+	        return "redirect:/index.do?kind=" + kind + "&page=" + maxPage;
+	    }
+	    // 페이지가 1보다 작을 경우 처리
+	    if(page < 1) {
+	        return "redirect:/index.do?kind=" + kind + "&page=1";
+	    }
+
+		vo.setPageno(page);
 		
 		//페이징 블럭 계산
 		//시작블럭 = (현재페이지/10) * 10 + 1
@@ -70,7 +84,7 @@ public class BoardController {
 		model.addAttribute("list",list);
 		model.addAttribute("search",vo);
 		
-		return "redirect:/index.do"; //포워딩
+		return "index"; //포워딩
 	}
 	
 	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
@@ -184,7 +198,7 @@ public class BoardController {
 		}
 		boardService.Insert(vo);
 		
-		return "redirect:/view?no=" + vo.getNo();
+		return "redirect:/view.do?no=" + vo.getNo();
 	}
 	
 	@RequestMapping(value = "/modify.do")
