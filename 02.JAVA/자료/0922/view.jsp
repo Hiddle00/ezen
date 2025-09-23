@@ -1,39 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./include/head.jsp" %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
-<script>
-	window.onload = function(){
-		$("#btnReply").click(function(){
-			AddReply();
-		});
-	}
-	
-	function AddReply(){
-		if($('#rnote').val() == '' ){
-			alert("댓글을 입력해주세요.")
-			$("#rnote").focus()
-			return false;
-		}
-		if(!confirm("댓글을 등록하시겠습니까?")){
-			return;
-		}
-		$.ajax({
-			url  : "replyok.do",
-			type : "post",
-			data : {
-				no : "${ item.no }",
-				userid : "${ login.userid }",
-				rnote : $( "rnote" ).val()
-			},
-			dataType : "html",
-			success : function(res){
-				res = res.trim();
-				alert(res);
-				document.location.reload();
-			}
-		});
-	}
-</script>
 <table border="0" style="width:100%;">
 	<tr>
 		<td style="height:40px">
@@ -59,7 +26,7 @@
 		<td>${ item.hit }회</td>
 	</tr>
 	<tr>
-		<td colspan="2">	
+		<td colspan="2">
 			${ item.HTML }
 		</td>
 	</tr>	
@@ -68,12 +35,12 @@
 		<td>
 		<c:choose>
 			<c:when test="${ item.fname != null and !item.fname.equals('') }">
-				<a href="down.jsp?no=${ item.no }">${ item.fname }</a>
+				<a href="down.do?no=${ item.no }">${ item.fname }</a>
 			</c:when>
 			<c:otherwise>
 				등록된 첨부파일 없음
 			</c:otherwise>
-		</c:choose>
+		</c:choose>			
 		</td>
 	</tr>	
 	<tr>
@@ -91,13 +58,11 @@
 
 <br>
 <table border="1" style="width:100%;">
-	<c:if test="${ login != null and login.userid.equals(item.userid) }">
-		<tr>
-			<td width="110px">${ item.name }</td>
-			<td><input type="text" id="rnote" name="rnote" style="width:95%"></td>
-			<td width="110px" align="center"><input type="button" id="btnReply" value="작성완료"></td>
-		</tr>					
-	</c:if>
+	<tr>
+		<td width="110px">홍길동</td>
+		<td><input type="text" style="width:95%"></td>
+		<td width="110px" align="center"><input type="submit" value="작성완료"></td>
+	</tr>					
 	<tr>
 		<td width="110px">홍길동</td>
 		<td>댓글 입니다. 댓글입니다.</td>

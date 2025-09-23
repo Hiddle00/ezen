@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,7 +34,6 @@ public class BoardController {
 		vo.setKind(kind);
 		System.out.println(page);
 		System.out.println(vo.getPageno());
-		System.out.println(((1-1)/10));
 		
 		//전체 갯수
 		int total = boardService.GetTotal(vo);
@@ -216,5 +216,45 @@ public class BoardController {
 		return "delete";
 	}
 	
+	//첨부파일 다운로드
+	@RequestMapping(value = "/down.do")
+	public void Download(@RequestParam(required = true)String no,
+			HttpServletResponse response) throws Exception {
+		BoardVO vo = boardService.Read(no, true);
+		
+		File file = new File(uploadPath, vo.getPname()); ///이해
+		
+		// 파일명 인코딩
+		//String filename = vo.getFname();
+		String filename = new String(vo.getFname().getBytes("UTF-8"),"ISO-8859-1");
+		
+		// file 다운로드 설정
+		response.setContentType("application/download");
+		response.setContentLength((int)file.length());
+		response.setHeader("Content-Disposition", "attatchment;filename=\"" + filename + "\"");
+		///이해
+		
+		// 다운로드 시 저장되는 이름은 Response Header의 "Content-Disposition"에 명시
+		OutputStream os = response.getOutputStream();
+		
+		FileInputStream fis = new FileInputStream(file);
+		FileCopyUtils.copy(fis, os);
+
+	}
 	
+	@RequestMapping(value = "/reply.do",
+			produces="application/text;charset=utf8", 
+			method = RequestMethod.POST)
+	@ResponseBody
+	public String Replyok(ReplyVO vo, HttpServletRequest request) {
+		
+		//로그인 검사
+		UserVO login = (UserVO) request.getSession().getAttribute("login");
+		if (login == null) {
+			return "로그인이 필요합니다.";
+		}
+		
+		replyService.Insert(vo);
+		return "댓글 등록이 완료되었습니다.";
+	}
 }
