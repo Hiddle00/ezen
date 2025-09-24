@@ -23,6 +23,14 @@
 		<property name="username" value="root" />
 		<property name="password" value="ezen" />
 	</bean>
+	
+	<!-- &amp;allowPublicKeyRetrieval=true"
+		DriverManagerDataSource dataSource = new DriverManagerDataSource() 
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver")
+		dataSource.setUrl("jdbc....")
+		dataSource.setUserName("root")
+		dataSource.setPassword("ezen")
+	-->
 
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -30,6 +38,12 @@
 		<property name="mapperLocations"
 			value="classpath*:mapper/**/*.xml" />
 	</bean>
+	
+	<!--
+		SqlSessionFactoryBean sqlSessionFactory = SqlSessionFactoryBean();
+		sqlSessionFactory.setDataSource(dataSource);
+		sqlSessionFactory.setMapperLocations("classpath*:mapper/**/*.xml")
+	-->
 
 	<bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate"
@@ -38,4 +52,7 @@
 			name="sqlSessionFactory" />
 	</bean>
 
+	<!-- 
+		SqlSessionTemplate sqlSession = new SqlSessionTemplate(sqlSessionFactory);
+	-->
 </beans>

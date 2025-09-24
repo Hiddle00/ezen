@@ -41,6 +41,11 @@
 		where no = #{no}
 	</update>
 	<!-- 게시물 삭제 쿼리 -->
+	<delete id="delete_reply" parameterType="String">
+		delete from reply 
+		where no = #{ no }
+	</delete>
+	
 	<delete id="delete" parameterType="String">
 		delete from board 
 		where no = #{ no }

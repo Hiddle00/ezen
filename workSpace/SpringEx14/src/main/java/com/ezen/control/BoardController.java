@@ -90,9 +90,15 @@ public class BoardController {
 	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
 	public String View(@RequestParam(required = true)String no, Model model) {
 		
+		//게시물 정보 조회
 		BoardVO vo = boardService.Read(no, true);
 		
+		//댓글 목록 조회
+		List<ReplyVO> list = replyService.GetList(no);
+		
 		model.addAttribute("item", vo);
+
+		model.addAttribute("rList", list);
 		return "view";
 	}
 	
@@ -201,19 +207,24 @@ public class BoardController {
 		return "redirect:/view.do?no=" + vo.getNo();
 	}
 	
-	@RequestMapping(value = "/modify.do")
-	public String Modify() {
+	@RequestMapping(value = "/modify.do", method = RequestMethod.GET)
+	public String Modify(@RequestParam(required = true) String no, Model model) {
+		BoardVO vo = boardService.Read(no, false);
+		model.addAttribute("item", vo);
+		
 		return "modify";
 	}
 	
-	@RequestMapping(value = "/modifyok.do")
+	@RequestMapping(value = "/modifyok.do", method = RequestMethod.POST)
 	public String ModifyOK() {
 		return "modifyok";
 	}
 	
 	@RequestMapping(value = "/delete.do")
-	public String Delete() {
-		return "delete";
+	public String Delete(@RequestParam(required = true) String no) {
+		
+		boardService.Delete(no);
+		return "redirect:/index.do";
 	}
 	
 	//첨부파일 다운로드
@@ -242,7 +253,7 @@ public class BoardController {
 
 	}
 	
-	@RequestMapping(value = "/reply.do",
+	@RequestMapping(value = "/replyok.do",
 			produces="application/text;charset=utf8", 
 			method = RequestMethod.POST)
 	@ResponseBody
@@ -256,5 +267,20 @@ public class BoardController {
 		
 		replyService.Insert(vo);
 		return "댓글 등록이 완료되었습니다.";
+	}
+	
+	@RequestMapping(value = "/delreply.do",
+			produces="application/text;charset=utf8")
+	@ResponseBody
+	public String DelReplyok(String rno, HttpServletRequest request) {
+		
+		//로그인 검사
+		UserVO login = (UserVO) request.getSession().getAttribute("login");
+		if (login == null) {
+			return "로그인이 필요합니다.";
+		}
+		
+		replyService.Delete(rno);
+		return "댓글 삭제가 완료되었습니다.";
 	}
 }

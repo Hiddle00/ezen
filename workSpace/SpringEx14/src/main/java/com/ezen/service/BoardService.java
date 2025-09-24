@@ -46,6 +46,9 @@ public class BoardService {
 	}
 	//게시물 정보를 삭제한다.
 	public boolean Delete(String no) {
+		//해당 게시물의 댓글 전체를 삭제
+		session.delete(namespace + ".delete_reply", no);
+		//해당 게시물을 삭제
 		session.delete(namespace + ".delete", no);
 		return true;
 	}

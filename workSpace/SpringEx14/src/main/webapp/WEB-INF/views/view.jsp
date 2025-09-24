@@ -33,6 +33,30 @@
 			}
 		});
 	}
+	
+	function DelReply(rno){
+		if(!confirm("댓글을 삭제하시겠습니까?")){
+			return;
+		}
+		
+		$.ajax({
+			url  : "delreply.do?rno=" + rno,
+			type : "get",
+			dataType : "html",
+			success : function(res){
+				res = res.trim();
+				alert(res);
+				document.location.reload();
+			}
+		});
+	}
+	
+	function Delete(no){
+		if(!confirm("게시물을 삭제하시겠습니까?")){
+			return;
+		}
+		document.location = "delete.do?no=" + no;
+	}
 </script>
 <table border="0" style="width:100%;">
 	<tr>
@@ -83,7 +107,7 @@
 			&nbsp;|&nbsp;
 			<a href="modify.do?no=${ item.no }">글수정</a>
 			&nbsp;|&nbsp;
-			<a href="delete.do?no=${ item.no }">글삭제</a>
+			<a href="javascript:DelBoard()">글삭제</a>
 		</c:if>
 		</td>
 	</tr>																													
@@ -98,26 +122,16 @@
 			<td width="110px" align="center"><input type="button" id="btnReply" value="작성완료"></td>
 		</tr>					
 	</c:if>
-	<tr>
-		<td width="110px">홍길동</td>
-		<td>댓글 입니다. 댓글입니다.</td>
-		<td width="110px" align="center">2021.12.01</td>
-	</tr>
-	<tr>
-		<td width="110px">홍길동</td>
-		<td>댓글 입니다. 댓글입니다.</td>
-		<td width="110px" align="center">2021.12.01</td>
-	</tr>
-	<tr>
-		<td width="110px">홍길동</td>
-		<td>댓글 입니다. 댓글입니다.</td>
-		<td width="110px" align="center">2021.12.01</td>
-	</tr>
-	<tr>
-		<td width="110px">홍길동</td>
-		<td>댓글 입니다. 댓글입니다. [ <a href="#">삭제</a> ]</td>
-		<td width="110px" align="center">2021.12.01</td>
-	</tr>																		
+	<c:forEach var="rList" items="${ rList }">
+		<tr>
+			<td width="110px">${ rList.name }</td>
+			<td>${ rList.rnote }</td>
+			<c:if test="${ login.userid != null and login.userid.equals(rList.userid)  }">
+				[ <a href="javascript:DelReply(${ rList.rno });">삭제</a> ]
+			</c:if>
+			<td width="110px" align="center">${ rList.rwdate }</td>
+		</tr>
+	</c:forEach>																	
 </table>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <%@ include file="./include/tail.jsp" %>

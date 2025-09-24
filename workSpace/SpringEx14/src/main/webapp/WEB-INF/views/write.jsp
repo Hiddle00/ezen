@@ -5,7 +5,7 @@
 window.onload = function(){
 	$("#title").focus();
 	
-	$("write").click(function(){
+	$("#write").submit(function(){
 		return DoWrite();
 	});
 }
