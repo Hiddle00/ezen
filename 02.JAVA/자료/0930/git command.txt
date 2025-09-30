@@ -1,0 +1,108 @@
+
+git config --global user.name "YeonH"
+git config --global user.email "duswork01@gmail.com"
+
+git config --global core.autocrlf true
+
+git config --global init.defaultBranch main
+
+d:
+mkdir project
+dir
+cd project
+
+start .
+
+git init
+dir
+dir /a
+
+echo Hello world! > a.txt
+echo Hello world! > b.txt
+echo Hello world! > c.txt
+
+git status
+git add a.txt.
+git add .
+
+echo bye bye >> a.txt 
+이어쓰기
+
+git add a.txt.
+
+git rm --cached *
+staging area에 있는 모든파일 스테이징 취소
+git add *
+
+echo 12345 > pw.txt
+echo pw.txt > .gitignore
+git status -s
+
+echo java >>b.txt
+git diff
+
+git add b.txt
+git diff
+staging area와 working 디렉토리 사이의 변경사항
+
+git diff --staged
+working 디렉토리와 깃 디렉토리 사이의 변경사항
+
+echo hello world! > a.txt
+git add a.txt
+
+git commit -m "first commit"
+git log
+
+git commit -m "second commit"
+
+echo add >> c.txt
+git add c.txt
+git commit -m "second commit"
+git log
+
+echo new text > d.txt
+del a.txt
+git status
+git add *.txt
+git commit -m "third commit"
+git log
+
+git checkout c63e1aa
+git log
+git checkout -
+
+git reset --hard c63e1aa
+
+cd ..
+mkdir project2
+cd project2
+git init
+
+
+echo hi > a.txt
+echo hello > b.txt
+echo bye > c.txt
+git add .
+git commit -m "first"
+
+echo good >> d.txt
+git add .
+git commit -m "second"
+
+echo good > d.txt
+echo add >> a.txt
+git add . 
+git commit -m "third"
+
+git revert 1c35a17
+
+git:https://github.com
+Hiddle00
+토큰 : ~
+
+git remote add origin https://github.com/Hiddle00/git-test.git
+git branch -M main
+마스터브렌치 main으로 세팅
+git push -u origin main
+
