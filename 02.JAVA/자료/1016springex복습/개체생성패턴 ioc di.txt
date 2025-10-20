@@ -1,0 +1,30 @@
+public static abstract
+인터페이스는 키워드를 모두 기본적으로 포함한다
+
+개체 생성 패턴
+new/싱글톤(객체의 주소가 항상 같은것을 보장)
+
+프레임웍 > 사용자의 코드를 프레임웍이 호출
+>제어의 역전(생성과 소멸)
+빈객체 > 스프링이 관리
+
+스프링이 관리하는 ioc컨테이너(ex.ApplicationContext context 메모리 주소를 가지고 있음)에서 context.getBean()으로 
+>의존성 주입(depenadence injection
+
+프로퍼티(getter/setter) 접근법 (setter)
+<bean id="school" class="ezen.di.School" > <<<<<<<생성자 호출
+	<!-- school.setPerson(hong) -->
+	<property name="person" ref="hong"></property>
+</bean>
+세터주입(직접 호출요청해서 세터로 주입했지만 실제로 사용할 일은 많지 않음)
+------------------------------------------------------------
+정의=파라미터/실행=argument
+------------------------------------------------------------
+<bean id="hong" class="ezen.di.Student">
+	<constructor-arg name="name" value="홍길동" />
+	<constructor-arg name="age" value="16" />
+	<constructor-arg name="job" value="학생" />
+</bean>
+생성자 주입
+
+>>>>xml을 통한 bean등록 방법
