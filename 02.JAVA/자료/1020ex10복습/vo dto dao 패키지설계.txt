@@ -1,0 +1,38 @@
+VO 불변객체 값 세팅이 불가능해야함
+setter x
+모든 필드는 생성자로 값을 저장
+getter만 존재해야 한다
+
+DTO
+setter o
+생성자 필요하면 존재
+getter o
+
+DAO >             Repository
+데이터 접근 객체
+mybatis, jdbc설정, jpa?
+setter X
+getter X
+
+패키지 설계 방법
+기능별
+게시판(Board)
+ > 게시판VO
+ > 게시판Repository
+ > 게시판Controller
+역할별
+ > vo패키지
+   >게시판VO
+ >controller패키지
+   >게시판controller
+ >repository패키지
+   >게시판repository
+
+
+값이 자주 변경되는 객체는 스프링에서 관리하면 안된다 > VO
+vo에 무언가를 집어넣을때 세테메소드를 반드시 호출하게 되어있기 때문에 
+setter 메소드를 반드시 만들어 줘야한다.
+
+프로퍼티접근법
+#{title} -> getTitle() -> 제목 -> '제목'
+${body} -> getBody() -> 본문 -> '본문'
